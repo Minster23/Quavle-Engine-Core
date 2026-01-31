@@ -1,0 +1,2450 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "CMakeLists.txt:88 (find_program)"
+    mode: "program"
+    variable: "CCACHE_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ccache"
+    candidate_directories:
+      - "E:/python 3.13/Scripts/"
+      - "E:/python 3.13/"
+      - "D:/quevelkit/Vulkan/Lib/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "F:/Devtool/python/"
+      - "F:/Devtool/Git/cmd/"
+      - "D:/cmake/bin/"
+      - "F:/Devtool/Microsoft VS Code/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "F:/Devtool/cursor/resources/app/bin/"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/"
+      - "F:/Devtool/cmake/bin/"
+      - "F:/Devtool/msys64/ucrt64/bin/"
+      - "F:/Devtool/mysys2/ucrt64/bin/"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/"
+      - "C:/Program Files/qemu/"
+      - "F:/Devtool/NASm/"
+      - "F:/Devtool/mysys2/mingw32/"
+      - "F:/Devtool/mysys2/mingw32/bin/"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/"
+      - "F:/Devtool/Nvim/bin/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/"
+      - "E:/QuavleEngine/build/"
+      - "C:/Users/athilah/.cargo/bin/"
+      - "F:/Devtool/Conan/conan/"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/athilah/.dotnet/tools/"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/imgui/Cmake/bin/"
+      - "D:/JetBrains Rider 2024.3.6/bin/"
+      - "F:/Devtool/MinGw/bin/"
+      - "F:/Devtool/5.1/"
+      - "F:/Devtool/OpenJDK8/bin/"
+      - "C:/Users/athilah/.bun/bin/"
+      - "C:/Users/athilah/AppData/Roaming/npm/"
+      - "F:/Devtool/qemu/"
+      - "E:/ponga/bin/Debug/"
+    searched_directories:
+      - "E:/python 3.13/Scripts/ccache.com"
+      - "E:/python 3.13/Scripts/ccache.exe"
+      - "E:/python 3.13/Scripts/ccache"
+      - "E:/python 3.13/ccache.com"
+      - "E:/python 3.13/ccache.exe"
+      - "E:/python 3.13/ccache"
+      - "D:/quevelkit/Vulkan/Lib/ccache.com"
+      - "D:/quevelkit/Vulkan/Lib/ccache.exe"
+      - "D:/quevelkit/Vulkan/Lib/ccache"
+      - "C:/Windows/System32/ccache.com"
+      - "C:/Windows/System32/ccache.exe"
+      - "C:/Windows/System32/ccache"
+      - "C:/Windows/ccache.com"
+      - "C:/Windows/ccache.exe"
+      - "C:/Windows/ccache"
+      - "C:/Windows/System32/wbem/ccache.com"
+      - "C:/Windows/System32/wbem/ccache.exe"
+      - "C:/Windows/System32/wbem/ccache"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/ccache.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/ccache.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/ccache"
+      - "C:/Windows/System32/OpenSSH/ccache.com"
+      - "C:/Windows/System32/OpenSSH/ccache.exe"
+      - "C:/Windows/System32/OpenSSH/ccache"
+      - "F:/Devtool/python/ccache.com"
+      - "F:/Devtool/python/ccache.exe"
+      - "F:/Devtool/python/ccache"
+      - "F:/Devtool/Git/cmd/ccache.com"
+      - "F:/Devtool/Git/cmd/ccache.exe"
+      - "F:/Devtool/Git/cmd/ccache"
+      - "D:/cmake/bin/ccache.com"
+      - "D:/cmake/bin/ccache.exe"
+      - "D:/cmake/bin/ccache"
+      - "F:/Devtool/Microsoft VS Code/ccache.com"
+      - "F:/Devtool/Microsoft VS Code/ccache.exe"
+      - "F:/Devtool/Microsoft VS Code/ccache"
+      - "C:/Program Files/dotnet/ccache.com"
+      - "C:/Program Files/dotnet/ccache.exe"
+      - "C:/Program Files/dotnet/ccache"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ccache.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ccache.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/ccache"
+      - "F:/Devtool/cursor/resources/app/bin/ccache.com"
+      - "F:/Devtool/cursor/resources/app/bin/ccache.exe"
+      - "F:/Devtool/cursor/resources/app/bin/ccache"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/ccache.com"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/ccache.exe"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/ccache"
+      - "F:/Devtool/cmake/bin/ccache.com"
+      - "F:/Devtool/cmake/bin/ccache.exe"
+      - "F:/Devtool/cmake/bin/ccache"
+      - "F:/Devtool/msys64/ucrt64/bin/ccache.com"
+      - "F:/Devtool/msys64/ucrt64/bin/ccache.exe"
+      - "F:/Devtool/msys64/ucrt64/bin/ccache"
+      - "F:/Devtool/mysys2/ucrt64/bin/ccache.com"
+      - "F:/Devtool/mysys2/ucrt64/bin/ccache.exe"
+      - "F:/Devtool/mysys2/ucrt64/bin/ccache"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/ccache.com"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/ccache.exe"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/ccache"
+      - "C:/Program Files/qemu/ccache.com"
+      - "C:/Program Files/qemu/ccache.exe"
+      - "C:/Program Files/qemu/ccache"
+      - "F:/Devtool/NASm/ccache.com"
+      - "F:/Devtool/NASm/ccache.exe"
+      - "F:/Devtool/NASm/ccache"
+      - "F:/Devtool/mysys2/mingw32/ccache.com"
+      - "F:/Devtool/mysys2/mingw32/ccache.exe"
+      - "F:/Devtool/mysys2/mingw32/ccache"
+      - "F:/Devtool/mysys2/mingw32/bin/ccache.com"
+      - "F:/Devtool/mysys2/mingw32/bin/ccache.exe"
+      - "F:/Devtool/mysys2/mingw32/bin/ccache"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/ccache.com"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/ccache.exe"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/ccache"
+      - "F:/Devtool/Nvim/bin/ccache.com"
+      - "F:/Devtool/Nvim/bin/ccache.exe"
+      - "F:/Devtool/Nvim/bin/ccache"
+      - "C:/Program Files/nodejs/ccache.com"
+      - "C:/Program Files/nodejs/ccache.exe"
+      - "C:/Program Files/nodejs/ccache"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/ccache.com"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/ccache.exe"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/ccache"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/ccache.com"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/ccache.exe"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/ccache"
+      - "E:/QuavleEngine/build/ccache.com"
+      - "E:/QuavleEngine/build/ccache.exe"
+      - "E:/QuavleEngine/build/ccache"
+      - "C:/Users/athilah/.cargo/bin/ccache.com"
+      - "C:/Users/athilah/.cargo/bin/ccache.exe"
+      - "C:/Users/athilah/.cargo/bin/ccache"
+      - "F:/Devtool/Conan/conan/ccache.com"
+      - "F:/Devtool/Conan/conan/ccache.exe"
+      - "F:/Devtool/Conan/conan/ccache"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/ccache.com"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/ccache.exe"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/ccache"
+      - "C:/Users/athilah/.dotnet/tools/ccache.com"
+      - "C:/Users/athilah/.dotnet/tools/ccache.exe"
+      - "C:/Users/athilah/.dotnet/tools/ccache"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/ccache.com"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/ccache.exe"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/ccache"
+      - "D:/imgui/Cmake/bin/ccache.com"
+      - "D:/imgui/Cmake/bin/ccache.exe"
+      - "D:/imgui/Cmake/bin/ccache"
+      - "D:/JetBrains Rider 2024.3.6/bin/ccache.com"
+      - "D:/JetBrains Rider 2024.3.6/bin/ccache.exe"
+      - "D:/JetBrains Rider 2024.3.6/bin/ccache"
+      - "F:/Devtool/MinGw/bin/ccache.com"
+      - "F:/Devtool/MinGw/bin/ccache.exe"
+      - "F:/Devtool/MinGw/bin/ccache"
+      - "F:/Devtool/5.1/ccache.com"
+      - "F:/Devtool/5.1/ccache.exe"
+      - "F:/Devtool/5.1/ccache"
+      - "F:/Devtool/OpenJDK8/bin/ccache.com"
+      - "F:/Devtool/OpenJDK8/bin/ccache.exe"
+      - "F:/Devtool/OpenJDK8/bin/ccache"
+      - "C:/Users/athilah/.bun/bin/ccache.com"
+      - "C:/Users/athilah/.bun/bin/ccache.exe"
+      - "C:/Users/athilah/.bun/bin/ccache"
+      - "C:/Users/athilah/AppData/Roaming/npm/ccache.com"
+      - "C:/Users/athilah/AppData/Roaming/npm/ccache.exe"
+      - "C:/Users/athilah/AppData/Roaming/npm/ccache"
+      - "F:/Devtool/qemu/ccache.com"
+      - "F:/Devtool/qemu/ccache.exe"
+      - "F:/Devtool/qemu/ccache"
+      - "E:/ponga/bin/Debug/ccache.com"
+      - "E:/ponga/bin/Debug/ccache.exe"
+      - "E:/ponga/bin/Debug/ccache"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "E:\\python 3.13\\Scripts\\"
+        - "E:\\python 3.13\\"
+        - "D:\\quevelkit\\Vulkan\\Lib"
+        - "c:\\windows\\system32"
+        - "c:\\windows"
+        - "c:\\windows\\system32\\wbem"
+        - "c:\\windows\\system32\\windowspowershell\\v1.0\\"
+        - "c:\\windows\\system32\\openssh\\"
+        - "f:\\devtool\\python"
+        - "f:\\devtool\\git\\cmd"
+        - "d:\\cmake\\bin"
+        - "f:\\devtool\\microsoft vs code"
+        - "c:\\program files\\dotnet"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "f:\\Devtool\\cursor\\resources\\app\\bin"
+        - "D:\\BuildTools\\VC\\Tools\\MSVC\\14.43.34808\\bin\\Hostx64\\x64"
+        - "F:\\Devtool\\Cmake\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "F:\\Devtool\\msys64\\ucrt64\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "F:\\Devlopment\\quevel\\thirdParty\\tools\\vcpkg"
+        - "C:\\Program Files\\qemu"
+        - "F:\\Devtool\\NASm"
+        - "F:\\Devtool\\mysys2\\mingw32"
+        - "F:\\Devtool\\mysys2\\mingw32\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "F:\\Devtool\\Nvim\\bin"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\athilah\\AppData\\Local\\bin\\NASM"
+        - "F:\\Devlopment\\LLL\\EmguCVApp\\ghost-i686-elf-tools-win32\\ghost-i686-elf-tools\\bin"
+        - "E:\\QuavleEngine\\build"
+        - "C:\\Users\\athilah\\.cargo\\bin"
+        - "F:\\Devtool\\Conan\\conan"
+        - "C:\\Users\\athilah\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "C:\\Users\\athilah\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\imgui\\Cmake\\bin"
+        - "D:\\JetBrains Rider 2024.3.6\\bin"
+        - "F:\\Devtool\\MinGw\\bin"
+        - "F:\\Devtool\\5.1"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\OpenJDK8\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "C:\\Users\\athilah\\.bun\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "C:\\Users\\athilah\\AppData\\Roaming\\npm"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\qemu"
+        - "E:\\ponga\\bin\\Debug"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    message: |
+      The system is: Windows - 10.0.22000 - AMD64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/"
+    found: "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "E:\\python 3.13\\Scripts\\"
+        - "E:\\python 3.13\\"
+        - "D:\\quevelkit\\Vulkan\\Lib"
+        - "c:\\windows\\system32"
+        - "c:\\windows"
+        - "c:\\windows\\system32\\wbem"
+        - "c:\\windows\\system32\\windowspowershell\\v1.0\\"
+        - "c:\\windows\\system32\\openssh\\"
+        - "f:\\devtool\\python"
+        - "f:\\devtool\\git\\cmd"
+        - "d:\\cmake\\bin"
+        - "f:\\devtool\\microsoft vs code"
+        - "c:\\program files\\dotnet"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "f:\\Devtool\\cursor\\resources\\app\\bin"
+        - "D:\\BuildTools\\VC\\Tools\\MSVC\\14.43.34808\\bin\\Hostx64\\x64"
+        - "F:\\Devtool\\Cmake\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "F:\\Devtool\\msys64\\ucrt64\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "F:\\Devlopment\\quevel\\thirdParty\\tools\\vcpkg"
+        - "C:\\Program Files\\qemu"
+        - "F:\\Devtool\\NASm"
+        - "F:\\Devtool\\mysys2\\mingw32"
+        - "F:\\Devtool\\mysys2\\mingw32\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "F:\\Devtool\\Nvim\\bin"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\athilah\\AppData\\Local\\bin\\NASM"
+        - "F:\\Devlopment\\LLL\\EmguCVApp\\ghost-i686-elf-tools-win32\\ghost-i686-elf-tools\\bin"
+        - "E:\\QuavleEngine\\build"
+        - "C:\\Users\\athilah\\.cargo\\bin"
+        - "F:\\Devtool\\Conan\\conan"
+        - "C:\\Users\\athilah\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "C:\\Users\\athilah\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\imgui\\Cmake\\bin"
+        - "D:\\JetBrains Rider 2024.3.6\\bin"
+        - "F:\\Devtool\\MinGw\\bin"
+        - "F:\\Devtool\\5.1"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\OpenJDK8\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "C:\\Users\\athilah\\.bun\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "C:\\Users\\athilah\\AppData\\Roaming\\npm"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\qemu"
+        - "E:\\ponga\\bin\\Debug"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 18.0.5+e22287bf1 for .NET Framework
+      Build started 24/11/2025 22:53:20.
+      
+      Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\4.2.0\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc145.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\4.2.0\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\4.2.0\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.81
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/4.2.0/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:103 (__resolve_linker_path)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
+      - "E:/python 3.13/Scripts/"
+      - "E:/python 3.13/"
+      - "D:/quevelkit/Vulkan/Lib/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "F:/Devtool/python/"
+      - "F:/Devtool/Git/cmd/"
+      - "D:/cmake/bin/"
+      - "F:/Devtool/Microsoft VS Code/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "F:/Devtool/cursor/resources/app/bin/"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/"
+      - "F:/Devtool/cmake/bin/"
+      - "F:/Devtool/msys64/ucrt64/bin/"
+      - "F:/Devtool/mysys2/ucrt64/bin/"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/"
+      - "C:/Program Files/qemu/"
+      - "F:/Devtool/NASm/"
+      - "F:/Devtool/mysys2/mingw32/"
+      - "F:/Devtool/mysys2/mingw32/bin/"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/"
+      - "F:/Devtool/Nvim/bin/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/"
+      - "E:/QuavleEngine/build/"
+      - "C:/Users/athilah/.cargo/bin/"
+      - "F:/Devtool/Conan/conan/"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/athilah/.dotnet/tools/"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/imgui/Cmake/bin/"
+      - "D:/JetBrains Rider 2024.3.6/bin/"
+      - "F:/Devtool/MinGw/bin/"
+      - "F:/Devtool/5.1/"
+      - "F:/Devtool/OpenJDK8/bin/"
+      - "C:/Users/athilah/.bun/bin/"
+      - "C:/Users/athilah/AppData/Roaming/npm/"
+      - "F:/Devtool/qemu/"
+      - "E:/ponga/bin/Debug/"
+    searched_directories:
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/link.com"
+    found: "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\python 3.13\\Scripts\\"
+        - "E:\\python 3.13\\"
+        - "D:\\quevelkit\\Vulkan\\Lib"
+        - "c:\\windows\\system32"
+        - "c:\\windows"
+        - "c:\\windows\\system32\\wbem"
+        - "c:\\windows\\system32\\windowspowershell\\v1.0\\"
+        - "c:\\windows\\system32\\openssh\\"
+        - "f:\\devtool\\python"
+        - "f:\\devtool\\git\\cmd"
+        - "d:\\cmake\\bin"
+        - "f:\\devtool\\microsoft vs code"
+        - "c:\\program files\\dotnet"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "f:\\Devtool\\cursor\\resources\\app\\bin"
+        - "D:\\BuildTools\\VC\\Tools\\MSVC\\14.43.34808\\bin\\Hostx64\\x64"
+        - "F:\\Devtool\\Cmake\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "F:\\Devtool\\msys64\\ucrt64\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "F:\\Devlopment\\quevel\\thirdParty\\tools\\vcpkg"
+        - "C:\\Program Files\\qemu"
+        - "F:\\Devtool\\NASm"
+        - "F:\\Devtool\\mysys2\\mingw32"
+        - "F:\\Devtool\\mysys2\\mingw32\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "F:\\Devtool\\Nvim\\bin"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\athilah\\AppData\\Local\\bin\\NASM"
+        - "F:\\Devlopment\\LLL\\EmguCVApp\\ghost-i686-elf-tools-win32\\ghost-i686-elf-tools\\bin"
+        - "E:\\QuavleEngine\\build"
+        - "C:\\Users\\athilah\\.cargo\\bin"
+        - "F:\\Devtool\\Conan\\conan"
+        - "C:\\Users\\athilah\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "C:\\Users\\athilah\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\imgui\\Cmake\\bin"
+        - "D:\\JetBrains Rider 2024.3.6\\bin"
+        - "F:\\Devtool\\MinGw\\bin"
+        - "F:\\Devtool\\5.1"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\OpenJDK8\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "C:\\Users\\athilah\\.bun\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "C:\\Users\\athilah\\AppData\\Roaming\\npm"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\qemu"
+        - "E:\\ponga\\bin\\Debug"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
+      - "E:/python 3.13/Scripts/"
+      - "E:/python 3.13/"
+      - "D:/quevelkit/Vulkan/Lib/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "F:/Devtool/python/"
+      - "F:/Devtool/Git/cmd/"
+      - "D:/cmake/bin/"
+      - "F:/Devtool/Microsoft VS Code/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "F:/Devtool/cursor/resources/app/bin/"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/"
+      - "F:/Devtool/cmake/bin/"
+      - "F:/Devtool/msys64/ucrt64/bin/"
+      - "F:/Devtool/mysys2/ucrt64/bin/"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/"
+      - "C:/Program Files/qemu/"
+      - "F:/Devtool/NASm/"
+      - "F:/Devtool/mysys2/mingw32/"
+      - "F:/Devtool/mysys2/mingw32/bin/"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/"
+      - "F:/Devtool/Nvim/bin/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/"
+      - "E:/QuavleEngine/build/"
+      - "C:/Users/athilah/.cargo/bin/"
+      - "F:/Devtool/Conan/conan/"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/athilah/.dotnet/tools/"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/imgui/Cmake/bin/"
+      - "D:/JetBrains Rider 2024.3.6/bin/"
+      - "F:/Devtool/MinGw/bin/"
+      - "F:/Devtool/5.1/"
+      - "F:/Devtool/OpenJDK8/bin/"
+      - "C:/Users/athilah/.bun/bin/"
+      - "C:/Users/athilah/AppData/Roaming/npm/"
+      - "F:/Devtool/qemu/"
+      - "E:/ponga/bin/Debug/"
+    searched_directories:
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link.com"
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link.exe"
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link"
+      - "E:/python 3.13/Scripts/lld-link.com"
+      - "E:/python 3.13/Scripts/lld-link.exe"
+      - "E:/python 3.13/Scripts/lld-link"
+      - "E:/python 3.13/lld-link.com"
+      - "E:/python 3.13/lld-link.exe"
+      - "E:/python 3.13/lld-link"
+      - "D:/quevelkit/Vulkan/Lib/lld-link.com"
+      - "D:/quevelkit/Vulkan/Lib/lld-link.exe"
+      - "D:/quevelkit/Vulkan/Lib/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "F:/Devtool/python/lld-link.com"
+      - "F:/Devtool/python/lld-link.exe"
+      - "F:/Devtool/python/lld-link"
+      - "F:/Devtool/Git/cmd/lld-link.com"
+      - "F:/Devtool/Git/cmd/lld-link.exe"
+      - "F:/Devtool/Git/cmd/lld-link"
+      - "D:/cmake/bin/lld-link.com"
+      - "D:/cmake/bin/lld-link.exe"
+      - "D:/cmake/bin/lld-link"
+      - "F:/Devtool/Microsoft VS Code/lld-link.com"
+      - "F:/Devtool/Microsoft VS Code/lld-link.exe"
+      - "F:/Devtool/Microsoft VS Code/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link"
+      - "F:/Devtool/cursor/resources/app/bin/lld-link.com"
+      - "F:/Devtool/cursor/resources/app/bin/lld-link.exe"
+      - "F:/Devtool/cursor/resources/app/bin/lld-link"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lld-link.com"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lld-link.exe"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lld-link"
+      - "F:/Devtool/cmake/bin/lld-link.com"
+      - "F:/Devtool/cmake/bin/lld-link.exe"
+      - "F:/Devtool/cmake/bin/lld-link"
+      - "F:/Devtool/msys64/ucrt64/bin/lld-link.com"
+      - "F:/Devtool/msys64/ucrt64/bin/lld-link.exe"
+      - "F:/Devtool/msys64/ucrt64/bin/lld-link"
+      - "F:/Devtool/mysys2/ucrt64/bin/lld-link.com"
+      - "F:/Devtool/mysys2/ucrt64/bin/lld-link.exe"
+      - "F:/Devtool/mysys2/ucrt64/bin/lld-link"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/lld-link.com"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/lld-link.exe"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/lld-link"
+      - "C:/Program Files/qemu/lld-link.com"
+      - "C:/Program Files/qemu/lld-link.exe"
+      - "C:/Program Files/qemu/lld-link"
+      - "F:/Devtool/NASm/lld-link.com"
+      - "F:/Devtool/NASm/lld-link.exe"
+      - "F:/Devtool/NASm/lld-link"
+      - "F:/Devtool/mysys2/mingw32/lld-link.com"
+      - "F:/Devtool/mysys2/mingw32/lld-link.exe"
+      - "F:/Devtool/mysys2/mingw32/lld-link"
+      - "F:/Devtool/mysys2/mingw32/bin/lld-link.com"
+      - "F:/Devtool/mysys2/mingw32/bin/lld-link.exe"
+      - "F:/Devtool/mysys2/mingw32/bin/lld-link"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/lld-link.com"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/lld-link.exe"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/lld-link"
+      - "F:/Devtool/Nvim/bin/lld-link.com"
+      - "F:/Devtool/Nvim/bin/lld-link.exe"
+      - "F:/Devtool/Nvim/bin/lld-link"
+      - "C:/Program Files/nodejs/lld-link.com"
+      - "C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Program Files/nodejs/lld-link"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/lld-link.com"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/lld-link.exe"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/lld-link"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/lld-link.com"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/lld-link.exe"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/lld-link"
+      - "E:/QuavleEngine/build/lld-link.com"
+      - "E:/QuavleEngine/build/lld-link.exe"
+      - "E:/QuavleEngine/build/lld-link"
+      - "C:/Users/athilah/.cargo/bin/lld-link.com"
+      - "C:/Users/athilah/.cargo/bin/lld-link.exe"
+      - "C:/Users/athilah/.cargo/bin/lld-link"
+      - "F:/Devtool/Conan/conan/lld-link.com"
+      - "F:/Devtool/Conan/conan/lld-link.exe"
+      - "F:/Devtool/Conan/conan/lld-link"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/athilah/.dotnet/tools/lld-link.com"
+      - "C:/Users/athilah/.dotnet/tools/lld-link.exe"
+      - "C:/Users/athilah/.dotnet/tools/lld-link"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+      - "D:/imgui/Cmake/bin/lld-link.com"
+      - "D:/imgui/Cmake/bin/lld-link.exe"
+      - "D:/imgui/Cmake/bin/lld-link"
+      - "D:/JetBrains Rider 2024.3.6/bin/lld-link.com"
+      - "D:/JetBrains Rider 2024.3.6/bin/lld-link.exe"
+      - "D:/JetBrains Rider 2024.3.6/bin/lld-link"
+      - "F:/Devtool/MinGw/bin/lld-link.com"
+      - "F:/Devtool/MinGw/bin/lld-link.exe"
+      - "F:/Devtool/MinGw/bin/lld-link"
+      - "F:/Devtool/5.1/lld-link.com"
+      - "F:/Devtool/5.1/lld-link.exe"
+      - "F:/Devtool/5.1/lld-link"
+      - "F:/Devtool/OpenJDK8/bin/lld-link.com"
+      - "F:/Devtool/OpenJDK8/bin/lld-link.exe"
+      - "F:/Devtool/OpenJDK8/bin/lld-link"
+      - "C:/Users/athilah/.bun/bin/lld-link.com"
+      - "C:/Users/athilah/.bun/bin/lld-link.exe"
+      - "C:/Users/athilah/.bun/bin/lld-link"
+      - "C:/Users/athilah/AppData/Roaming/npm/lld-link.com"
+      - "C:/Users/athilah/AppData/Roaming/npm/lld-link.exe"
+      - "C:/Users/athilah/AppData/Roaming/npm/lld-link"
+      - "F:/Devtool/qemu/lld-link.com"
+      - "F:/Devtool/qemu/lld-link.exe"
+      - "F:/Devtool/qemu/lld-link"
+      - "E:/ponga/bin/Debug/lld-link.com"
+      - "E:/ponga/bin/Debug/lld-link.exe"
+      - "E:/ponga/bin/Debug/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "E:\\python 3.13\\Scripts\\"
+        - "E:\\python 3.13\\"
+        - "D:\\quevelkit\\Vulkan\\Lib"
+        - "c:\\windows\\system32"
+        - "c:\\windows"
+        - "c:\\windows\\system32\\wbem"
+        - "c:\\windows\\system32\\windowspowershell\\v1.0\\"
+        - "c:\\windows\\system32\\openssh\\"
+        - "f:\\devtool\\python"
+        - "f:\\devtool\\git\\cmd"
+        - "d:\\cmake\\bin"
+        - "f:\\devtool\\microsoft vs code"
+        - "c:\\program files\\dotnet"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "f:\\Devtool\\cursor\\resources\\app\\bin"
+        - "D:\\BuildTools\\VC\\Tools\\MSVC\\14.43.34808\\bin\\Hostx64\\x64"
+        - "F:\\Devtool\\Cmake\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "F:\\Devtool\\msys64\\ucrt64\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "F:\\Devlopment\\quevel\\thirdParty\\tools\\vcpkg"
+        - "C:\\Program Files\\qemu"
+        - "F:\\Devtool\\NASm"
+        - "F:\\Devtool\\mysys2\\mingw32"
+        - "F:\\Devtool\\mysys2\\mingw32\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "F:\\Devtool\\Nvim\\bin"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\athilah\\AppData\\Local\\bin\\NASM"
+        - "F:\\Devlopment\\LLL\\EmguCVApp\\ghost-i686-elf-tools-win32\\ghost-i686-elf-tools\\bin"
+        - "E:\\QuavleEngine\\build"
+        - "C:\\Users\\athilah\\.cargo\\bin"
+        - "F:\\Devtool\\Conan\\conan"
+        - "C:\\Users\\athilah\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "C:\\Users\\athilah\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\imgui\\Cmake\\bin"
+        - "D:\\JetBrains Rider 2024.3.6\\bin"
+        - "F:\\Devtool\\MinGw\\bin"
+        - "F:\\Devtool\\5.1"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\OpenJDK8\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "C:\\Users\\athilah\\.bun\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "C:\\Users\\athilah\\AppData\\Roaming\\npm"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\qemu"
+        - "E:\\ponga\\bin\\Debug"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
+      - "E:/python 3.13/Scripts/"
+      - "E:/python 3.13/"
+      - "D:/quevelkit/Vulkan/Lib/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "F:/Devtool/python/"
+      - "F:/Devtool/Git/cmd/"
+      - "D:/cmake/bin/"
+      - "F:/Devtool/Microsoft VS Code/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "F:/Devtool/cursor/resources/app/bin/"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/"
+      - "F:/Devtool/cmake/bin/"
+      - "F:/Devtool/msys64/ucrt64/bin/"
+      - "F:/Devtool/mysys2/ucrt64/bin/"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/"
+      - "C:/Program Files/qemu/"
+      - "F:/Devtool/NASm/"
+      - "F:/Devtool/mysys2/mingw32/"
+      - "F:/Devtool/mysys2/mingw32/bin/"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/"
+      - "F:/Devtool/Nvim/bin/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/"
+      - "E:/QuavleEngine/build/"
+      - "C:/Users/athilah/.cargo/bin/"
+      - "F:/Devtool/Conan/conan/"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/athilah/.dotnet/tools/"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/imgui/Cmake/bin/"
+      - "D:/JetBrains Rider 2024.3.6/bin/"
+      - "F:/Devtool/MinGw/bin/"
+      - "F:/Devtool/5.1/"
+      - "F:/Devtool/OpenJDK8/bin/"
+      - "C:/Users/athilah/.bun/bin/"
+      - "C:/Users/athilah/AppData/Roaming/npm/"
+      - "F:/Devtool/qemu/"
+      - "E:/ponga/bin/Debug/"
+    searched_directories:
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/link.com"
+    found: "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\python 3.13\\Scripts\\"
+        - "E:\\python 3.13\\"
+        - "D:\\quevelkit\\Vulkan\\Lib"
+        - "c:\\windows\\system32"
+        - "c:\\windows"
+        - "c:\\windows\\system32\\wbem"
+        - "c:\\windows\\system32\\windowspowershell\\v1.0\\"
+        - "c:\\windows\\system32\\openssh\\"
+        - "f:\\devtool\\python"
+        - "f:\\devtool\\git\\cmd"
+        - "d:\\cmake\\bin"
+        - "f:\\devtool\\microsoft vs code"
+        - "c:\\program files\\dotnet"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "f:\\Devtool\\cursor\\resources\\app\\bin"
+        - "D:\\BuildTools\\VC\\Tools\\MSVC\\14.43.34808\\bin\\Hostx64\\x64"
+        - "F:\\Devtool\\Cmake\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "F:\\Devtool\\msys64\\ucrt64\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "F:\\Devlopment\\quevel\\thirdParty\\tools\\vcpkg"
+        - "C:\\Program Files\\qemu"
+        - "F:\\Devtool\\NASm"
+        - "F:\\Devtool\\mysys2\\mingw32"
+        - "F:\\Devtool\\mysys2\\mingw32\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "F:\\Devtool\\Nvim\\bin"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\athilah\\AppData\\Local\\bin\\NASM"
+        - "F:\\Devlopment\\LLL\\EmguCVApp\\ghost-i686-elf-tools-win32\\ghost-i686-elf-tools\\bin"
+        - "E:\\QuavleEngine\\build"
+        - "C:\\Users\\athilah\\.cargo\\bin"
+        - "F:\\Devtool\\Conan\\conan"
+        - "C:\\Users\\athilah\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "C:\\Users\\athilah\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\imgui\\Cmake\\bin"
+        - "D:\\JetBrains Rider 2024.3.6\\bin"
+        - "F:\\Devtool\\MinGw\\bin"
+        - "F:\\Devtool\\5.1"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\OpenJDK8\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "C:\\Users\\athilah\\.bun\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "C:\\Users\\athilah\\AppData\\Roaming\\npm"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\qemu"
+        - "E:\\ponga\\bin\\Debug"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    mode: "program"
+    variable: "CMAKE_MT"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "mt"
+    candidate_directories:
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
+      - "E:/python 3.13/Scripts/"
+      - "E:/python 3.13/"
+      - "D:/quevelkit/Vulkan/Lib/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "F:/Devtool/python/"
+      - "F:/Devtool/Git/cmd/"
+      - "D:/cmake/bin/"
+      - "F:/Devtool/Microsoft VS Code/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "F:/Devtool/cursor/resources/app/bin/"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/"
+      - "F:/Devtool/cmake/bin/"
+      - "F:/Devtool/msys64/ucrt64/bin/"
+      - "F:/Devtool/mysys2/ucrt64/bin/"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/"
+      - "C:/Program Files/qemu/"
+      - "F:/Devtool/NASm/"
+      - "F:/Devtool/mysys2/mingw32/"
+      - "F:/Devtool/mysys2/mingw32/bin/"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/"
+      - "F:/Devtool/Nvim/bin/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/"
+      - "E:/QuavleEngine/build/"
+      - "C:/Users/athilah/.cargo/bin/"
+      - "F:/Devtool/Conan/conan/"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/athilah/.dotnet/tools/"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/imgui/Cmake/bin/"
+      - "D:/JetBrains Rider 2024.3.6/bin/"
+      - "F:/Devtool/MinGw/bin/"
+      - "F:/Devtool/5.1/"
+      - "F:/Devtool/OpenJDK8/bin/"
+      - "C:/Users/athilah/.bun/bin/"
+      - "C:/Users/athilah/AppData/Roaming/npm/"
+      - "F:/Devtool/qemu/"
+      - "E:/ponga/bin/Debug/"
+    searched_directories:
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/mt.com"
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/mt.exe"
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/mt"
+      - "E:/python 3.13/Scripts/mt.com"
+      - "E:/python 3.13/Scripts/mt.exe"
+      - "E:/python 3.13/Scripts/mt"
+      - "E:/python 3.13/mt.com"
+      - "E:/python 3.13/mt.exe"
+      - "E:/python 3.13/mt"
+      - "D:/quevelkit/Vulkan/Lib/mt.com"
+      - "D:/quevelkit/Vulkan/Lib/mt.exe"
+      - "D:/quevelkit/Vulkan/Lib/mt"
+      - "C:/Windows/System32/mt.com"
+      - "C:/Windows/System32/mt.exe"
+      - "C:/Windows/System32/mt"
+      - "C:/Windows/mt.com"
+      - "C:/Windows/mt.exe"
+      - "C:/Windows/mt"
+      - "C:/Windows/System32/wbem/mt.com"
+      - "C:/Windows/System32/wbem/mt.exe"
+      - "C:/Windows/System32/wbem/mt"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt"
+      - "C:/Windows/System32/OpenSSH/mt.com"
+      - "C:/Windows/System32/OpenSSH/mt.exe"
+      - "C:/Windows/System32/OpenSSH/mt"
+      - "F:/Devtool/python/mt.com"
+      - "F:/Devtool/python/mt.exe"
+      - "F:/Devtool/python/mt"
+      - "F:/Devtool/Git/cmd/mt.com"
+      - "F:/Devtool/Git/cmd/mt.exe"
+      - "F:/Devtool/Git/cmd/mt"
+      - "D:/cmake/bin/mt.com"
+      - "D:/cmake/bin/mt.exe"
+      - "D:/cmake/bin/mt"
+      - "F:/Devtool/Microsoft VS Code/mt.com"
+      - "F:/Devtool/Microsoft VS Code/mt.exe"
+      - "F:/Devtool/Microsoft VS Code/mt"
+      - "C:/Program Files/dotnet/mt.com"
+      - "C:/Program Files/dotnet/mt.exe"
+      - "C:/Program Files/dotnet/mt"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt"
+      - "F:/Devtool/cursor/resources/app/bin/mt.com"
+      - "F:/Devtool/cursor/resources/app/bin/mt.exe"
+      - "F:/Devtool/cursor/resources/app/bin/mt"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/mt.com"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/mt.exe"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/mt"
+      - "F:/Devtool/cmake/bin/mt.com"
+      - "F:/Devtool/cmake/bin/mt.exe"
+      - "F:/Devtool/cmake/bin/mt"
+      - "F:/Devtool/msys64/ucrt64/bin/mt.com"
+      - "F:/Devtool/msys64/ucrt64/bin/mt.exe"
+      - "F:/Devtool/msys64/ucrt64/bin/mt"
+      - "F:/Devtool/mysys2/ucrt64/bin/mt.com"
+      - "F:/Devtool/mysys2/ucrt64/bin/mt.exe"
+      - "F:/Devtool/mysys2/ucrt64/bin/mt"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/mt.com"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/mt.exe"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/mt"
+      - "C:/Program Files/qemu/mt.com"
+      - "C:/Program Files/qemu/mt.exe"
+      - "C:/Program Files/qemu/mt"
+      - "F:/Devtool/NASm/mt.com"
+      - "F:/Devtool/NASm/mt.exe"
+      - "F:/Devtool/NASm/mt"
+      - "F:/Devtool/mysys2/mingw32/mt.com"
+      - "F:/Devtool/mysys2/mingw32/mt.exe"
+      - "F:/Devtool/mysys2/mingw32/mt"
+      - "F:/Devtool/mysys2/mingw32/bin/mt.com"
+      - "F:/Devtool/mysys2/mingw32/bin/mt.exe"
+      - "F:/Devtool/mysys2/mingw32/bin/mt"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/mt.com"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/mt.exe"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/mt"
+      - "F:/Devtool/Nvim/bin/mt.com"
+      - "F:/Devtool/Nvim/bin/mt.exe"
+      - "F:/Devtool/Nvim/bin/mt"
+      - "C:/Program Files/nodejs/mt.com"
+      - "C:/Program Files/nodejs/mt.exe"
+      - "C:/Program Files/nodejs/mt"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/mt.com"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/mt.exe"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/mt"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/mt.com"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/mt.exe"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/mt"
+      - "E:/QuavleEngine/build/mt.com"
+      - "E:/QuavleEngine/build/mt.exe"
+      - "E:/QuavleEngine/build/mt"
+      - "C:/Users/athilah/.cargo/bin/mt.com"
+      - "C:/Users/athilah/.cargo/bin/mt.exe"
+      - "C:/Users/athilah/.cargo/bin/mt"
+      - "F:/Devtool/Conan/conan/mt.com"
+      - "F:/Devtool/Conan/conan/mt.exe"
+      - "F:/Devtool/Conan/conan/mt"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/mt.com"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/mt.exe"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/mt"
+      - "C:/Users/athilah/.dotnet/tools/mt.com"
+      - "C:/Users/athilah/.dotnet/tools/mt.exe"
+      - "C:/Users/athilah/.dotnet/tools/mt"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/mt.com"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/mt.exe"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/mt"
+      - "D:/imgui/Cmake/bin/mt.com"
+      - "D:/imgui/Cmake/bin/mt.exe"
+      - "D:/imgui/Cmake/bin/mt"
+      - "D:/JetBrains Rider 2024.3.6/bin/mt.com"
+      - "D:/JetBrains Rider 2024.3.6/bin/mt.exe"
+      - "D:/JetBrains Rider 2024.3.6/bin/mt"
+      - "F:/Devtool/MinGw/bin/mt.com"
+      - "F:/Devtool/MinGw/bin/mt.exe"
+      - "F:/Devtool/MinGw/bin/mt"
+      - "F:/Devtool/5.1/mt.com"
+      - "F:/Devtool/5.1/mt.exe"
+      - "F:/Devtool/5.1/mt"
+      - "F:/Devtool/OpenJDK8/bin/mt.com"
+      - "F:/Devtool/OpenJDK8/bin/mt.exe"
+      - "F:/Devtool/OpenJDK8/bin/mt"
+      - "C:/Users/athilah/.bun/bin/mt.com"
+      - "C:/Users/athilah/.bun/bin/mt.exe"
+      - "C:/Users/athilah/.bun/bin/mt"
+      - "C:/Users/athilah/AppData/Roaming/npm/mt.com"
+      - "C:/Users/athilah/AppData/Roaming/npm/mt.exe"
+      - "C:/Users/athilah/AppData/Roaming/npm/mt"
+      - "F:/Devtool/qemu/mt.com"
+      - "F:/Devtool/qemu/mt.exe"
+      - "F:/Devtool/qemu/mt"
+      - "E:/ponga/bin/Debug/mt.com"
+      - "E:/ponga/bin/Debug/mt.exe"
+      - "E:/ponga/bin/Debug/mt"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "E:\\python 3.13\\Scripts\\"
+        - "E:\\python 3.13\\"
+        - "D:\\quevelkit\\Vulkan\\Lib"
+        - "c:\\windows\\system32"
+        - "c:\\windows"
+        - "c:\\windows\\system32\\wbem"
+        - "c:\\windows\\system32\\windowspowershell\\v1.0\\"
+        - "c:\\windows\\system32\\openssh\\"
+        - "f:\\devtool\\python"
+        - "f:\\devtool\\git\\cmd"
+        - "d:\\cmake\\bin"
+        - "f:\\devtool\\microsoft vs code"
+        - "c:\\program files\\dotnet"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "f:\\Devtool\\cursor\\resources\\app\\bin"
+        - "D:\\BuildTools\\VC\\Tools\\MSVC\\14.43.34808\\bin\\Hostx64\\x64"
+        - "F:\\Devtool\\Cmake\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "F:\\Devtool\\msys64\\ucrt64\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "F:\\Devlopment\\quevel\\thirdParty\\tools\\vcpkg"
+        - "C:\\Program Files\\qemu"
+        - "F:\\Devtool\\NASm"
+        - "F:\\Devtool\\mysys2\\mingw32"
+        - "F:\\Devtool\\mysys2\\mingw32\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "F:\\Devtool\\Nvim\\bin"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\athilah\\AppData\\Local\\bin\\NASM"
+        - "F:\\Devlopment\\LLL\\EmguCVApp\\ghost-i686-elf-tools-win32\\ghost-i686-elf-tools\\bin"
+        - "E:\\QuavleEngine\\build"
+        - "C:\\Users\\athilah\\.cargo\\bin"
+        - "F:\\Devtool\\Conan\\conan"
+        - "C:\\Users\\athilah\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "C:\\Users\\athilah\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\imgui\\Cmake\\bin"
+        - "D:\\JetBrains Rider 2024.3.6\\bin"
+        - "F:\\Devtool\\MinGw\\bin"
+        - "F:\\Devtool\\5.1"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\OpenJDK8\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "C:\\Users\\athilah\\.bun\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "C:\\Users\\athilah\\AppData\\Roaming\\npm"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\qemu"
+        - "E:\\ponga\\bin\\Debug"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lib"
+    candidate_directories:
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
+      - "E:/python 3.13/Scripts/"
+      - "E:/python 3.13/"
+      - "D:/quevelkit/Vulkan/Lib/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "F:/Devtool/python/"
+      - "F:/Devtool/Git/cmd/"
+      - "D:/cmake/bin/"
+      - "F:/Devtool/Microsoft VS Code/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "F:/Devtool/cursor/resources/app/bin/"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/"
+      - "F:/Devtool/cmake/bin/"
+      - "F:/Devtool/msys64/ucrt64/bin/"
+      - "F:/Devtool/mysys2/ucrt64/bin/"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/"
+      - "C:/Program Files/qemu/"
+      - "F:/Devtool/NASm/"
+      - "F:/Devtool/mysys2/mingw32/"
+      - "F:/Devtool/mysys2/mingw32/bin/"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/"
+      - "F:/Devtool/Nvim/bin/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/"
+      - "E:/QuavleEngine/build/"
+      - "C:/Users/athilah/.cargo/bin/"
+      - "F:/Devtool/Conan/conan/"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/athilah/.dotnet/tools/"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/imgui/Cmake/bin/"
+      - "D:/JetBrains Rider 2024.3.6/bin/"
+      - "F:/Devtool/MinGw/bin/"
+      - "F:/Devtool/5.1/"
+      - "F:/Devtool/OpenJDK8/bin/"
+      - "C:/Users/athilah/.bun/bin/"
+      - "C:/Users/athilah/AppData/Roaming/npm/"
+      - "F:/Devtool/qemu/"
+      - "E:/ponga/bin/Debug/"
+    searched_directories:
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lib.com"
+    found: "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lib.exe"
+    search_context:
+      ENV{PATH}:
+        - "E:\\python 3.13\\Scripts\\"
+        - "E:\\python 3.13\\"
+        - "D:\\quevelkit\\Vulkan\\Lib"
+        - "c:\\windows\\system32"
+        - "c:\\windows"
+        - "c:\\windows\\system32\\wbem"
+        - "c:\\windows\\system32\\windowspowershell\\v1.0\\"
+        - "c:\\windows\\system32\\openssh\\"
+        - "f:\\devtool\\python"
+        - "f:\\devtool\\git\\cmd"
+        - "d:\\cmake\\bin"
+        - "f:\\devtool\\microsoft vs code"
+        - "c:\\program files\\dotnet"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "f:\\Devtool\\cursor\\resources\\app\\bin"
+        - "D:\\BuildTools\\VC\\Tools\\MSVC\\14.43.34808\\bin\\Hostx64\\x64"
+        - "F:\\Devtool\\Cmake\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "F:\\Devtool\\msys64\\ucrt64\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "F:\\Devlopment\\quevel\\thirdParty\\tools\\vcpkg"
+        - "C:\\Program Files\\qemu"
+        - "F:\\Devtool\\NASm"
+        - "F:\\Devtool\\mysys2\\mingw32"
+        - "F:\\Devtool\\mysys2\\mingw32\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "F:\\Devtool\\Nvim\\bin"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\athilah\\AppData\\Local\\bin\\NASM"
+        - "F:\\Devlopment\\LLL\\EmguCVApp\\ghost-i686-elf-tools-win32\\ghost-i686-elf-tools\\bin"
+        - "E:\\QuavleEngine\\build"
+        - "C:\\Users\\athilah\\.cargo\\bin"
+        - "F:\\Devtool\\Conan\\conan"
+        - "C:\\Users\\athilah\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "C:\\Users\\athilah\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\imgui\\Cmake\\bin"
+        - "D:\\JetBrains Rider 2024.3.6\\bin"
+        - "F:\\Devtool\\MinGw\\bin"
+        - "F:\\Devtool\\5.1"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\OpenJDK8\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "C:\\Users\\athilah\\.bun\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "C:\\Users\\athilah\\AppData\\Roaming\\npm"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\qemu"
+        - "E:\\ponga\\bin\\Debug"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/"
+    found: "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "E:\\python 3.13\\Scripts\\"
+        - "E:\\python 3.13\\"
+        - "D:\\quevelkit\\Vulkan\\Lib"
+        - "c:\\windows\\system32"
+        - "c:\\windows"
+        - "c:\\windows\\system32\\wbem"
+        - "c:\\windows\\system32\\windowspowershell\\v1.0\\"
+        - "c:\\windows\\system32\\openssh\\"
+        - "f:\\devtool\\python"
+        - "f:\\devtool\\git\\cmd"
+        - "d:\\cmake\\bin"
+        - "f:\\devtool\\microsoft vs code"
+        - "c:\\program files\\dotnet"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "f:\\Devtool\\cursor\\resources\\app\\bin"
+        - "D:\\BuildTools\\VC\\Tools\\MSVC\\14.43.34808\\bin\\Hostx64\\x64"
+        - "F:\\Devtool\\Cmake\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "F:\\Devtool\\msys64\\ucrt64\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "F:\\Devlopment\\quevel\\thirdParty\\tools\\vcpkg"
+        - "C:\\Program Files\\qemu"
+        - "F:\\Devtool\\NASm"
+        - "F:\\Devtool\\mysys2\\mingw32"
+        - "F:\\Devtool\\mysys2\\mingw32\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "F:\\Devtool\\Nvim\\bin"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\athilah\\AppData\\Local\\bin\\NASM"
+        - "F:\\Devlopment\\LLL\\EmguCVApp\\ghost-i686-elf-tools-win32\\ghost-i686-elf-tools\\bin"
+        - "E:\\QuavleEngine\\build"
+        - "C:\\Users\\athilah\\.cargo\\bin"
+        - "F:\\Devtool\\Conan\\conan"
+        - "C:\\Users\\athilah\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "C:\\Users\\athilah\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\imgui\\Cmake\\bin"
+        - "D:\\JetBrains Rider 2024.3.6\\bin"
+        - "F:\\Devtool\\MinGw\\bin"
+        - "F:\\Devtool\\5.1"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\OpenJDK8\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "C:\\Users\\athilah\\.bun\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "C:\\Users\\athilah\\AppData\\Roaming\\npm"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\qemu"
+        - "E:\\ponga\\bin\\Debug"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 18.0.5+e22287bf1 for .NET Framework
+      Build started 24/11/2025 22:53:21.
+      
+      Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\4.2.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+      ClCompile:
+        E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc145.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\4.2.0\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\4.2.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.91
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/4.2.0/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
+      - "E:/python 3.13/Scripts/"
+      - "E:/python 3.13/"
+      - "D:/quevelkit/Vulkan/Lib/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "F:/Devtool/python/"
+      - "F:/Devtool/Git/cmd/"
+      - "D:/cmake/bin/"
+      - "F:/Devtool/Microsoft VS Code/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "F:/Devtool/cursor/resources/app/bin/"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/"
+      - "F:/Devtool/cmake/bin/"
+      - "F:/Devtool/msys64/ucrt64/bin/"
+      - "F:/Devtool/mysys2/ucrt64/bin/"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/"
+      - "C:/Program Files/qemu/"
+      - "F:/Devtool/NASm/"
+      - "F:/Devtool/mysys2/mingw32/"
+      - "F:/Devtool/mysys2/mingw32/bin/"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/"
+      - "F:/Devtool/Nvim/bin/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/"
+      - "E:/QuavleEngine/build/"
+      - "C:/Users/athilah/.cargo/bin/"
+      - "F:/Devtool/Conan/conan/"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/athilah/.dotnet/tools/"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/imgui/Cmake/bin/"
+      - "D:/JetBrains Rider 2024.3.6/bin/"
+      - "F:/Devtool/MinGw/bin/"
+      - "F:/Devtool/5.1/"
+      - "F:/Devtool/OpenJDK8/bin/"
+      - "C:/Users/athilah/.bun/bin/"
+      - "C:/Users/athilah/AppData/Roaming/npm/"
+      - "F:/Devtool/qemu/"
+      - "E:/ponga/bin/Debug/"
+    searched_directories:
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link.com"
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link.exe"
+      - "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link"
+      - "E:/python 3.13/Scripts/lld-link.com"
+      - "E:/python 3.13/Scripts/lld-link.exe"
+      - "E:/python 3.13/Scripts/lld-link"
+      - "E:/python 3.13/lld-link.com"
+      - "E:/python 3.13/lld-link.exe"
+      - "E:/python 3.13/lld-link"
+      - "D:/quevelkit/Vulkan/Lib/lld-link.com"
+      - "D:/quevelkit/Vulkan/Lib/lld-link.exe"
+      - "D:/quevelkit/Vulkan/Lib/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "F:/Devtool/python/lld-link.com"
+      - "F:/Devtool/python/lld-link.exe"
+      - "F:/Devtool/python/lld-link"
+      - "F:/Devtool/Git/cmd/lld-link.com"
+      - "F:/Devtool/Git/cmd/lld-link.exe"
+      - "F:/Devtool/Git/cmd/lld-link"
+      - "D:/cmake/bin/lld-link.com"
+      - "D:/cmake/bin/lld-link.exe"
+      - "D:/cmake/bin/lld-link"
+      - "F:/Devtool/Microsoft VS Code/lld-link.com"
+      - "F:/Devtool/Microsoft VS Code/lld-link.exe"
+      - "F:/Devtool/Microsoft VS Code/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link"
+      - "F:/Devtool/cursor/resources/app/bin/lld-link.com"
+      - "F:/Devtool/cursor/resources/app/bin/lld-link.exe"
+      - "F:/Devtool/cursor/resources/app/bin/lld-link"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lld-link.com"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lld-link.exe"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/lld-link"
+      - "F:/Devtool/cmake/bin/lld-link.com"
+      - "F:/Devtool/cmake/bin/lld-link.exe"
+      - "F:/Devtool/cmake/bin/lld-link"
+      - "F:/Devtool/msys64/ucrt64/bin/lld-link.com"
+      - "F:/Devtool/msys64/ucrt64/bin/lld-link.exe"
+      - "F:/Devtool/msys64/ucrt64/bin/lld-link"
+      - "F:/Devtool/mysys2/ucrt64/bin/lld-link.com"
+      - "F:/Devtool/mysys2/ucrt64/bin/lld-link.exe"
+      - "F:/Devtool/mysys2/ucrt64/bin/lld-link"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/lld-link.com"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/lld-link.exe"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/lld-link"
+      - "C:/Program Files/qemu/lld-link.com"
+      - "C:/Program Files/qemu/lld-link.exe"
+      - "C:/Program Files/qemu/lld-link"
+      - "F:/Devtool/NASm/lld-link.com"
+      - "F:/Devtool/NASm/lld-link.exe"
+      - "F:/Devtool/NASm/lld-link"
+      - "F:/Devtool/mysys2/mingw32/lld-link.com"
+      - "F:/Devtool/mysys2/mingw32/lld-link.exe"
+      - "F:/Devtool/mysys2/mingw32/lld-link"
+      - "F:/Devtool/mysys2/mingw32/bin/lld-link.com"
+      - "F:/Devtool/mysys2/mingw32/bin/lld-link.exe"
+      - "F:/Devtool/mysys2/mingw32/bin/lld-link"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/lld-link.com"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/lld-link.exe"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/lld-link"
+      - "F:/Devtool/Nvim/bin/lld-link.com"
+      - "F:/Devtool/Nvim/bin/lld-link.exe"
+      - "F:/Devtool/Nvim/bin/lld-link"
+      - "C:/Program Files/nodejs/lld-link.com"
+      - "C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Program Files/nodejs/lld-link"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/lld-link.com"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/lld-link.exe"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/lld-link"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/lld-link.com"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/lld-link.exe"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/lld-link"
+      - "E:/QuavleEngine/build/lld-link.com"
+      - "E:/QuavleEngine/build/lld-link.exe"
+      - "E:/QuavleEngine/build/lld-link"
+      - "C:/Users/athilah/.cargo/bin/lld-link.com"
+      - "C:/Users/athilah/.cargo/bin/lld-link.exe"
+      - "C:/Users/athilah/.cargo/bin/lld-link"
+      - "F:/Devtool/Conan/conan/lld-link.com"
+      - "F:/Devtool/Conan/conan/lld-link.exe"
+      - "F:/Devtool/Conan/conan/lld-link"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/athilah/.dotnet/tools/lld-link.com"
+      - "C:/Users/athilah/.dotnet/tools/lld-link.exe"
+      - "C:/Users/athilah/.dotnet/tools/lld-link"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+      - "D:/imgui/Cmake/bin/lld-link.com"
+      - "D:/imgui/Cmake/bin/lld-link.exe"
+      - "D:/imgui/Cmake/bin/lld-link"
+      - "D:/JetBrains Rider 2024.3.6/bin/lld-link.com"
+      - "D:/JetBrains Rider 2024.3.6/bin/lld-link.exe"
+      - "D:/JetBrains Rider 2024.3.6/bin/lld-link"
+      - "F:/Devtool/MinGw/bin/lld-link.com"
+      - "F:/Devtool/MinGw/bin/lld-link.exe"
+      - "F:/Devtool/MinGw/bin/lld-link"
+      - "F:/Devtool/5.1/lld-link.com"
+      - "F:/Devtool/5.1/lld-link.exe"
+      - "F:/Devtool/5.1/lld-link"
+      - "F:/Devtool/OpenJDK8/bin/lld-link.com"
+      - "F:/Devtool/OpenJDK8/bin/lld-link.exe"
+      - "F:/Devtool/OpenJDK8/bin/lld-link"
+      - "C:/Users/athilah/.bun/bin/lld-link.com"
+      - "C:/Users/athilah/.bun/bin/lld-link.exe"
+      - "C:/Users/athilah/.bun/bin/lld-link"
+      - "C:/Users/athilah/AppData/Roaming/npm/lld-link.com"
+      - "C:/Users/athilah/AppData/Roaming/npm/lld-link.exe"
+      - "C:/Users/athilah/AppData/Roaming/npm/lld-link"
+      - "F:/Devtool/qemu/lld-link.com"
+      - "F:/Devtool/qemu/lld-link.exe"
+      - "F:/Devtool/qemu/lld-link"
+      - "E:/ponga/bin/Debug/lld-link.com"
+      - "E:/ponga/bin/Debug/lld-link.exe"
+      - "E:/ponga/bin/Debug/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "E:\\python 3.13\\Scripts\\"
+        - "E:\\python 3.13\\"
+        - "D:\\quevelkit\\Vulkan\\Lib"
+        - "c:\\windows\\system32"
+        - "c:\\windows"
+        - "c:\\windows\\system32\\wbem"
+        - "c:\\windows\\system32\\windowspowershell\\v1.0\\"
+        - "c:\\windows\\system32\\openssh\\"
+        - "f:\\devtool\\python"
+        - "f:\\devtool\\git\\cmd"
+        - "d:\\cmake\\bin"
+        - "f:\\devtool\\microsoft vs code"
+        - "c:\\program files\\dotnet"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "f:\\Devtool\\cursor\\resources\\app\\bin"
+        - "D:\\BuildTools\\VC\\Tools\\MSVC\\14.43.34808\\bin\\Hostx64\\x64"
+        - "F:\\Devtool\\Cmake\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "F:\\Devtool\\msys64\\ucrt64\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "F:\\Devlopment\\quevel\\thirdParty\\tools\\vcpkg"
+        - "C:\\Program Files\\qemu"
+        - "F:\\Devtool\\NASm"
+        - "F:\\Devtool\\mysys2\\mingw32"
+        - "F:\\Devtool\\mysys2\\mingw32\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "F:\\Devtool\\Nvim\\bin"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\athilah\\AppData\\Local\\bin\\NASM"
+        - "F:\\Devlopment\\LLL\\EmguCVApp\\ghost-i686-elf-tools-win32\\ghost-i686-elf-tools\\bin"
+        - "E:\\QuavleEngine\\build"
+        - "C:\\Users\\athilah\\.cargo\\bin"
+        - "F:\\Devtool\\Conan\\conan"
+        - "C:\\Users\\athilah\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "C:\\Users\\athilah\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\imgui\\Cmake\\bin"
+        - "D:\\JetBrains Rider 2024.3.6\\bin"
+        - "F:\\Devtool\\MinGw\\bin"
+        - "F:\\Devtool\\5.1"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\OpenJDK8\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "C:\\Users\\athilah\\.bun\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "C:\\Users\\athilah\\AppData\\Roaming\\npm"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\qemu"
+        - "E:\\ponga\\bin\\Debug"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineRCCompiler.cmake:40 (find_program)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/Platform/Windows-MSVC.cmake:580 (enable_language)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/Platform/Windows-MSVC.cmake:553 (__windows_compiler_msvc_enable_rc)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/Platform/Windows-MSVC-C.cmake:5 (__windows_compiler_msvc)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeCInformation.cmake:48 (include)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    mode: "program"
+    variable: "CMAKE_RC_COMPILER"
+    description: "RC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rc"
+    candidate_directories:
+      - "E:/python 3.13/Scripts/"
+      - "E:/python 3.13/"
+      - "D:/quevelkit/Vulkan/Lib/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "F:/Devtool/python/"
+      - "F:/Devtool/Git/cmd/"
+      - "D:/cmake/bin/"
+      - "F:/Devtool/Microsoft VS Code/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "F:/Devtool/cursor/resources/app/bin/"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/"
+      - "F:/Devtool/cmake/bin/"
+      - "F:/Devtool/msys64/ucrt64/bin/"
+      - "F:/Devtool/mysys2/ucrt64/bin/"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/"
+      - "C:/Program Files/qemu/"
+      - "F:/Devtool/NASm/"
+      - "F:/Devtool/mysys2/mingw32/"
+      - "F:/Devtool/mysys2/mingw32/bin/"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/"
+      - "F:/Devtool/Nvim/bin/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/"
+      - "E:/QuavleEngine/build/"
+      - "C:/Users/athilah/.cargo/bin/"
+      - "F:/Devtool/Conan/conan/"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/athilah/.dotnet/tools/"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "D:/imgui/Cmake/bin/"
+      - "D:/JetBrains Rider 2024.3.6/bin/"
+      - "F:/Devtool/MinGw/bin/"
+      - "F:/Devtool/5.1/"
+      - "F:/Devtool/OpenJDK8/bin/"
+      - "C:/Users/athilah/.bun/bin/"
+      - "C:/Users/athilah/AppData/Roaming/npm/"
+      - "F:/Devtool/qemu/"
+      - "E:/ponga/bin/Debug/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "F:/Devtool/cmake/bin/"
+      - "F:/Devtool/cmake/sbin/"
+      - "F:/Devtool/cmake/"
+      - "C:/Program Files (x86)/Assimp/bin/"
+      - "C:/Program Files (x86)/Assimp/sbin/"
+      - "C:/Program Files (x86)/Assimp/"
+    searched_directories:
+      - "E:/python 3.13/Scripts/rc.com"
+      - "E:/python 3.13/Scripts/rc.exe"
+      - "E:/python 3.13/Scripts/rc"
+      - "E:/python 3.13/rc.com"
+      - "E:/python 3.13/rc.exe"
+      - "E:/python 3.13/rc"
+      - "D:/quevelkit/Vulkan/Lib/rc.com"
+      - "D:/quevelkit/Vulkan/Lib/rc.exe"
+      - "D:/quevelkit/Vulkan/Lib/rc"
+      - "C:/Windows/System32/rc.com"
+      - "C:/Windows/System32/rc.exe"
+      - "C:/Windows/System32/rc"
+      - "C:/Windows/rc.com"
+      - "C:/Windows/rc.exe"
+      - "C:/Windows/rc"
+      - "C:/Windows/System32/wbem/rc.com"
+      - "C:/Windows/System32/wbem/rc.exe"
+      - "C:/Windows/System32/wbem/rc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc"
+      - "C:/Windows/System32/OpenSSH/rc.com"
+      - "C:/Windows/System32/OpenSSH/rc.exe"
+      - "C:/Windows/System32/OpenSSH/rc"
+      - "F:/Devtool/python/rc.com"
+      - "F:/Devtool/python/rc.exe"
+      - "F:/Devtool/python/rc"
+      - "F:/Devtool/Git/cmd/rc.com"
+      - "F:/Devtool/Git/cmd/rc.exe"
+      - "F:/Devtool/Git/cmd/rc"
+      - "D:/cmake/bin/rc.com"
+      - "D:/cmake/bin/rc.exe"
+      - "D:/cmake/bin/rc"
+      - "F:/Devtool/Microsoft VS Code/rc.com"
+      - "F:/Devtool/Microsoft VS Code/rc.exe"
+      - "F:/Devtool/Microsoft VS Code/rc"
+      - "C:/Program Files/dotnet/rc.com"
+      - "C:/Program Files/dotnet/rc.exe"
+      - "C:/Program Files/dotnet/rc"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc"
+      - "F:/Devtool/cursor/resources/app/bin/rc.com"
+      - "F:/Devtool/cursor/resources/app/bin/rc.exe"
+      - "F:/Devtool/cursor/resources/app/bin/rc"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/rc.com"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/rc.exe"
+      - "D:/BuildTools/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/rc"
+      - "F:/Devtool/cmake/bin/rc.com"
+      - "F:/Devtool/cmake/bin/rc.exe"
+      - "F:/Devtool/cmake/bin/rc"
+      - "F:/Devtool/msys64/ucrt64/bin/rc.com"
+      - "F:/Devtool/msys64/ucrt64/bin/rc.exe"
+      - "F:/Devtool/msys64/ucrt64/bin/rc"
+      - "F:/Devtool/mysys2/ucrt64/bin/rc.com"
+      - "F:/Devtool/mysys2/ucrt64/bin/rc.exe"
+      - "F:/Devtool/mysys2/ucrt64/bin/rc"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/rc.com"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/rc.exe"
+      - "F:/Devlopment/quevel/thirdParty/tools/vcpkg/rc"
+      - "C:/Program Files/qemu/rc.com"
+      - "C:/Program Files/qemu/rc.exe"
+      - "C:/Program Files/qemu/rc"
+      - "F:/Devtool/NASm/rc.com"
+      - "F:/Devtool/NASm/rc.exe"
+      - "F:/Devtool/NASm/rc"
+      - "F:/Devtool/mysys2/mingw32/rc.com"
+      - "F:/Devtool/mysys2/mingw32/rc.exe"
+      - "F:/Devtool/mysys2/mingw32/rc"
+      - "F:/Devtool/mysys2/mingw32/bin/rc.com"
+      - "F:/Devtool/mysys2/mingw32/bin/rc.exe"
+      - "F:/Devtool/mysys2/mingw32/bin/rc"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/rc.com"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/rc.exe"
+      - "F:/athilah/Documents/premake-5.0.0-beta7-windows/rc"
+      - "F:/Devtool/Nvim/bin/rc.com"
+      - "F:/Devtool/Nvim/bin/rc.exe"
+      - "F:/Devtool/Nvim/bin/rc"
+      - "C:/Program Files/nodejs/rc.com"
+      - "C:/Program Files/nodejs/rc.exe"
+      - "C:/Program Files/nodejs/rc"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/rc.com"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/rc.exe"
+      - "C:/Users/athilah/AppData/Local/bin/NASM/rc"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/rc.com"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/rc.exe"
+      - "F:/Devlopment/LLL/EmguCVApp/ghost-i686-elf-tools-win32/ghost-i686-elf-tools/bin/rc"
+      - "E:/QuavleEngine/build/rc.com"
+      - "E:/QuavleEngine/build/rc.exe"
+      - "E:/QuavleEngine/build/rc"
+      - "C:/Users/athilah/.cargo/bin/rc.com"
+      - "C:/Users/athilah/.cargo/bin/rc.exe"
+      - "C:/Users/athilah/.cargo/bin/rc"
+      - "F:/Devtool/Conan/conan/rc.com"
+      - "F:/Devtool/Conan/conan/rc.exe"
+      - "F:/Devtool/Conan/conan/rc"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/rc.com"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/rc.exe"
+      - "C:/Users/athilah/AppData/Local/Microsoft/WindowsApps/rc"
+      - "C:/Users/athilah/.dotnet/tools/rc.com"
+      - "C:/Users/athilah/.dotnet/tools/rc.exe"
+      - "C:/Users/athilah/.dotnet/tools/rc"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/rc.com"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/rc.exe"
+      - "C:/Users/athilah/AppData/Local/Programs/Microsoft VS Code/bin/rc"
+      - "D:/imgui/Cmake/bin/rc.com"
+      - "D:/imgui/Cmake/bin/rc.exe"
+      - "D:/imgui/Cmake/bin/rc"
+      - "D:/JetBrains Rider 2024.3.6/bin/rc.com"
+      - "D:/JetBrains Rider 2024.3.6/bin/rc.exe"
+      - "D:/JetBrains Rider 2024.3.6/bin/rc"
+      - "F:/Devtool/MinGw/bin/rc.com"
+      - "F:/Devtool/MinGw/bin/rc.exe"
+      - "F:/Devtool/MinGw/bin/rc"
+      - "F:/Devtool/5.1/rc.com"
+      - "F:/Devtool/5.1/rc.exe"
+      - "F:/Devtool/5.1/rc"
+      - "F:/Devtool/OpenJDK8/bin/rc.com"
+      - "F:/Devtool/OpenJDK8/bin/rc.exe"
+      - "F:/Devtool/OpenJDK8/bin/rc"
+      - "C:/Users/athilah/.bun/bin/rc.com"
+      - "C:/Users/athilah/.bun/bin/rc.exe"
+      - "C:/Users/athilah/.bun/bin/rc"
+      - "C:/Users/athilah/AppData/Roaming/npm/rc.com"
+      - "C:/Users/athilah/AppData/Roaming/npm/rc.exe"
+      - "C:/Users/athilah/AppData/Roaming/npm/rc"
+      - "F:/Devtool/qemu/rc.com"
+      - "F:/Devtool/qemu/rc.exe"
+      - "F:/Devtool/qemu/rc"
+      - "E:/ponga/bin/Debug/rc.com"
+      - "E:/ponga/bin/Debug/rc.exe"
+      - "E:/ponga/bin/Debug/rc"
+      - "C:/Program Files/bin/rc.com"
+      - "C:/Program Files/bin/rc.exe"
+      - "C:/Program Files/bin/rc"
+      - "C:/Program Files/sbin/rc.com"
+      - "C:/Program Files/sbin/rc.exe"
+      - "C:/Program Files/sbin/rc"
+      - "C:/Program Files/rc.com"
+      - "C:/Program Files/rc.exe"
+      - "C:/Program Files/rc"
+      - "C:/Program Files (x86)/bin/rc.com"
+      - "C:/Program Files (x86)/bin/rc.exe"
+      - "C:/Program Files (x86)/bin/rc"
+      - "C:/Program Files (x86)/sbin/rc.com"
+      - "C:/Program Files (x86)/sbin/rc.exe"
+      - "C:/Program Files (x86)/sbin/rc"
+      - "C:/Program Files (x86)/rc.com"
+      - "C:/Program Files (x86)/rc.exe"
+      - "C:/Program Files (x86)/rc"
+      - "F:/Devtool/cmake/bin/rc.com"
+      - "F:/Devtool/cmake/bin/rc.exe"
+      - "F:/Devtool/cmake/bin/rc"
+      - "F:/Devtool/cmake/sbin/rc.com"
+      - "F:/Devtool/cmake/sbin/rc.exe"
+      - "F:/Devtool/cmake/sbin/rc"
+      - "F:/Devtool/cmake/rc.com"
+      - "F:/Devtool/cmake/rc.exe"
+      - "F:/Devtool/cmake/rc"
+      - "C:/Program Files (x86)/Assimp/bin/rc.com"
+      - "C:/Program Files (x86)/Assimp/bin/rc.exe"
+      - "C:/Program Files (x86)/Assimp/bin/rc"
+      - "C:/Program Files (x86)/Assimp/sbin/rc.com"
+      - "C:/Program Files (x86)/Assimp/sbin/rc.exe"
+      - "C:/Program Files (x86)/Assimp/sbin/rc"
+      - "C:/Program Files (x86)/Assimp/rc.com"
+      - "C:/Program Files (x86)/Assimp/rc.exe"
+      - "C:/Program Files (x86)/Assimp/rc"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "E:\\python 3.13\\Scripts\\"
+        - "E:\\python 3.13\\"
+        - "D:\\quevelkit\\Vulkan\\Lib"
+        - "c:\\windows\\system32"
+        - "c:\\windows"
+        - "c:\\windows\\system32\\wbem"
+        - "c:\\windows\\system32\\windowspowershell\\v1.0\\"
+        - "c:\\windows\\system32\\openssh\\"
+        - "f:\\devtool\\python"
+        - "f:\\devtool\\git\\cmd"
+        - "d:\\cmake\\bin"
+        - "f:\\devtool\\microsoft vs code"
+        - "c:\\program files\\dotnet"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "f:\\Devtool\\cursor\\resources\\app\\bin"
+        - "D:\\BuildTools\\VC\\Tools\\MSVC\\14.43.34808\\bin\\Hostx64\\x64"
+        - "F:\\Devtool\\Cmake\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "F:\\Devtool\\msys64\\ucrt64\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "F:\\Devlopment\\quevel\\thirdParty\\tools\\vcpkg"
+        - "C:\\Program Files\\qemu"
+        - "F:\\Devtool\\NASm"
+        - "F:\\Devtool\\mysys2\\mingw32"
+        - "F:\\Devtool\\mysys2\\mingw32\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "F:\\Devtool\\Nvim\\bin"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\athilah\\AppData\\Local\\bin\\NASM"
+        - "F:\\Devlopment\\LLL\\EmguCVApp\\ghost-i686-elf-tools-win32\\ghost-i686-elf-tools\\bin"
+        - "E:\\QuavleEngine\\build"
+        - "C:\\Users\\athilah\\.cargo\\bin"
+        - "F:\\Devtool\\Conan\\conan"
+        - "C:\\Users\\athilah\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "C:\\Users\\athilah\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "D:\\imgui\\Cmake\\bin"
+        - "D:\\JetBrains Rider 2024.3.6\\bin"
+        - "F:\\Devtool\\MinGw\\bin"
+        - "F:\\Devtool\\5.1"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\OpenJDK8\\bin"
+        - "F:\\Devtool\\mysys2\\ucrt64\\bin"
+        - "C:\\Users\\athilah\\.bun\\bin"
+        - "F:\\athilah\\Documents\\premake-5.0.0-beta7-windows"
+        - "C:\\Users\\athilah\\AppData\\Roaming\\npm"
+        - "C:\\Users\\athilah\\.dotnet\\tools"
+        - "F:\\Devtool\\qemu"
+        - "E:\\ponga\\bin\\Debug"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Assimp"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "F:/Devtool/cmake"
+        - "C:/Program Files (x86)/Assimp"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-fxhy41"
+      binary: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-fxhy41"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-fxhy41'
+        
+        Run Build Command(s): "E:/Visual Studio/ide/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_7e39e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.0.5+e22287bf1 for .NET Framework
+        Build started 24/11/2025 22:53:22.
+        
+        Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fxhy41\\cmTC_7e39e.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fxhy41\\Debug\\".
+          Creating directory "cmTC_7e39e.dir\\Debug\\cmTC_7e39e.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_7e39e.dir\\Debug\\cmTC_7e39e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_7e39e.dir\\Debug\\cmTC_7e39e.tlog\\unsuccessfulbuild".
+        ClCompile:
+          E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_7e39e.dir\\Debug\\\\" /Fd"cmTC_7e39e.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "F:\\Devtool\\cmake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35718 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_7e39e.dir\\Debug\\\\" /Fd"cmTC_7e39e.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "F:\\Devtool\\cmake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fxhy41\\Debug\\cmTC_7e39e.exe" /INCREMENTAL /ILK:"cmTC_7e39e.dir\\Debug\\cmTC_7e39e.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-fxhy41/Debug/cmTC_7e39e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-fxhy41/Debug/cmTC_7e39e.lib" /MACHINE:X64  /machine:x64 cmTC_7e39e.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_7e39e.vcxproj -> E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fxhy41\\Debug\\cmTC_7e39e.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_7e39e.dir\\Debug\\cmTC_7e39e.tlog\\unsuccessfulbuild".
+          Touching "cmTC_7e39e.dir\\Debug\\cmTC_7e39e.tlog\\cmTC_7e39e.lastbuildstate".
+        Done Building Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fxhy41\\cmTC_7e39e.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.93
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    message: |
+      Running the C compiler's linker: "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.50.35718.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-vol1ju"
+      binary: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-vol1ju"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-vol1ju'
+        
+        Run Build Command(s): "E:/Visual Studio/ide/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_bcb94.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.0.5+e22287bf1 for .NET Framework
+        Build started 24/11/2025 22:53:23.
+        
+        Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vol1ju\\cmTC_bcb94.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vol1ju\\Debug\\".
+          Creating directory "cmTC_bcb94.dir\\Debug\\cmTC_bcb94.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_bcb94.dir\\Debug\\cmTC_bcb94.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_bcb94.dir\\Debug\\cmTC_bcb94.tlog\\unsuccessfulbuild".
+        ClCompile:
+          E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_bcb94.dir\\Debug\\\\" /Fd"cmTC_bcb94.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "F:\\Devtool\\cmake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35718 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_bcb94.dir\\Debug\\\\" /Fd"cmTC_bcb94.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "F:\\Devtool\\cmake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+        Link:
+          E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vol1ju\\Debug\\cmTC_bcb94.exe" /INCREMENTAL /ILK:"cmTC_bcb94.dir\\Debug\\cmTC_bcb94.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-vol1ju/Debug/cmTC_bcb94.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-vol1ju/Debug/cmTC_bcb94.lib" /MACHINE:X64  /machine:x64 cmTC_bcb94.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_bcb94.vcxproj -> E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vol1ju\\Debug\\cmTC_bcb94.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_bcb94.dir\\Debug\\cmTC_bcb94.tlog\\unsuccessfulbuild".
+          Touching "cmTC_bcb94.dir\\Debug\\cmTC_bcb94.tlog\\cmTC_bcb94.lastbuildstate".
+        Done Building Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vol1ju\\cmTC_bcb94.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.89
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'CXX': E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:107 (PROJECT)"
+    message: |
+      Running the CXX compiler's linker: "E:/Visual Studio/ide/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.50.35718.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "contrib/zlib/CMakeLists.txt:35 (check_include_file)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-s1eto6"
+      binary: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-s1eto6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/cmake-modules"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-s1eto6'
+        
+        Run Build Command(s): "E:/Visual Studio/ide/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b58e7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.0.5+e22287bf1 for .NET Framework
+        Build started 24/11/2025 22:53:25.
+        
+        Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s1eto6\\cmTC_b58e7.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s1eto6\\Debug\\".
+          Creating directory "cmTC_b58e7.dir\\Debug\\cmTC_b58e7.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_b58e7.dir\\Debug\\cmTC_b58e7.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_b58e7.dir\\Debug\\cmTC_b58e7.tlog\\unsuccessfulbuild".
+        ClCompile:
+          E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_b58e7.dir\\Debug\\\\" /Fd"cmTC_b58e7.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s1eto6\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35718 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_b58e7.dir\\Debug\\\\" /Fd"cmTC_b58e7.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s1eto6\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s1eto6\\Debug\\cmTC_b58e7.exe" /INCREMENTAL /ILK:"cmTC_b58e7.dir\\Debug\\cmTC_b58e7.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-s1eto6/Debug/cmTC_b58e7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-s1eto6/Debug/cmTC_b58e7.lib" /MACHINE:X64  /machine:x64 cmTC_b58e7.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_b58e7.vcxproj -> E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s1eto6\\Debug\\cmTC_b58e7.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_b58e7.dir\\Debug\\cmTC_b58e7.tlog\\unsuccessfulbuild".
+          Touching "cmTC_b58e7.dir\\Debug\\cmTC_b58e7.tlog\\cmTC_b58e7.lastbuildstate".
+        Done Building Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s1eto6\\cmTC_b58e7.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.87
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "contrib/zlib/CMakeLists.txt:36 (check_include_file)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-za8520"
+      binary: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-za8520"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/cmake-modules"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-za8520'
+        
+        Run Build Command(s): "E:/Visual Studio/ide/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_126f9.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.0.5+e22287bf1 for .NET Framework
+        Build started 24/11/2025 22:53:26.
+        
+        Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-za8520\\cmTC_126f9.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-za8520\\Debug\\".
+          Creating directory "cmTC_126f9.dir\\Debug\\cmTC_126f9.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_126f9.dir\\Debug\\cmTC_126f9.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_126f9.dir\\Debug\\cmTC_126f9.tlog\\unsuccessfulbuild".
+        ClCompile:
+          E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_126f9.dir\\Debug\\\\" /Fd"cmTC_126f9.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-za8520\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35718 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_126f9.dir\\Debug\\\\" /Fd"cmTC_126f9.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-za8520\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-za8520\\Debug\\cmTC_126f9.exe" /INCREMENTAL /ILK:"cmTC_126f9.dir\\Debug\\cmTC_126f9.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-za8520/Debug/cmTC_126f9.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-za8520/Debug/cmTC_126f9.lib" /MACHINE:X64  /machine:x64 cmTC_126f9.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_126f9.vcxproj -> E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-za8520\\Debug\\cmTC_126f9.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_126f9.dir\\Debug\\cmTC_126f9.tlog\\unsuccessfulbuild".
+          Touching "cmTC_126f9.dir\\Debug\\cmTC_126f9.tlog\\cmTC_126f9.lastbuildstate".
+        Done Building Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-za8520\\cmTC_126f9.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.85
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "contrib/zlib/CMakeLists.txt:37 (check_include_file)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-s4sta6"
+      binary: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-s4sta6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/cmake-modules"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-s4sta6'
+        
+        Run Build Command(s): "E:/Visual Studio/ide/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_570d9.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.0.5+e22287bf1 for .NET Framework
+        Build started 24/11/2025 22:53:27.
+        
+        Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s4sta6\\cmTC_570d9.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s4sta6\\Debug\\".
+          Creating directory "cmTC_570d9.dir\\Debug\\cmTC_570d9.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_570d9.dir\\Debug\\cmTC_570d9.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_570d9.dir\\Debug\\cmTC_570d9.tlog\\unsuccessfulbuild".
+        ClCompile:
+          E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_570d9.dir\\Debug\\\\" /Fd"cmTC_570d9.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s4sta6\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35718 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_570d9.dir\\Debug\\\\" /Fd"cmTC_570d9.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s4sta6\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s4sta6\\Debug\\cmTC_570d9.exe" /INCREMENTAL /ILK:"cmTC_570d9.dir\\Debug\\cmTC_570d9.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-s4sta6/Debug/cmTC_570d9.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-s4sta6/Debug/cmTC_570d9.lib" /MACHINE:X64  /machine:x64 cmTC_570d9.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_570d9.vcxproj -> E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s4sta6\\Debug\\cmTC_570d9.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_570d9.dir\\Debug\\cmTC_570d9.tlog\\unsuccessfulbuild".
+          Touching "cmTC_570d9.dir\\Debug\\cmTC_570d9.tlog\\cmTC_570d9.lastbuildstate".
+        Done Building Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s4sta6\\cmTC_570d9.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.89
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CheckTypeSize.cmake:348 (try_compile)"
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CheckTypeSize.cmake:481 (__check_type_size_impl)"
+      - "contrib/zlib/CMakeLists.txt:55 (check_type_size)"
+    checks:
+      - "Check size of off64_t"
+    directories:
+      source: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-vmaliw"
+      binary: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-vmaliw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/cmake-modules"
+    buildResult:
+      variable: "HAVE_OFF64_T"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-vmaliw'
+        
+        Run Build Command(s): "E:/Visual Studio/ide/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_155df.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.0.5+e22287bf1 for .NET Framework
+        Build started 24/11/2025 22:53:28.
+        
+        Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\cmTC_155df.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\Debug\\".
+          Creating directory "cmTC_155df.dir\\Debug\\cmTC_155df.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_155df.dir\\Debug\\cmTC_155df.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_155df.dir\\Debug\\cmTC_155df.tlog\\unsuccessfulbuild".
+        ClCompile:
+          E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _LARGEFILE64_SOURCE=1 /D HAVE_SYS_TYPES_H /D HAVE_STDINT_H /D HAVE_STDDEF_H /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_155df.dir\\Debug\\\\" /Fd"cmTC_155df.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\OFF64_T.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35718 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _LARGEFILE64_SOURCE=1 /D HAVE_SYS_TYPES_H /D HAVE_STDINT_H /D HAVE_STDDEF_H /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_155df.dir\\Debug\\\\" /Fd"cmTC_155df.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\OFF64_T.c"
+          OFF64_T.c
+        E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\OFF64_T.c(29,12): error C2065: 'off64_t': undeclared identifier [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\cmTC_155df.vcxproj]
+        E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\OFF64_T.c(30,12): error C2065: 'off64_t': undeclared identifier [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\cmTC_155df.vcxproj]
+        E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\OFF64_T.c(31,12): error C2065: 'off64_t': undeclared identifier [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\cmTC_155df.vcxproj]
+        E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\OFF64_T.c(32,12): error C2065: 'off64_t': undeclared identifier [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\cmTC_155df.vcxproj]
+        E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\OFF64_T.c(33,12): error C2065: 'off64_t': undeclared identifier [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\cmTC_155df.vcxproj]
+        Done Building Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\cmTC_155df.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\cmTC_155df.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\OFF64_T.c(29,12): error C2065: 'off64_t': undeclared identifier [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\cmTC_155df.vcxproj]
+          E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\OFF64_T.c(30,12): error C2065: 'off64_t': undeclared identifier [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\cmTC_155df.vcxproj]
+          E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\OFF64_T.c(31,12): error C2065: 'off64_t': undeclared identifier [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\cmTC_155df.vcxproj]
+          E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\OFF64_T.c(32,12): error C2065: 'off64_t': undeclared identifier [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\cmTC_155df.vcxproj]
+          E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\OFF64_T.c(33,12): error C2065: 'off64_t': undeclared identifier [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmaliw\\cmTC_155df.vcxproj]
+        
+            0 Warning(s)
+            5 Error(s)
+        
+        Time Elapsed 00:00:00.39
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CheckFunctionExists.cmake:167 (try_compile)"
+      - "contrib/zlib/CMakeLists.txt:64 (check_function_exists)"
+    checks:
+      - "Looking for fseeko"
+    directories:
+      source: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-2vxbab"
+      binary: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-2vxbab"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/cmake-modules"
+    buildResult:
+      variable: "HAVE_FSEEKO"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-2vxbab'
+        
+        Run Build Command(s): "E:/Visual Studio/ide/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_bb2b5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.0.5+e22287bf1 for .NET Framework
+        Build started 24/11/2025 22:53:29.
+        
+        Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2vxbab\\cmTC_bb2b5.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2vxbab\\Debug\\".
+          Creating directory "cmTC_bb2b5.dir\\Debug\\cmTC_bb2b5.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_bb2b5.dir\\Debug\\cmTC_bb2b5.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_bb2b5.dir\\Debug\\cmTC_bb2b5.tlog\\unsuccessfulbuild".
+        ClCompile:
+          E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=fseeko /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_bb2b5.dir\\Debug\\\\" /Fd"cmTC_bb2b5.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2vxbab\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35718 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=fseeko /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_bb2b5.dir\\Debug\\\\" /Fd"cmTC_bb2b5.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2vxbab\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2vxbab\\Debug\\cmTC_bb2b5.exe" /INCREMENTAL /ILK:"cmTC_bb2b5.dir\\Debug\\cmTC_bb2b5.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-2vxbab/Debug/cmTC_bb2b5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-2vxbab/Debug/cmTC_bb2b5.lib" /MACHINE:X64  /machine:x64 cmTC_bb2b5.dir\\Debug\\CheckFunctionExists.obj
+        CheckFunctionExists.obj : error LNK2019: unresolved external symbol fseeko referenced in function main [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2vxbab\\cmTC_bb2b5.vcxproj]
+        E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2vxbab\\Debug\\cmTC_bb2b5.exe : fatal error LNK1120: 1 unresolved externals [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2vxbab\\cmTC_bb2b5.vcxproj]
+        Done Building Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2vxbab\\cmTC_bb2b5.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2vxbab\\cmTC_bb2b5.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          CheckFunctionExists.obj : error LNK2019: unresolved external symbol fseeko referenced in function main [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2vxbab\\cmTC_bb2b5.vcxproj]
+          E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2vxbab\\Debug\\cmTC_bb2b5.exe : fatal error LNK1120: 1 unresolved externals [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2vxbab\\cmTC_bb2b5.vcxproj]
+        
+            0 Warning(s)
+            2 Error(s)
+        
+        Time Elapsed 00:00:00.78
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "F:/Devtool/cmake/share/cmake-4.2/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "contrib/zlib/CMakeLists.txt:72 (check_include_file)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-thg7ti"
+      binary: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-thg7ti"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/cmake-modules"
+    buildResult:
+      variable: "Z_HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/CMakeFiles/CMakeScratch/TryCompile-thg7ti'
+        
+        Run Build Command(s): "E:/Visual Studio/ide/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9f335.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.0.5+e22287bf1 for .NET Framework
+        Build started 24/11/2025 22:53:30.
+        
+        Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-thg7ti\\cmTC_9f335.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-thg7ti\\Debug\\".
+          Creating directory "cmTC_9f335.dir\\Debug\\cmTC_9f335.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_9f335.dir\\Debug\\cmTC_9f335.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_9f335.dir\\Debug\\cmTC_9f335.tlog\\unsuccessfulbuild".
+        ClCompile:
+          E:\\Visual Studio\\ide\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_9f335.dir\\Debug\\\\" /Fd"cmTC_9f335.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-thg7ti\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35718 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_9f335.dir\\Debug\\\\" /Fd"cmTC_9f335.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-thg7ti\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-thg7ti\\CheckIncludeFile.c(1,10): error C1083: Cannot open include file: 'unistd.h': No such file or directory [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-thg7ti\\cmTC_9f335.vcxproj]
+        Done Building Project "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-thg7ti\\cmTC_9f335.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-thg7ti\\cmTC_9f335.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-thg7ti\\CheckIncludeFile.c(1,10): error C1083: Cannot open include file: 'unistd.h': No such file or directory [E:\\project\\Quavle-Engine\\Quavle-Engine\\vendor\\assimp-6.0.2\\build\\CMakeFiles\\CMakeScratch\\TryCompile-thg7ti\\cmTC_9f335.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.41
+        
+      exitCode: 1
+...

@@ -1,0 +1,15 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+# Add any dependencies here if needed
+# find_dependency(SomePackage)
+
+# Include the targets file
+include("${CMAKE_CURRENT_LIST_DIR}/AudioTargets.cmake")
+
+# Provide variables for compatibility
+get_target_property(Audio_INCLUDE_DIRS Audio::Audio INTERFACE_INCLUDE_DIRECTORIES)
+set(Audio_LIBRARIES Audio::Audio)
+
+check_required_components(Audio)

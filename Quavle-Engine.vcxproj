@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="QuavleGame-Runtime|Win32">
+      <Configuration>QuavleGame-Runtime</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="QuavleGame-Runtime|x64">
+      <Configuration>QuavleGame-Runtime</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{7f4043ef-a180-4979-b360-e35484a01144}</ProjectGuid>
+    <RootNamespace>QuavleEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='QuavleGame-Runtime|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='QuavleGame-Runtime|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='QuavleGame-Runtime|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='QuavleGame-Runtime|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='QuavleGame-Runtime|x64'">
+    <TargetName>GameRuntime</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>false</VcpkgEnableManifest>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgInstalledDir>.</VcpkgInstalledDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <VcpkgInstalledDir>.</VcpkgInstalledDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='QuavleGame-Runtime|x64'" Label="Vcpkg">
+    <VcpkgInstalledDir>.</VcpkgInstalledDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\include;;C:\Users\athilah\Downloads\glad\src;C:\Users\athilah\Downloads\glad\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\src</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>;C:\Users\athilah\Downloads\glad\src;C:\Users\athilah\Downloads\glad\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\src;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\include</AdditionalUsingDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);opengl32.lib;opengl32.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\include;;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\src</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\src;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\include</AdditionalUsingDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);opengl32.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='QuavleGame-Runtime|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\include;;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\src</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\src;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\include</AdditionalUsingDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);opengl32.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>E:\project\Quavle-Engine\Quavle-Engine\vendor\ImGuizmo;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\bin\Release;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\implot;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\devel;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\include\freetype;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\src;E:\project\Quavle-Engine\Quavle-Engine\vendor\imgui\backends;E:\project\Quavle-Engine\Quavle-Engine\vendor\imgui;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\src;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\include;C:\Users\athilah\Downloads\glad\include;%(AdditionalIncludeDirectories);C:\Users\athilah\Downloads\glad\src;C:\Users\athilah\Downloads\glad\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\src</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>E:\project\Quavle-Engine\Quavle-Engine\vendor\ImGuizmo;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\bin\Release;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\implot;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\devel;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\include\freetype;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\src;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\imgui;E:\project\Quavle-Engine\Quavle-Engine\vendor\imgui\backends;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\src;C:\Users\athilah\Downloads\glad\include;%(AdditionalUsingDirectories);C:\Users\athilah\Downloads\glad\src;C:\Users\athilah\Downloads\glad\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\src;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\include;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;freetype.lib;assimp-vc145-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\project\Quavle-Engine\Quavle-Engine\vcpkg_installed\x64-windows\lib;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\lib\Release;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\bin\Release;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\objs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;ENGINE_EDITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>E:\project\Quavle-Engine\QuavleFormat;E:\project\Quavle-Engine\Quavle-Engine\vendor\Audio-1.0.1\inc;E:\project\Quavle-Engine\Quavle-Engine\vendor\ImGuizmo;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\bin\Release;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\implot;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\devel;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\include\freetype;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\src;E:\project\Quavle-Engine\Quavle-Engine\vendor\imgui\backends;E:\project\Quavle-Engine\Quavle-Engine\vendor\imgui;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\src;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\include</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>E:\project\Quavle-Engine\QuavleFormat;E:\project\Quavle-Engine\Quavle-Engine\vendor\Audio-1.0.1\inc;E:\project\Quavle-Engine\Quavle-Engine\vendor\ImGuizmo;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\bin\Release;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\implot;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\devel;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\include\freetype;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\src;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\imgui;E:\project\Quavle-Engine\Quavle-Engine\vendor\imgui\backends;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\src;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;freetype.lib;assimp-vc145-mt.lib;Audio.lib;QuavleFormat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\project\Quavle-Engine\x64\LIB;E:\project\Quavle-Engine\Quavle-Engine\vendor\Audio-1.0.1\lib\Release;E:\project\Quavle-Engine\Quavle-Engine\vcpkg_installed\x64-windows\lib;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\lib\Release;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\bin\Release;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\objs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='QuavleGame-Runtime|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;ENGINE_RUNTIME;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>E:\project\Quavle-Engine\QuavleFormat;E:\project\Quavle-Engine\Quavle-Engine\vendor\Audio-1.0.1\inc;E:\project\Quavle-Engine\Quavle-Engine\vendor\ImGuizmo;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\bin\Release;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\implot;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\devel;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\include\freetype;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\src;E:\project\Quavle-Engine\Quavle-Engine\vendor\imgui\backends;E:\project\Quavle-Engine\Quavle-Engine\vendor\imgui;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\src;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\include</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>E:\project\Quavle-Engine\QuavleFormat;E:\project\Quavle-Engine\Quavle-Engine\vendor\Audio-1.0.1\inc;E:\project\Quavle-Engine\Quavle-Engine\vendor\ImGuizmo;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\bin\Release;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\implot;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\devel;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\include\freetype;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\src;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\imgui;E:\project\Quavle-Engine\Quavle-Engine\vendor\imgui\backends;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\include;E:\project\Quavle-Engine\Quavle-Engine\vendor\glad\src;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;freetype.lib;assimp-vc145-mt.lib;Audio.lib;QuavleFormat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\project\Quavle-Engine\x64\LIB;E:\project\Quavle-Engine\Quavle-Engine\vendor\Audio-1.0.1\lib\Release;E:\project\Quavle-Engine\Quavle-Engine\vcpkg_installed\x64-windows\lib;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\lib\Release;E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\bin\Release;E:\project\Quavle-Engine\Quavle-Engine\vendor\freetype-2.14.1\objs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="audio.cpp" />
+    <ClCompile Include="canvas.cpp" />
+    <ClCompile Include="entity.cpp" />
+    <ClCompile Include="entityLoader.cpp" />
+    <ClCompile Include="environment.cpp" />
+    <ClCompile Include="filebrowser.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="godrays.cpp" />
+    <ClCompile Include="guizmo.cpp" />
+    <ClCompile Include="hirarcy.cpp" />
+    <ClCompile Include="inspector.cpp" />
+    <ClCompile Include="interface.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="postprocessing.cpp" />
+    <ClCompile Include="profiler.cpp" />
+    <ClCompile Include="saveSystem.cpp" />
+    <ClCompile Include="scene.cpp" />
+    <ClCompile Include="scenes.cpp" />
+    <ClCompile Include="shadow.cpp" />
+    <ClCompile Include="vendor\Audio-1.0.1\src\Device.cpp" />
+    <ClCompile Include="vendor\Audio-1.0.1\src\Listener.cpp" />
+    <ClCompile Include="vendor\Audio-1.0.1\src\ListenerImpl.cpp" />
+    <ClCompile Include="vendor\Audio-1.0.1\src\miniaudio.c" />
+    <ClCompile Include="vendor\Audio-1.0.1\src\Sound.cpp" />
+    <ClCompile Include="vendor\Audio-1.0.1\src\SoundImpl.cpp" />
+    <ClCompile Include="vendor\Audio-1.0.1\src\stb_vorbis.c" />
+    <ClCompile Include="vendor\Audio-1.0.1\src\Waveform.cpp" />
+    <ClCompile Include="vendor\Audio-1.0.1\src\WaveformImpl.cpp" />
+    <ClCompile Include="vendor\glad\src\glad.c" />
+    <ClCompile Include="vendor\ImGuizmo\GraphEditor.cpp" />
+    <ClCompile Include="vendor\ImGuizmo\ImCurveEdit.cpp" />
+    <ClCompile Include="vendor\ImGuizmo\ImGradient.cpp" />
+    <ClCompile Include="vendor\ImGuizmo\ImGuizmo.cpp" />
+    <ClCompile Include="vendor\ImGuizmo\ImSequencer.cpp" />
+    <ClCompile Include="vendor\imgui\backends\imgui_impl_glfw.cpp" />
+    <ClCompile Include="vendor\imgui\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="vendor\imgui\imgui.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_tables.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="vendor\implot\implot.cpp" />
+    <ClCompile Include="vendor\implot\implot_demo.cpp" />
+    <ClCompile Include="vendor\implot\implot_items.cpp" />
+    <ClCompile Include="widget.cpp" />
+    <ClCompile Include="window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fragment.glsl" />
+    <None Include="packages.config" />
+    <None Include="point_shadow_depth.gs" />
+    <None Include="shadow_depth.fs" />
+    <None Include="shadow_depth.vs" />
+    <None Include="textFrag.fs" />
+    <None Include="textVert.vs" />
+    <None Include="vendor\implot\.gitignore" />
+    <None Include="vendor\implot\LICENSE" />
+    <None Include="vendor\implot\README.md" />
+    <None Include="vendor\implot\TODO.md" />
+    <None Include="vertex.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\athilah\Downloads\ImGuizmo-master\ImGuizmo\example\stb_image.h" />
+    <ClInclude Include="C:\Users\athilah\Downloads\stb_image.h" />
+    <ClInclude Include="EngineConfig.h" />
+    <ClInclude Include="entity.h" />
+    <ClInclude Include="environment.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="interface.h" />
+    <ClInclude Include="pipeline.h" />
+    <ClInclude Include="random.h" />
+    <ClInclude Include="saveSystem.h" />
+    <ClInclude Include="scene.h" />
+    <ClInclude Include="shader_s.h" />
+    <ClInclude Include="vendor\Audio-1.0.1\inc\Audio\Config.hpp" />
+    <ClInclude Include="vendor\Audio-1.0.1\inc\Audio\Device.hpp" />
+    <ClInclude Include="vendor\Audio-1.0.1\inc\Audio\Listener.hpp" />
+    <ClInclude Include="vendor\Audio-1.0.1\inc\Audio\Sound.hpp" />
+    <ClInclude Include="vendor\Audio-1.0.1\inc\Audio\Vector.hpp" />
+    <ClInclude Include="vendor\Audio-1.0.1\inc\Audio\Waveform.hpp" />
+    <ClInclude Include="vendor\Audio-1.0.1\src\ListenerImpl.hpp" />
+    <ClInclude Include="vendor\Audio-1.0.1\src\miniaudio.h" />
+    <ClInclude Include="vendor\Audio-1.0.1\src\SoundImpl.hpp" />
+    <ClInclude Include="vendor\Audio-1.0.1\src\WaveformImpl.hpp" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\freetype.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftadvanc.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftbbox.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftbdf.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftbitmap.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftbzip2.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftcache.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftchapters.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftcid.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftcolor.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftdriver.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\fterrdef.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\fterrors.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftfntfmt.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftgasp.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftglyph.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftgxval.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftgzip.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftimage.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftincrem.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftlcdfil.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftlist.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftlogging.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftlzw.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftmac.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftmm.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftmodapi.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftmoderr.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftotval.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftoutln.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftparams.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftpfr.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftrender.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftsizes.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftsnames.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftstroke.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftsynth.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftsystem.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\fttrigon.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\fttypes.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftwinfnt.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\otsvg.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\t1tables.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ttnameid.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\tttables.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\tttags.h" />
+    <ClInclude Include="vendor\freetype-2.14.1\include\ft2build.h" />
+    <ClInclude Include="vendor\glad\include\glad\glad.h" />
+    <ClInclude Include="vendor\glad\include\KHR\khrplatform.h" />
+    <ClInclude Include="vendor\ImGuizmo\GraphEditor.h" />
+    <ClInclude Include="vendor\ImGuizmo\ImCurveEdit.h" />
+    <ClInclude Include="vendor\ImGuizmo\ImGradient.h" />
+    <ClInclude Include="vendor\ImGuizmo\ImGuizmo.h" />
+    <ClInclude Include="vendor\ImGuizmo\ImSequencer.h" />
+    <ClInclude Include="vendor\ImGuizmo\ImZoomSlider.h" />
+    <ClInclude Include="vendor\imgui\backends\imgui_impl_glfw.h" />
+    <ClInclude Include="vendor\imgui\backends\imgui_impl_opengl3.h" />
+    <ClInclude Include="vendor\imgui\imconfig.h" />
+    <ClInclude Include="vendor\imgui\imgui.h" />
+    <ClInclude Include="vendor\imgui\imgui_internal.h" />
+    <ClInclude Include="vendor\imgui\imstb_rectpack.h" />
+    <ClInclude Include="vendor\imgui\imstb_textedit.h" />
+    <ClInclude Include="vendor\imgui\imstb_truetype.h" />
+    <ClInclude Include="vendor\implot\implot.h" />
+    <ClInclude Include="vendor\implot\implot_internal.h" />
+    <ClInclude Include="window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="C:\Users\athilah\Downloads\arial\ARIAL.TTF" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\glfw.3.4.0\build\native\glfw.targets" Condition="Exists('..\packages\glfw.3.4.0\build\native\glfw.targets')" />
+    <Import Project="..\packages\glm.1.0.2\build\native\glm.targets" Condition="Exists('..\packages\glm.1.0.2\build\native\glm.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\glfw.3.4.0\build\native\glfw.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\glfw.3.4.0\build\native\glfw.targets'))" />
+    <Error Condition="!Exists('..\packages\glm.1.0.2\build\native\glm.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\glm.1.0.2\build\native\glm.targets'))" />
+  </Target>
+</Project>

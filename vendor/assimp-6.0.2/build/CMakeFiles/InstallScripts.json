@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/cmake_install.cmake",
+		"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/contrib/zlib/cmake_install.cmake",
+		"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/code/cmake_install.cmake",
+		"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/test/cmake_install.cmake",
+		"E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/build/test/headercheck/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,10 @@
+# CMake generation dependency list for this directory.
+E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/contrib/zlib/CMakeLists.txt
+E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/contrib/zlib/zconf.h.cmakein
+E:/project/Quavle-Engine/Quavle-Engine/vendor/assimp-6.0.2/contrib/zlib/zlib.pc.cmakein
+F:/Devtool/cmake/share/cmake-4.2/Modules/CheckCSourceCompiles.cmake
+F:/Devtool/cmake/share/cmake-4.2/Modules/CheckFunctionExists.cmake
+F:/Devtool/cmake/share/cmake-4.2/Modules/CheckIncludeFile.cmake
+F:/Devtool/cmake/share/cmake-4.2/Modules/CheckIncludeFileCXX.cmake
+F:/Devtool/cmake/share/cmake-4.2/Modules/CheckTypeSize.cmake
+F:/Devtool/cmake/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake

@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\window">
+      <UniqueIdentifier>{84110052-41ab-47de-a8be-a6310c90322f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entity">
+      <UniqueIdentifier>{30eabad5-cfdc-47bc-9f92-8efdc8795933}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{46f1bb77-eb2b-4086-81e2-4a6ec594c51a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils\shader">
+      <UniqueIdentifier>{46202051-a575-429b-b50e-7c87806105ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vendor">
+      <UniqueIdentifier>{a790e200-f45e-42b8-b94c-26f5c3f8e911}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vendor\glad">
+      <UniqueIdentifier>{9fdffb14-8579-4579-ac21-7e956edf14ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vendor\glad\include">
+      <UniqueIdentifier>{15d6de1d-60fe-43bf-961a-b5ed83e42c58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vendor\glad\include\glad">
+      <UniqueIdentifier>{318d384f-cd36-4790-a89c-4117233a2f3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vendor\glad\include\KHR">
+      <UniqueIdentifier>{9226b05b-3632-4512-9293-995d1579f0c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vendor\glad\src">
+      <UniqueIdentifier>{f694fb6d-dade-4df9-9824-c0ce3eaf4a2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vendor\imgui">
+      <UniqueIdentifier>{584d6856-c038-4118-9981-5c7244987f0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vendor\imgui\backends">
+      <UniqueIdentifier>{f8a932ff-d7bf-442a-a140-21508ec09059}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\interface">
+      <UniqueIdentifier>{6f4ef2a2-8759-4e3d-98bb-89d6f4cf0a8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils\fonts">
+      <UniqueIdentifier>{7dcfecb2-e5d7-4703-a6f0-be064aa540b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vendor\truetype">
+      <UniqueIdentifier>{67f6dff9-3fa8-4a10-9c29-e711ca5c6f24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\interface\compenents">
+      <UniqueIdentifier>{941ed6d5-91f5-4b51-a8b3-5d99af24a5e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vendor\implot">
+      <UniqueIdentifier>{c1934976-6198-4301-92e7-2f23375c84c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vendor\assimp">
+      <UniqueIdentifier>{efa08939-87b0-4d39-b8d2-65db5e46e7b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vendor\imguizmo">
+      <UniqueIdentifier>{d4aff1ce-d63e-4e88-98e0-e34124ce4900}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pipeline">
+      <UniqueIdentifier>{c2bec2ab-ff99-44c5-89eb-14ccf0381445}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vendor\audio">
+      <UniqueIdentifier>{8e3029d0-42de-4ca0-aba5-30457d25fb08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game">
+      <UniqueIdentifier>{d45c4dd6-8d2f-417c-b209-0c6d29a07c29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\saved">
+      <UniqueIdentifier>{d22c5d09-b7a8-4d6e-a42d-07d47673f948}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entity\components widget">
+      <UniqueIdentifier>{c14da9a0-b96e-4b60-9a57-e213e118fc33}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="window.cpp">
+      <Filter>Source Files\window</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>Source Files\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui.cpp">
+      <Filter>Source Files\vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui_demo.cpp">
+      <Filter>Source Files\vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui_draw.cpp">
+      <Filter>Source Files\vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui_tables.cpp">
+      <Filter>Source Files\vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui_widgets.cpp">
+      <Filter>Source Files\vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\backends\imgui_impl_opengl3.cpp">
+      <Filter>Source Files\vendor\imgui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="interface.cpp">
+      <Filter>Source Files\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\backends\imgui_impl_glfw.cpp">
+      <Filter>Source Files\vendor\imgui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="profiler.cpp">
+      <Filter>Source Files\interface\compenents</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\implot\implot.cpp">
+      <Filter>Source Files\vendor\implot</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\implot\implot_demo.cpp">
+      <Filter>Source Files\vendor\implot</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\implot\implot_items.cpp">
+      <Filter>Source Files\vendor\implot</Filter>
+    </ClCompile>
+    <ClCompile Include="hirarcy.cpp">
+      <Filter>Source Files\interface\compenents</Filter>
+    </ClCompile>
+    <ClCompile Include="inspector.cpp">
+      <Filter>Source Files\interface\compenents</Filter>
+    </ClCompile>
+    <ClCompile Include="entityLoader.cpp">
+      <Filter>Source Files\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="guizmo.cpp">
+      <Filter>Source Files\interface\compenents</Filter>
+    </ClCompile>
+    <ClCompile Include="shadow.cpp">
+      <Filter>Source Files\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\ImGuizmo\GraphEditor.cpp">
+      <Filter>Source Files\vendor\imguizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\ImGuizmo\ImCurveEdit.cpp">
+      <Filter>Source Files\vendor\imguizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\ImGuizmo\ImGradient.cpp">
+      <Filter>Source Files\vendor\imguizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\ImGuizmo\ImGuizmo.cpp">
+      <Filter>Source Files\vendor\imguizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\ImGuizmo\ImSequencer.cpp">
+      <Filter>Source Files\vendor\imguizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\glad\src\glad.c">
+      <Filter>Source Files\vendor\glad\src</Filter>
+    </ClCompile>
+    <ClCompile Include="audio.cpp">
+      <Filter>Source Files\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\Audio-1.0.1\src\Device.cpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\Audio-1.0.1\src\Listener.cpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\Audio-1.0.1\src\ListenerImpl.cpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\Audio-1.0.1\src\miniaudio.c">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\Audio-1.0.1\src\Sound.cpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\Audio-1.0.1\src\SoundImpl.cpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\Audio-1.0.1\src\stb_vorbis.c">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\Audio-1.0.1\src\Waveform.cpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\Audio-1.0.1\src\WaveformImpl.cpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="scenes.cpp">
+      <Filter>Source Files\interface\compenents</Filter>
+    </ClCompile>
+    <ClCompile Include="postprocessing.cpp">
+      <Filter>Source Files\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="saveSystem.cpp">
+      <Filter>Source Files\saved</Filter>
+    </ClCompile>
+    <ClCompile Include="godrays.cpp">
+      <Filter>Source Files\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="filebrowser.cpp">
+      <Filter>Source Files\interface\compenents</Filter>
+    </ClCompile>
+    <ClCompile Include="canvas.cpp">
+      <Filter>Source Files\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="widget.cpp">
+      <Filter>Source Files\entity\components widget</Filter>
+    </ClCompile>
+    <ClCompile Include="environment.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="fragment.glsl">
+      <Filter>Source Files\utils\shader</Filter>
+    </None>
+    <None Include="vertex.glsl">
+      <Filter>Source Files\utils\shader</Filter>
+    </None>
+    <None Include="textVert.vs">
+      <Filter>Source Files\utils\shader</Filter>
+    </None>
+    <None Include="textFrag.fs">
+      <Filter>Source Files\utils\shader</Filter>
+    </None>
+    <None Include="vendor\implot\.gitignore">
+      <Filter>Source Files\vendor\implot</Filter>
+    </None>
+    <None Include="vendor\implot\LICENSE">
+      <Filter>Source Files\vendor\implot</Filter>
+    </None>
+    <None Include="vendor\implot\README.md">
+      <Filter>Source Files\vendor\implot</Filter>
+    </None>
+    <None Include="vendor\implot\TODO.md">
+      <Filter>Source Files\vendor\implot</Filter>
+    </None>
+    <None Include="shadow_depth.vs">
+      <Filter>Source Files\utils\shader</Filter>
+    </None>
+    <None Include="shadow_depth.fs">
+      <Filter>Source Files\utils\shader</Filter>
+    </None>
+    <None Include="point_shadow_depth.gs">
+      <Filter>Source Files\utils\shader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="window.h">
+      <Filter>Source Files\window</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Source Files\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\imconfig.h">
+      <Filter>Source Files\vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\imgui.h">
+      <Filter>Source Files\vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\imgui_internal.h">
+      <Filter>Source Files\vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\imstb_rectpack.h">
+      <Filter>Source Files\vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\imstb_textedit.h">
+      <Filter>Source Files\vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\imstb_truetype.h">
+      <Filter>Source Files\vendor\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\backends\imgui_impl_opengl3.h">
+      <Filter>Source Files\vendor\imgui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="interface.h">
+      <Filter>Source Files\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\imgui\backends\imgui_impl_glfw.h">
+      <Filter>Source Files\vendor\imgui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\ft2build.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\freetype.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftadvanc.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftbbox.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftbdf.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftbitmap.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftbzip2.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftcache.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftchapters.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftcid.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftcolor.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftdriver.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\fterrdef.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\fterrors.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftfntfmt.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftgasp.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftglyph.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftgxval.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftgzip.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftimage.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftincrem.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftlcdfil.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftlist.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftlogging.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftlzw.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftmac.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftmm.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftmodapi.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftmoderr.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftotval.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftoutln.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftparams.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftpfr.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftrender.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftsizes.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftsnames.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftstroke.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftsynth.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftsystem.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\fttrigon.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\fttypes.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ftwinfnt.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\otsvg.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\t1tables.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\ttnameid.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\tttables.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\freetype-2.14.1\include\freetype\tttags.h">
+      <Filter>Source Files\vendor\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\implot\implot.h">
+      <Filter>Source Files\vendor\implot</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\implot\implot_internal.h">
+      <Filter>Source Files\vendor\implot</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_s.h">
+      <Filter>Source Files\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\athilah\Downloads\ImGuizmo-master\ImGuizmo\example\stb_image.h">
+      <Filter>Source Files\vendor</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\athilah\Downloads\stb_image.h">
+      <Filter>Source Files\vendor\imguizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="pipeline.h">
+      <Filter>Source Files\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGuizmo\GraphEditor.h">
+      <Filter>Source Files\vendor\imguizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGuizmo\ImCurveEdit.h">
+      <Filter>Source Files\vendor\imguizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGuizmo\ImGradient.h">
+      <Filter>Source Files\vendor\imguizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGuizmo\ImGuizmo.h">
+      <Filter>Source Files\vendor\imguizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGuizmo\ImSequencer.h">
+      <Filter>Source Files\vendor\imguizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGuizmo\ImZoomSlider.h">
+      <Filter>Source Files\vendor\imguizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\glad\include\glad\glad.h">
+      <Filter>Source Files\vendor\glad\include\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\glad\include\KHR\khrplatform.h">
+      <Filter>Source Files\vendor\glad\include\KHR</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\Audio-1.0.1\inc\Audio\Config.hpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\Audio-1.0.1\inc\Audio\Device.hpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\Audio-1.0.1\inc\Audio\Listener.hpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\Audio-1.0.1\inc\Audio\Sound.hpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\Audio-1.0.1\inc\Audio\Vector.hpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\Audio-1.0.1\inc\Audio\Waveform.hpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\Audio-1.0.1\src\ListenerImpl.hpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\Audio-1.0.1\src\miniaudio.h">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\Audio-1.0.1\src\SoundImpl.hpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\Audio-1.0.1\src\WaveformImpl.hpp">
+      <Filter>Source Files\vendor\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>Source Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineConfig.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="saveSystem.h">
+      <Filter>Source Files\saved</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Source Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="environment.h">
+      <Filter>Source Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="random.h">
+      <Filter>Source Files\utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="C:\Users\athilah\Downloads\arial\ARIAL.TTF">
+      <Filter>Source Files\utils\fonts</Filter>
+    </Font>
+  </ItemGroup>
+</Project>

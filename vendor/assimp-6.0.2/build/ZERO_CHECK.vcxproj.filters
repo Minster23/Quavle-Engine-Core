@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\project\Quavle-Engine\Quavle-Engine\vendor\assimp-6.0.2\build\CMakeFiles\f18e6a7fefa2e1924da9b410a6f27d12\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{79B45A84-A308-396C-9440-EC4300A307FB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
