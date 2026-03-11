@@ -13,34 +13,6 @@ using namespace interface;
 
 namespace
 {
-    GLuint getFBO(GLuint tex)
-    {
-        GLuint fbo;
-        glGenFramebuffers(1, &fbo);
-        glBindFramebuffer(GL_FRAMEBUFFER, fbo);
-        glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, tex, 0);
-
-        if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
-        {
-            glBindFramebuffer(GL_FRAMEBUFFER, 0);
-            glDeleteFramebuffers(1, &fbo);
-            return 0;
-        }
-
-        glBindFramebuffer(GL_FRAMEBUFFER, 0);
-        return fbo;
-    }
-
-    GLuint getActiveCameraFBO()
-    {
-        if (!gameobjects.activeCamera || gameobjects.activeCamera->fbo == 0)
-        {
-            return 0;
-        }
-
-        return gameobjects.activeCamera->fbo;
-    }
-
     void displayTexture(GLuint textureId, std::string_view label)
     {
         ImGui::BeginGroup();
@@ -137,8 +109,6 @@ void components::Transform::renderUI()
         ImGui::Spacing();
         ImGui::Text("Scale");
         ImGui::DragFloat3("##Scale", glm::value_ptr(scale), 0.01f, 0.01f, 10.0f);
-
-        ImGui::PopItemWidth();
     }
 }
 
@@ -155,7 +125,6 @@ void components::Material::renderUI()
         ImGui::SliderFloat("Emissive Power", &emissivePower, 0.0f, 10.0f, "%.1f");
         ImGui::SliderFloat("Normal Strength", &normalStrength, 0.0f, 10.0f, "%.1f");
 
-        ImGui::PopItemWidth();
     }
 }
 
@@ -239,8 +208,6 @@ void components::Light::renderUI()
             innerCutoff = glm::radians(12.5f);
             outerCutoff = glm::radians(30.0f);
         }
-
-        ImGui::PopItemWidth();
     }
 }
 
@@ -267,33 +234,6 @@ void components::Camera::renderUI()
         ImGui::Text("Aspect Ratio: %.2f:1", aspect);
         ImGui::Text("Resolution: %.0f x %.0f", aspect * 100.0f, 100.0f);
 
-        // Preview section
-        ImGui::Separator();
-        if (ImGui::TreeNode("Preview"))
-        {
-            GLuint cameraFBO = getActiveCameraFBO();
-            if (cameraFBO != 0 && tex != 0)
-            {
-                ImVec2 previewSize = ImGui::GetContentRegionAvail();
-                previewSize.y = previewSize.x / aspect;
-
-                ImGui::Image(reinterpret_cast<void*>(static_cast<intptr_t>(tex)),
-                    previewSize,
-                    ImVec2(0, 1),
-                    ImVec2(1, 0));
-
-                // Preview info
-                ImGui::TextDisabled("Camera Feed");
-            }
-            else
-            {
-                ImGui::TextColored(ImVec4(1.0f, 0.5f, 0.5f, 1.0f),
-                    "No camera feed available");
-            }
-            ImGui::TreePop();
-        }
-
-        ImGui::PopItemWidth();
     }
 }
 
@@ -365,7 +305,6 @@ void components::Audio::renderUI()
             ImGui::TextDisabled("No audio loaded");
         }
 
-        ImGui::PopItemWidth();
     }
 }
 
@@ -373,9 +312,7 @@ void item::Text::renderUI()
 {
     if (ImGui::CollapsingHeader("Text Properties", ImGuiTreeNodeFlags_DefaultOpen))
     {
-        ImGui::PushItemWidth(-FLT_MIN * 0.5f);
 
-        // Text content
         static char textBuffer[1024] = { 0 };
         std::copy_n(content.begin(), std::min(content.size(), sizeof(textBuffer) - 1), textBuffer);
         textBuffer[std::min(content.size(), sizeof(textBuffer) - 1)] = '\0';
@@ -388,33 +325,8 @@ void item::Text::renderUI()
 
         ImGui::Separator();
 
-        // Text appearance
         ImGui::SliderFloat("Scale", &scale, 0.1f, 10.0f, "%.2f");
         ImGui::ColorEdit3("Color", glm::value_ptr(color));
-
-        // Target camera
-        static char camBuffer[128] = { 0 };
-        std::copy_n(renderToCam.begin(), std::min(renderToCam.size(), sizeof(camBuffer) - 1), camBuffer);
-        camBuffer[std::min(renderToCam.size(), sizeof(camBuffer) - 1)] = '\0';
-
-        if (ImGui::InputText("Render to Camera", camBuffer, sizeof(camBuffer)))
-        {
-            renderToCam = camBuffer;
-        }
-
-        // Quick color presets
-        ImGui::Separator();
-        ImGui::Text("Presets:");
-
-        if (ImGui::Button("White")) color = glm::vec3(1.0f);
-        ImGui::SameLine();
-        if (ImGui::Button("Red")) color = glm::vec3(1.0f, 0.2f, 0.2f);
-        ImGui::SameLine();
-        if (ImGui::Button("Green")) color = glm::vec3(0.2f, 1.0f, 0.2f);
-        ImGui::SameLine();
-        if (ImGui::Button("Blue")) color = glm::vec3(0.2f, 0.2f, 1.0f);
-
-        ImGui::PopItemWidth();
     }
 }
 
@@ -425,10 +337,9 @@ void item::container::renderUI()
         ImGui::Text("UUID: %s", UUID.c_str());
         ImGui::Separator();
 
-        // Add items section
-        ImGui::Text("Add Items:");
+        ImGui::Text("Items:");
         ImGui::BeginGroup();
-
+        ImGui::Checkbox("Overlay Editor", &overlayEditor);
         if (ImGui::Button("Add Text"))
         {
             std::string entityId = GenerateRandomID();
@@ -445,78 +356,6 @@ void item::container::renderUI()
         }
 
         ImGui::EndGroup();
-
-        ImGui::Separator();
-
-        // List of items in container
-        if (!itemListID.empty())
-        {
-            if (ImGui::TreeNodeEx("Items", ImGuiTreeNodeFlags_DefaultOpen))
-            {
-                for (const auto& itemID : itemListID)
-                {
-                    if (!item::item_itemData.contains(itemID))
-                        continue;
-
-                    auto& itemData = item::item_itemData[itemID];
-                    bool isText = item::item_text.contains(itemID);
-
-                    ImGui::PushID(itemID.c_str());
-
-                    // Item header with visibility toggle
-                    ImGui::AlignTextToFramePadding();
-                    ImGui::Checkbox("##Visible", &itemData.show_);
-                    ImGui::SameLine();
-
-                    std::string nodeLabel = std::format("{} ({})",
-                        isText ? "Text" : "Empty",
-                        itemID.substr(0, 8));
-
-                    if (ImGui::TreeNodeEx(nodeLabel.c_str(), ImGuiTreeNodeFlags_DefaultOpen))
-                    {
-                        // Render item-specific UI
-                        if (isText)
-                        {
-                            item::item_text[itemID].renderUI();
-                        }
-
-                        if (item::item_position.contains(itemID))
-                        {
-                            item::item_position[itemID].renderUI();
-                        }
-
-                        // Remove button
-                        ImGui::Spacing();
-                        if (ImGui::Button("Remove"))
-                        {
-                            // Mark for removal (handle removal outside this loop)
-                            itemData.show_ = false;
-                        }
-
-                        ImGui::TreePop();
-                    }
-
-                    ImGui::PopID();
-                }
-                ImGui::TreePop();
-            }
-        }
-        else
-        {
-            ImGui::TextDisabled("No items in container");
-        }
-
-        // Remove hidden items
-        auto it = std::remove_if(itemListID.begin(), itemListID.end(),
-            [](const std::string& id) {
-                auto dataIt = item::item_itemData.find(id);
-                return dataIt == item::item_itemData.end() || !dataIt->second.show_;
-            });
-
-        if (it != itemListID.end())
-        {
-            itemListID.erase(it, itemListID.end());
-        }
     }
 }
 
@@ -530,7 +369,6 @@ void item::position::renderUI()
         ImGui::DragFloat("X", &x, 1.0f, -1000.0f, 1000.0f, "%.0f px");
         ImGui::DragFloat("Y", &y, 1.0f, -1000.0f, 1000.0f, "%.0f px");
 
-        // Quick position presets
         ImGui::Separator();
         ImGui::Text("Presets:");
 
@@ -553,7 +391,5 @@ void item::position::renderUI()
             x = 400.0f;
             y = -300.0f;
         }
-
-        ImGui::PopItemWidth();
     }
 }

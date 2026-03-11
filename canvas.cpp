@@ -3,6 +3,7 @@
 #include "window.h"
 #include "scene.h"
 #include "interface.h"
+#include "game.h"
 #include <imgui.h>
 
 #include <ft2build.h>
@@ -19,6 +20,7 @@ using namespace entity::canvas;
 using namespace window;
 using namespace scene;
 using namespace interface;
+using namespace game;
 
 windowsHandler windsHemndls;
 
@@ -36,6 +38,7 @@ std::unordered_map<std::string, item::Shader> item::item_shader;
 std::unordered_map<std::string, item::container> item::item_container;
 std::unordered_map<std::string, item::Text> item::item_text;
 std::map<char, item::Character> item::characters;
+std::vector<std::string> item::textFontList;
 GLuint item::textVAO, item::textVBO;
 
 void item::LoadFont(const char* Font_Path)
@@ -111,16 +114,40 @@ void item::LoadFont(const char* Font_Path)
     glBindVertexArray(0);
 }
 
+#if WITH_EDITOR
+
+struct ShaderLocations {
+    std::string MeshFragmentShader;
+    std::string MeshVertexShader;
+
+    void Init()
+    {
+        MeshFragmentShader = gameData.projectLocation + "\\saveData\\shader\\textFrag.fs";
+        MeshVertexShader = gameData.projectLocation + "\\saveData\\shader\\textVert.vs";
+    }
+}shaderLocs;
+
+#else
+
+struct ShaderLocations {
+    std::string MeshFragmentShader = "\\game\\shader\\textFrag.quashader";
+    std::string MeshVertexShader = "\\game\\shader\\textVert.quashader";
+    void Init() {}
+
+}shaderLocs;
+#endif
+
 void item::addItem(const char* UUID, const char* name, type itemType, const char* parentID)
 {
+	shaderLocs.Init();
     if (itemType == type::TEXT)
     {
 		components::entity_data[UUID] = components::Data{ name, parentID, UUID, true, components::type::OTHER };
+        LoadFont("");
         item::item_itemData[UUID] = { UUID, true };
         item::item_text[UUID] = { "Hello World", 1.0f, {1,1,1}, "" };
         item::item_position[UUID] = { 100.0f, 100.0f };
-		item::item_shader[UUID] = { gameobjects.loadShader("textVert.vs", "textFrag.fs", UUID), false};
-		item::LoadFont("ARIAL.ttf");
+		item::item_shader[UUID] = { gameobjects.loadShader(shaderLocs.MeshVertexShader.c_str(), shaderLocs.MeshFragmentShader.c_str(), UUID), false};
     }
     if (itemType == type::HOLDER)
     {
@@ -145,7 +172,6 @@ void item::draw()
 
         glm::mat4 projection = glm::ortho(0.0f, (float)windsHemndls.width,
             0.0f, (float)windsHemndls.height);
-
 
         glUniformMatrix4fv(glGetUniformLocation(shaderComp.ShaderProgram, "projection"),
             1, GL_FALSE, glm::value_ptr(projection));

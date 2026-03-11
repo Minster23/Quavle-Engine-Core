@@ -5,30 +5,60 @@
 
 #include "entity.h"
 #include "saveSystem.h"
-#include "window.h"
+#include "game.h"
 
 using namespace saved;
 using namespace entity;
 using namespace entity::canvas;
-using namespace window;
-using namespace Quavle;
+using namespace QuavleData;
+using namespace QuaveleShaderFormater;
+using namespace game;
 
-SaveOptions options;
-Saver saver;
-Loader loader;
+namespace saved
+{
+    savesystem saveSystem;
+	saved::savePaths SavePath;
+}
 
-void saved::savesystem::save() 
+void saveMetadata()
+{
+    QuavleData::Light MetaData;
+
+    MetaData.setString("GameName", game::gameData.gamePlayName);
+    MetaData.setString("AuthorName", game::gameData.authorName);
+    MetaData.setString("Version", game::gameData.version);
+
+   
+    MetaData.saveToFile(gameData.projectLocation + saved::SavePath.metadata);
+}
+
+void saved::savesystem::save()
 {
 #if WITH_EDITOR
+    saveMetadata();
+#else
 
 #endif
 }
 
-void saved::savesystem::load() 
+std::string saved::savesystem::gamePlayName()
+{
+    QuavleData::Light LoadedData;
+    std::string name = "QUAVLE ENGINE";
+
+    if (LoadedData.loadFromFile(gameData.projectLocation + saved::SavePath.metadata))
+    {
+        name = LoadedData.getString("GameName");
+    }
+
+    return name;
+}
+
+void saved::savesystem::load()
 {
 #if WITH_EDITOR
-	std::cout << "Load Game Projects\n";
+    std::cout << "Load Game Projects" << std::endl;
 #else
-	std::cout << "Load Game Assets\n";
+
 #endif
 }

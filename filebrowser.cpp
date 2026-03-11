@@ -1,6 +1,5 @@
 #include "interface.h"
 #include <glad/glad.h>
-#include "window.h"
 #include "entity.h"
 #include <iostream>
 #include <filesystem>
@@ -8,38 +7,26 @@
 #include "stb_image.h"
 #include <unordered_map>
 #include <string_view>
+#include "game.h"
+#include "IconsFontAwesome6.h"
+
 
 using namespace interface;
-using namespace window;
 using namespace entity;
 using namespace entity::importers;
+using namespace game;
 namespace fs = std::filesystem;
 
-bool interfaces::componentsInterfaces::fileExplorer_ = true;
-window::windowsHandler wndF;
+namespace
+{
+    std::unordered_map<std::string, std::vector<std::string>> fileCache;
+	std::unordered_map<std::string, unsigned int> textureCache;
 
-struct IconCache {
-    unsigned int folder = 0;
-    unsigned int defaultFile = 0;
-    unsigned int image = 0;
-    unsigned int model3D = 0;
+    unsigned int loadTexture(const std::string& path) {
 
-    void initialize(const std::string& iconPath) {
-        folder = loadTexture(iconPath + "folder.png");
-        defaultFile = loadTexture(iconPath + "file.png");
-        image = loadTexture(iconPath + "image.png");
-        model3D = loadTexture(iconPath + "3D.png");
-    }
+		if (textureCache.find(path) != textureCache.end())
+            return textureCache[path];
 
-    void cleanup() {
-        glDeleteTextures(1, &folder);
-        glDeleteTextures(1, &defaultFile);
-        glDeleteTextures(1, &image);
-        glDeleteTextures(1, &model3D);
-    }
-
-private:
-    static unsigned int loadTexture(const std::string& path) {
         unsigned int textureID;
         glGenTextures(1, &textureID);
         glBindTexture(GL_TEXTURE_2D, textureID);
@@ -63,103 +50,220 @@ private:
             return 0;
         }
 
+        textureCache[path] = textureID;
+
         return textureID;
     }
-};
 
-static IconCache iconCache;
-static bool iconsInitialized = false;
-
-struct Settings {
-    int columns = 5;
-    float iconSize = 32.0f;
-    ImVec2 iconButtonSize{ 32.0f, 32.0f };
-    ImVec4 buttonBgColor{ 0, 0, 0, 0 };
-};
-
-static Settings settings;
-
-unsigned int getIconForExtension(std::string_view ext) {
-    static const std::unordered_map<std::string_view, unsigned int*> extensionMap = {
-        {".png", &iconCache.image},
-        {".jpg", &iconCache.image},
-        {".jpeg", &iconCache.image},
-        {".gltf", &iconCache.model3D},
-        {".glb", &iconCache.model3D}
-    };
-
-    auto it = extensionMap.find(ext);
-    return it != extensionMap.end() ? *it->second : iconCache.defaultFile;
-}
-
-void clickHandler(std::string ext, std::string fileLoc, std::string foldLoc)
-{
-    if(ext == ".gltf" || ext == ".obj" || ext == ".fbx")
+    bool openFile(const std::string& path, std::string type)
     {
-        Entity_Importer.load(fileLoc.c_str(), foldLoc.c_str());
+		if (type == ".txt" || type == ".lua" || type == ".cpp")
+        {
+			Interfaces.setCodeEditorOpened(path);
+            return true;
+        }
+        else
+        {
+            std::cerr << "Unsupported file type: " << type << std::endl;
+            return false;
+        }
+    }
+
+    static std::string currentPath;
+	static std::vector<std::string> HistoryDir;
+}
+
+bool interfaces::componentsInterfaces::fileExplorer_ = true;
+
+std::string fileIcon(std::string type)
+{
+    std::string Icon;
+	if (type == ".txt" || type == ".docx" || type == ".pdf")
+		Icon = ICON_FA_FILE_LINES;
+	else if (type == ".png" || type == ".jpg" || type == ".jpeg" || type == ".bmp")
+		Icon = ICON_FA_FILE_IMAGE;
+	else if (type == ".mp4" || type == ".avi" || type == ".mkv")
+		Icon = ICON_FA_FILE_VIDEO;
+	else if (type == ".mp3" || type == ".wav" || type == ".ogg")
+		Icon = ICON_FA_FILE_AUDIO;
+    else if (type == ".cpp" || type == ".h" || type == ".hpp" || type == ".cs")
+        Icon = ICON_FA_FILE_CODE;
+    else if (type == ".zip" || type == ".rar" || type == ".7z")
+        Icon = ICON_FA_FILE_ZIPPER;
+    else
+		Icon = ICON_FA_FILE;
+    return Icon;
+}
+
+void fileList()
+{
+    fs::path dir_path{ currentPath };
+
+    int counter = 0;
+    int foundFiles = 0;
+
+    try {
+        for (const auto& entry : fs::directory_iterator(dir_path)) {
+            counter++;
+            if (fileCache[currentPath].size() <= counter && !entry.is_directory())
+            {
+                foundFiles++;
+                fileCache[currentPath].push_back(entry.path().filename().string());
+            }
+            if (foundFiles == counter)
+            {
+                counter = 0;
+                foundFiles = 0;
+                break;
+            }
+        }
+    }
+    catch (const fs::filesystem_error& e) {
+        std::cerr << "Filesystem error: " << e.what() << std::endl;
+    }
+
+    auto& files = fileCache[currentPath];
+    ImGuiIO& io = ImGui::GetIO();
+
+    ImFont* ICON_FONT = io.Fonts->AddFontFromFileTTF("fonts/fa-solid-900.ttf", 30.0f);
+    ImFont* TEXT_FONT = io.Fonts->AddFontFromFileTTF("fonts/arial.ttf", 16.0f);
+
+    int P = 0;
+    int limit = 7;
+
+    for (const auto& file : files) {
+        ImGui::PushID(P);
+		fs::path filePath = dir_path / file;
+		fs::path ext = filePath.extension();
+        std::string ext_str = ext.string();
+
+        ImVec2 cellSize = { 80, 80 };
+        ImGui::BeginGroup();
+
+        ImVec2 start = ImGui::GetCursorScreenPos();
+		if (ImGui::InvisibleButton("cell", cellSize))
+        {
+            openFile(filePath.string(), ext_str);
+        }
+
+        ImVec2 iconSize = ImGui::CalcTextSize(fileIcon(ext_str).c_str());
+
+        ImGui::SetCursorScreenPos({
+            start.x + (cellSize.x - iconSize.x) * 0.5f,
+            start.y + (cellSize.y - iconSize.y) * 0.4f
+            });
+
+        ImGui::PushFont(ICON_FONT);
+
+        if(ext_str == ".jpg" || ext_str == ".jpeg" || ext_str == ".png" || ext_str == ".bmp" )
+			ImGui::Image((void*)(intptr_t)loadTexture((dir_path / file).string()), ImVec2(40, 40));
+		else
+            ImGui::Text("%s", fileIcon(ext_str).c_str());
+
+        ImGui::PopFont();
+
+        std::string name = file;
+        if (name.length() > 10) name = name.substr(0, 10) + "...";
+
+        ImVec2 textSize = ImGui::CalcTextSize(name.c_str());
+
+        ImGui::SetCursorScreenPos({
+            start.x + (cellSize.x - textSize.x) * 0.5f,
+            start.y + cellSize.y - 18
+            });
+
+        ImGui::PushFont(TEXT_FONT);
+        ImGui::Text("%s", name.c_str());
+        ImGui::PopFont();
+
+        ImGui::EndGroup();
+        ImGui::PopID();
+
+        if ((P + 1) % limit != 0)
+            ImGui::SameLine();
+
+        P++;
     }
 }
 
-void interfaces::componentsInterfaces::fileExplorer() {
-    if (!iconsInitialized) {
-        iconCache.initialize(fs::current_path().string() + "\\fonts\\icons\\");
-        iconsInitialized = true;
-    }
+void drawDirectory(const std::filesystem::path& path)
+{
+    for (const auto& entry : std::filesystem::directory_iterator(path))
+    {
+        if (!entry.is_directory()) continue;
 
-    const std::string& currentPath = wndF.project_location;
+        std::string name = entry.path().filename().string();
+        std::string label = std::string(ICON_FA_FOLDER) + " " + name;
+
+        if (ImGui::TreeNode(label.c_str()))
+        {
+            if (ImGui::IsItemClicked())
+            {
+				HistoryDir.push_back(currentPath);
+                currentPath = entry.path().string();
+            }
+
+            drawDirectory(entry.path());
+
+            ImGui::TreePop();
+        }
+        else
+        {
+            if (ImGui::IsItemClicked())
+            {
+                HistoryDir.push_back(currentPath);
+                currentPath = entry.path().string();
+            }
+        }
+    }
+}
+
+void directoryList(std::string FileLoc)
+{
+    std::filesystem::path dir_path{ FileLoc };
+
+    ImGui::BeginChild("Directory List", ImVec2(0, 0), true);
+    drawDirectory(dir_path);
+    ImGui::EndChild();
+}
+
+void interfaces::componentsInterfaces::fileExplorer() 
+{
+    if (currentPath.empty())
+        currentPath = game::gameData.projectLocation;
 
     ImGui::Begin("File Explorer", &fileExplorer_, ImGuiWindowFlags_NoCollapse);
-
-    if (ImGui::Button("Back")) {
-        fs::path path(currentPath);
-        if (path != path.root_path()) {
-            wndF.project_location = path.parent_path().string();
-        }
-    }
-
+    if (ImGui::Button(ICON_FA_HOUSE))
+        currentPath = game::gameData.projectLocation;
     ImGui::SameLine();
-    ImGui::Text("%s", currentPath.c_str());
 
-    ImGui::Separator();
-    ImGui::Columns(settings.columns, "file_explorer_columns", false);
-
-    int id = 0;
-    for (const auto& entry : fs::directory_iterator(currentPath)) {
-        ImGui::PushID(id++);
-
-        unsigned int icon;
-        bool isDirectory = entry.is_directory();
-
-        if (isDirectory) {
-            icon = iconCache.folder;
+	if (currentPath != game::gameData.projectLocation)
+    {
+        if (ImGui::Button(ICON_FA_BACKWARD_STEP))
+        {
+            currentPath = HistoryDir.back();
+            HistoryDir.pop_back();
         }
-        else {
-            icon = getIconForExtension(entry.path().extension().string());
-        }
-
-        if (ImGui::ImageButton(
-            entry.path().filename().string().c_str(),
-            (ImTextureID)(intptr_t)icon,
-            settings.iconButtonSize,
-            ImVec2(0, 0),
-            ImVec2(1, 1),
-            settings.buttonBgColor
-        )) {
-            if (isDirectory) {
-                wndF.project_location = entry.path().string();
-            }
-            else {
-				clickHandler(entry.path().extension().string(), entry.path().string(), entry.path().parent_path().string());
-            }
-        }
-
-        const std::string filename = entry.path().filename().string();
-        ImGui::TextWrapped("%s", filename.c_str());
-
-        ImGui::PopID();
-        ImGui::NextColumn();
+        ImGui::SameLine();
     }
+
+	ImGui::Text(currentPath.c_str());
+
+	ImGui::BeginChild("File List", ImVec2(0, 0), true);
+    ImGui::Columns(2);
+
+    ImGui::Text("Folder");
+    ImGui::NextColumn();
+    ImGui::Text("Files");
+    ImGui::NextColumn();
+
+	directoryList(currentPath);
+    ImGui::NextColumn();
+    fileList();
+    ImGui::NextColumn();
 
     ImGui::Columns(1);
+	ImGui::EndChild();
+
     ImGui::End();
 }

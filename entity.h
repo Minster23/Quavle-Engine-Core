@@ -129,7 +129,6 @@ namespace entity
 
         struct Camera
         {
-
             void renderUI();
             float fov = 60.0f;
             float nearPlane = 0.1f;
@@ -138,12 +137,19 @@ namespace entity
             bool isActive = true;
 			bool isMain = false;
             GLuint fbo, tex, rbo;
+            GLsizei width = 1920, height = 1080;
+
 
             glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f);
             glm::vec3 rotation = glm::vec3(0.0f);
 
             glm::mat4 viewMatrix;
             glm::mat4 projectionMatrix;
+
+            void create_framefuffer();
+            void rescale_framebuffer(float width, float height);
+            void bind();
+            void unbind();
 
             void UpdateProjection()
             {
@@ -249,7 +255,6 @@ namespace entity
     }                                                     \
 }
 
-
         struct CompoenentsList
         {
             std::string name;
@@ -298,9 +303,9 @@ namespace entity
     {
         class item 
         {
-
         public:
             static GLuint textVAO, textVBO;
+            static std::vector<std::string> textFontList;
             struct Character
             {
                 GLuint TextureID;
@@ -336,6 +341,7 @@ namespace entity
 				std::string UUID = "";
 				std::vector<std::string> itemListID;
                 void renderUI();
+				bool overlayEditor = false;
             };
 
             struct Shader

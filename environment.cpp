@@ -1,9 +1,12 @@
+#include <glad/glad.h>
+
 #include "environment.h"
 #include "imgui.h"
 #include "scene.h"
+#include "entity.h"
 
 using namespace scene;
-
+using namespace entity;
 namespace environment
 {
 	environment_properties Environment_Properties;
@@ -47,4 +50,35 @@ void environment_properties::env::renderUI()
 		this->isCreated = true;
 		this->sceneID = scenesHandler.currentSceneName();
 	}
+}
+
+void environment_properties::localEnv()
+{
+	bool found = false;
+	bool cubeMap = false;
+
+	for (const auto& pair : environment::environment_properties::Enviroments) {
+		if (pair.second.isCreated &&
+			pair.second.sceneID == scenesHandler.currentSceneName() &&
+			pair.second.useCubemap == false)
+		{
+			glClearColor(
+				pair.second.cubeMapcolour.r,
+				pair.second.cubeMapcolour.g,
+				pair.second.cubeMapcolour.b,
+				pair.second.cubeMapcolour.a
+			);
+			found = true;
+			cubeMap = pair.second.useCubemap;
+			break;
+		}
+	}
+
+	if (!found && !cubeMap) {
+		glClearColor(0.82f, 0.87f, 0.98f, 1.0f);
+	}
+
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
 }

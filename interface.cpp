@@ -1,9 +1,12 @@
-#include "interface.h"
+﻿#include "interface.h"
 #include "window.h"
 #include "scene.h"
 #include "entity.h"
 #include "game.h"
 #include "environment.h"
+#include "build.h"
+#include "random.h"
+#include "IconsFontAwesome6.h"
 
 #include <imgui.h>
 #include <imgui_internal.h>
@@ -14,18 +17,41 @@
 
 using namespace interface;
 using namespace window;
-using namespace entity;
 using namespace saved;
 using namespace scene;
 using namespace game;
 using namespace environment;
+using namespace build;
+using namespace entity;
 
 windowsHandler wndHandler;
+
+namespace interface
+{
+    interfaces Interfaces;
+
+    ViewportRect sceneViewport;
+};
 
 void Theme(ImGuiIO& io)
 {
     ImGuiStyle& style = ImGui::GetStyle();
     ImVec4* colors = style.Colors;
+
+    ImFont* font = io.Fonts->AddFontFromFileTTF("fonts/arial.ttf", 16.0f);
+
+    static const ImWchar icons_ranges[] = { 0xf000, 0xf3ff, 0 };
+
+    ImFontConfig icons_config;
+    icons_config.MergeMode = true;
+    icons_config.PixelSnapH = true;
+
+    io.Fonts->AddFontFromFileTTF(
+        "fonts/fa-solid-900.ttf",
+        16.0f,
+        &icons_config,
+        icons_ranges
+    );
 
     // ===============================
     // Layout & Spacing
@@ -122,11 +148,31 @@ void Theme(ImGuiIO& io)
     style.ScaleAllSizes(io.FontGlobalScale);
 }
 
-
-namespace interface
+void interface::interfaces::viewport(std::string title, unsigned int tex)
 {
-	interfaces Interfaces;
-};
+    ImGui::Begin(title.c_str());
+
+    ImVec2 avail = ImGui::GetContentRegionAvail();
+    ImVec2 pos = ImGui::GetCursorScreenPos();
+
+    sceneViewport.x = pos.x;
+    sceneViewport.y = pos.y;
+    sceneViewport.width = avail.x;
+    sceneViewport.height = avail.y;
+
+    ImGui::Image(
+        (ImTextureID)(intptr_t)tex,
+        avail,
+        ImVec2(0, 1),
+        ImVec2(1, 0)
+    );
+    ImGui::SetNextItemAllowOverlap();
+
+    if(title != "Game")
+        interfaces::componentsInterfaces::guizmo();
+
+    ImGui::End();
+}
 
 bool interface::interfaces::init()
 {
@@ -135,6 +181,7 @@ bool interface::interfaces::init()
 
     ImGuiIO& io = ImGui::GetIO();
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+    io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
     ImGui::StyleColorsDark();
 
@@ -152,7 +199,7 @@ void interface::interfaces::componentsInterfaces::menuBar()
     ImGui::TextUnformatted("Quavle Editor");
     ImGui::Separator();
 
-    if (ImGui::Button("Play"))
+    if (ImGui::Button(ICON_FA_PLAY))
     {
         scenesHandler.setPlayMode(true);
         GameState.control_state = states::controlState::GAMEPLAY;
@@ -162,16 +209,17 @@ void interface::interfaces::componentsInterfaces::menuBar()
 
     ImGui::SameLine();
 
-    if (ImGui::Button("Stop"))
+    if (ImGui::Button(ICON_FA_STOP))
     {
         scenesHandler.setPlayMode(false);
         GameState.control_state = states::controlState::EDITOR;
         GameState.game_state = states::gameState::PAUSE;
+        profiler_ = false;
     }
 
     ImGui::Separator();
 
-    if (ImGui::BeginMenu("File"))
+    if (ImGui::BeginMenu(ICON_FA_LAPTOP_FILE " File"))
     {
         if (ImGui::MenuItem("Save", "Ctrl+S"))
             saveSystem.save();
@@ -183,45 +231,62 @@ void interface::interfaces::componentsInterfaces::menuBar()
     }
 
     // ===== Window Menu =====
-    if (ImGui::BeginMenu("Window"))
+    if (ImGui::BeginMenu(ICON_FA_PERSON_THROUGH_WINDOW " Window"))
     {
         ImGui::MenuItem("Hierarchy", nullptr, &hirarcy_);
         ImGui::MenuItem("Inspector", nullptr, &inspector_);
         ImGui::MenuItem("Scene Manager", nullptr, &sceneManager_);
         ImGui::MenuItem("File Browser", nullptr, &fileExplorer_);
+        ImGui::MenuItem("Build", nullptr, &buildWindow_);
         ImGui::EndMenu();
     }
 
     // ===== Debug Menu =====
-    if (ImGui::BeginMenu("Debug"))
+    if (ImGui::BeginMenu(ICON_FA_BUG_SLASH " Debug"))
     {
         ImGui::MenuItem("Profiler", nullptr, &profiler_);
         ImGui::EndMenu();
     }
 
-    // ===== Scene Info =====
+    if (ImGui::BeginMenu(ICON_FA_HAMMER " Compile"))
+    {
+		if (ImGui::MenuItem("Compile Shader"))
+        {
+            Compile.compileShaders("Null");
+        }
+        ImGui::EndMenu();
+    }
+
     ImGui::Separator();
     ImGui::Text("Scene: %s", scenesHandler.currentSceneName());
 
     ImGui::EndMainMenuBar();
 }
 
-
 void interface::interfaces::draw()
 {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
+
+    ImGui::DockSpaceOverViewport();
+
     componentsInterfaces::menuBar();
     componentsInterfaces::profiler(interfaces::componentsInterfaces::profiler_);
-    if(GameState.game_state == states::gameState::PAUSE)
-    {
-        interfaces::componentsInterfaces::hirarcy();
-        interfaces::componentsInterfaces::inspector();
-        interfaces::componentsInterfaces::scenesManager();
-        interfaces::componentsInterfaces::fileExplorer();
-        interfaces::componentsInterfaces::guizmo();
-    }
+
+    if (interfaces::componentsInterfaces::profiler_)interfaces::componentsInterfaces::floatingInfo();
+    interfaces::componentsInterfaces::hirarcy();
+    interfaces::componentsInterfaces::inspector();
+    interfaces::componentsInterfaces::scenesManager();
+    interfaces::componentsInterfaces::fileExplorer();
+    interfaces::componentsInterfaces::buildWindow();
+    interfaces::componentsInterfaces::canvasOverlay();
+    interfaces::componentsInterfaces::detailItem();
+	interfaces::componentsInterfaces::codeEditor();
+
+    viewport("Game", gameobjects.activeCamera->tex);
+    viewport("Scene", componentss.entity_camera["ENGINE_CAM"].tex);
+
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }

@@ -21,6 +21,8 @@ namespace environment
 			void renderUI();
 		} default_env;
 
+		void localEnv();
+
 		static std::unordered_map<std::string, env> Enviroments;
 	};
 

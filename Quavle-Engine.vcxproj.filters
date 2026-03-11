@@ -77,6 +77,15 @@
     <Filter Include="Source Files\entity\components widget">
       <UniqueIdentifier>{c14da9a0-b96e-4b60-9a57-e213e118fc33}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\vendor\imgui\misc">
+      <UniqueIdentifier>{a0ff72cd-b9ae-4112-bda1-43bfd80c938b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{a872118a-c974-495b-86e2-34e1ebe67cf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\build">
+      <UniqueIdentifier>{d591e0a5-abbc-4083-9aa9-f1c3c6225d14}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -136,9 +145,6 @@
     <ClCompile Include="guizmo.cpp">
       <Filter>Source Files\interface\compenents</Filter>
     </ClCompile>
-    <ClCompile Include="shadow.cpp">
-      <Filter>Source Files\pipeline</Filter>
-    </ClCompile>
     <ClCompile Include="vendor\ImGuizmo\GraphEditor.cpp">
       <Filter>Source Files\vendor\imguizmo</Filter>
     </ClCompile>
@@ -193,14 +199,8 @@
     <ClCompile Include="scenes.cpp">
       <Filter>Source Files\interface\compenents</Filter>
     </ClCompile>
-    <ClCompile Include="postprocessing.cpp">
-      <Filter>Source Files\pipeline</Filter>
-    </ClCompile>
     <ClCompile Include="saveSystem.cpp">
       <Filter>Source Files\saved</Filter>
-    </ClCompile>
-    <ClCompile Include="godrays.cpp">
-      <Filter>Source Files\pipeline</Filter>
     </ClCompile>
     <ClCompile Include="game.cpp">
       <Filter>Source Files\game</Filter>
@@ -216,6 +216,21 @@
     </ClCompile>
     <ClCompile Include="environment.cpp">
       <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="buildwindow.cpp">
+      <Filter>Source Files\interface\compenents</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\misc\cpp\imgui_stdlib.cpp">
+      <Filter>Source Files\vendor\imgui\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="build.cpp">
+      <Filter>Source Files\build</Filter>
+    </ClCompile>
+    <ClCompile Include="canvasOverlay.cpp">
+      <Filter>Source Files\interface\compenents</Filter>
+    </ClCompile>
+    <ClCompile Include="codeEditor.cpp">
+      <Filter>Source Files\interface\compenents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -444,9 +459,6 @@
     <ClInclude Include="C:\Users\athilah\Downloads\stb_image.h">
       <Filter>Source Files\vendor\imguizmo</Filter>
     </ClInclude>
-    <ClInclude Include="pipeline.h">
-      <Filter>Source Files\pipeline</Filter>
-    </ClInclude>
     <ClInclude Include="vendor\ImGuizmo\GraphEditor.h">
       <Filter>Source Files\vendor\imguizmo</Filter>
     </ClInclude>
@@ -519,10 +531,34 @@
     <ClInclude Include="random.h">
       <Filter>Source Files\utils</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\imgui\misc\cpp\imgui_stdlib.h">
+      <Filter>Source Files\vendor\imgui\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="build.h">
+      <Filter>Source Files\build</Filter>
+    </ClInclude>
+    <ClInclude Include="IconsFontAwesome6.h">
+      <Filter>Source Files\utils\fonts</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="C:\Users\athilah\Downloads\arial\ARIAL.TTF">
+    <Font Include="..\x64\Release\fonts\fa-solid-900.ttf">
       <Filter>Source Files\utils\fonts</Filter>
     </Font>
+    <Font Include="..\x64\Release\fonts\arial.TTF">
+      <Filter>Source Files\utils\fonts</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="vendor\imgui\LICENSE.txt">
+      <Filter>Source Files\vendor\imgui</Filter>
+    </Text>
   </ItemGroup>
 </Project>

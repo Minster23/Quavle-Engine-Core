@@ -18,6 +18,16 @@ namespace interface
 			componentsInterfaces::selecetedObject = UID;
 		}
 
+		void setDetailId(std::string id)
+		{
+			componentsInterfaces::detailItemId_ = id;
+		}
+
+		void setCodeEditorOpened(std::string fileLoc)
+		{
+			componentsInterfaces::codeEditorFileLoc_ = fileLoc;
+		}
+
 		enum ComponentType
 		{
 			COMP_TRANSFORM,
@@ -50,10 +60,27 @@ namespace interface
 			static void scenesManager();
 			static bool fileExplorer_;
 			static void fileExplorer();
+			static bool buildWindow_;
+			static void buildWindow();
+			static bool canvasOverlay_;
+			static void canvasOverlay();
+			static std::string detailItemId_;
+			static void detailItem();
+			static void floatingInfo();
+			static std::string codeEditorFileLoc_;
+			static void codeEditor();
 		};
+
+		void viewport(std::string title, unsigned int tex);
 
 		static void changeParent();
 	};
 
+	struct ViewportRect {
+		float x = 0, y = 0;
+		float width = 1920, height = 1080;
+	};
+
+	extern ViewportRect sceneViewport; 
 	extern interfaces Interfaces;
 }

@@ -1,26 +1,26 @@
 ﻿#include <glad/glad.h>
+#include "game.h"
 #include "scene.h"
 #include "window.h"
 #include "entity.h"
-#include "pipeline.h"
 #include "saveSystem.h"
 #include "random.h"
+#include "environment.h"
 
 #if WITH_EDITOR
 #include <imgui.h>
 #include "interface.h"
-#include "game.h"
 using namespace interface;
-using namespace game;
 #endif
 
 using namespace window;
 using namespace entity;
 using namespace importers;
-using namespace pipeline;
 using namespace entity::canvas;
 using namespace scene;
+using namespace game;
 using namespace saved;
+using namespace environment;
 
 GLFWwindow* windowsHandler::window;
 glm::vec2 windowsHandler::size;
@@ -31,6 +31,31 @@ std::string windowsHandler::project_location = "";
 bool firstMouse = false;
 float lastX = 0.0f, lastY = 0.0f;
 static bool cursorDisabled = true;
+
+void cameraSelector()
+{
+    static std::string realActiveUUID = "ENGINE_CAM";
+
+    if (GameState.game_state == states::gameState::PLAY)
+    {
+        for (auto& cam : components::entity_camera)
+        {
+            if (cam.second.isMain && cam.second.isActive)
+            {
+                realActiveUUID = cam.first;
+                break;
+            }
+        }
+    }
+    else
+    {
+        realActiveUUID = "ENGINE_CAM";
+    }
+
+    gameobjects.activeCamera = &components::entity_camera[realActiveUUID];
+    gameobjects.activeCamera->UpdateView();
+    gameobjects.activeCamera->UpdateProjection();
+}
 
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
@@ -47,11 +72,12 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
             glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
         }
         cursorDisabled = !cursorDisabled;
-    }else
+    }
+    else
     {
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
         firstMouse = true;
-		cursorDisabled = false;
+        cursorDisabled = false;
     }
 #endif
 }
@@ -75,16 +101,16 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
     yoffset *= sensitivity;
 
 
-    if(cursorDisabled)
+    if (cursorDisabled)
     {
-		gameobjects.activeCamera->cameraRotation(xoffset, yoffset);
+        gameobjects.activeCamera->cameraRotation(xoffset, yoffset);
     }
 }
 
 bool canIntract()
 {
 #if WITH_EDITOR
-	if (ImGui::IsAnyItemActive() || ImGui::IsAnyItemHovered() || ImGui::IsWindowHovered())
+    if (ImGui::IsAnyItemActive() || ImGui::IsAnyItemHovered() || ImGui::IsWindowHovered())
     {
         return false;
     }
@@ -130,31 +156,31 @@ void processInput(GLFWwindow* window)
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
-	glViewport(0, 0, width, height);
+    glViewport(0, 0, width, height);
 }
 
 void window::windowsHandler::windowInit()
 {
-	size = glm::vec2(1920, 1080);
-	if (!initGLFW() || size == glm::vec2(0, 0))return;
-	if (!initGL())return;
+    saveSystem.load();
+    size = glm::vec2(1920, 1080);
+    game::gameData.projectLocation = project_location;
+    if (!initGLFW() || size == glm::vec2(0, 0))return;
+    if (!initGL())return;
     glfwSetCursorPosCallback(window, mouse_callback);
     glfwSetMouseButtonCallback(window, mouse_button_callback);
 
 #if WITH_EDITOR
-	Interfaces.init();
-	componentss.prepareComponentsList();
+    Interfaces.init();
+    componentss.prepareComponentsList();
+    std::cout << "Project Location: " << gameData.projectLocation << std::endl;
 #endif
-    shadows.init();
-	GodRays.init(size.x, size.y);
-    //postProcessings.init(1920, 1080);
 
 #if WITH_EDITOR
 
     scenesHandler.addScene("default_scene");
     scenesHandler.setCurrentScene("default_scene");
+    gameobjects.addObject("PLAYER", "PLAYER", componentss.type::OBJECT);
     gameobjects.addObject("ENGINE_CAM", "ENGINE_CAM", componentss.type::CAMERA);
-    gameobjects.addListener("ENGINE_CAM");
 
 #else
     scenesHandler.setPlayMode(true);
@@ -162,99 +188,92 @@ void window::windowsHandler::windowInit()
     scenesHandler.setCurrentScene("default_scene");
     gameobjects.addObject("ENGINE_CAM", "ENGINE_CAM", componentss.type::CAMERA);
     gameobjects.addListener("ENGINE_CAM");
-	gameobjects.addObject("PLAYER", "PLAYER", componentss.type::OBJECT);
-	componentss.entity_transform["PLAYER"].location = glm::vec3(0.0f, 0.0f, 0.0f);
-
-    saveSystem.load();
 #endif
 
-	windowLoop();
-
-	cleanUp();
+    windowLoop();
+    cleanUp();
 }
 
 bool window::windowsHandler::initGLFW()
 {
-
 #if WITH_EDITOR
-    std::string title = "Quavle Editor " + project_location;
+    std::string Title = "Quavle Engine - " + gameData.projectLocation;
 #else
-    std::string title = "NAMA GAME";
+    std::string Title = saveSystem.gamePlayName();
 #endif
 
-    const char* titleWindow = title.c_str();
-	if (!glfwInit()) {
-		return false;
-	}
+    const char* titleWindow = Title.c_str();
+    if (!glfwInit()) {
+        return false;
+    }
 
     GLFWmonitor* primary = glfwGetPrimaryMonitor();
     const GLFWvidmode* mode = glfwGetVideoMode(primary);
 
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
-	window = glfwCreateWindow(mode->width, mode->height, titleWindow, NULL, NULL);
-	if (!window) {
-		glfwTerminate(); 
-		return false;
-	}
-	glfwMakeContextCurrent(window);
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
+    window = glfwCreateWindow(mode->width, mode->height, titleWindow, NULL, NULL);
+    if (!window) {
+        glfwTerminate();
+        return false;
+    }
+    glfwMakeContextCurrent(window);
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-	return true;
+    return true;
 }
 
 bool window::windowsHandler::initGL()
 {
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-		std::cout << "Failed to initialize GLAD" << std::endl;
-		glfwTerminate();
-		return -1;
-	}
-	glfwGetWindowSize(window, &width, &height);
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+        std::cout << "Failed to initialize GLAD" << std::endl;
+        glfwTerminate();
+        return -1;
+    }
+    glfwGetWindowSize(window, &width, &height);
 
-	glViewport(0, 0, width, height);
+    glViewport(0, 0, width, height);
 
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-	std::cout << "OpenGL Initialized: "
-		<< glGetString(GL_VERSION) << std::endl;
+    std::cout << "OpenGL Initialized: "
+        << glGetString(GL_VERSION) << std::endl;
 
-	return true;
+    return true;
 }
 
 void window::windowsHandler::windowLoop()
 {
-	while (!glfwWindowShouldClose(window)) {
+    while (!glfwWindowShouldClose(window)) {
         glfwGetWindowSize(window, &width, &height);
-#if WITH_EDITOR
-        if(GameState.control_state == states::controlState::EDITOR)processInput(window);
-        prepareTexCam(width, height);
-#endif
+        cameraSelector();
+        gameobjects.updateAudio();
         gameobjects.childrenHandler();
+        
+        gameobjects.activeCamera->bind();
+        Environment_Properties.localEnv();
         gameobjects.draw();
-        //GodRays.start(gameobjects.activeCamera->tex, shadows.depthMap);
         canvasItems.draw();
+        gameobjects.activeCamera->unbind();
 
 #if WITH_EDITOR
+        if (GameState.control_state == states::controlState::EDITOR)processInput(window);
         Interfaces.draw();
 #endif
-        gameobjects.updateAudio();
 
-		glfwSwapBuffers(window);
-		glfwPollEvents();
-	}
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
 }
 
 void window::windowsHandler::cleanUp()
 {
 #if WITH_EDITOR
-	Interfaces.cleanup();
+    Interfaces.cleanup();
 #endif
-    GodRays.clean();
-    postProcessings.cleanup();
-	glfwDestroyWindow(window);
-	glfwTerminate();
+    glfwDestroyWindow(window);
+    glfwTerminate();
 }

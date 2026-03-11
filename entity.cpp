@@ -1,9 +1,9 @@
 ﻿#include <glad/glad.h>
 #include "entity.h"
 #include "window.h"
-#include "pipeline.h"
 #include "game.h"
 #include "environment.h"
+#include "EngineConfig.h"
 
 #if WITH_EDITOR
 #include "interface.h"
@@ -22,16 +22,17 @@ using namespace interface;
 #include <fstream>
 #include <string>
 #include <imgui.h>
+#include <QuavleFormat.h>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
 using namespace entity;
 using namespace window;
-using namespace pipeline;
 using namespace scene;
 using namespace game;
 using namespace environment;
+using namespace QuaveleShaderFormater;
 
 namespace entity
 {
@@ -53,6 +54,29 @@ std::unordered_map<std::string, components::Collusion> components::entity_collus
 std::vector<components::CompoenentsList> components::ComponentsList;
 components::Camera* gameObject::activeCamera = nullptr;
 std::unordered_map<std::string, std::vector<glm::vec3>> gameObject::mesh_world_vertices;
+
+#if WITH_EDITOR
+
+struct ShaderLocation {
+    std::string MeshFragmentShader;
+    std::string MeshVertexShader;
+
+    void Init()
+    {
+        MeshFragmentShader = gameData.projectLocation + "\\saveData\\shader\\fragment.glsl";
+        MeshVertexShader = gameData.projectLocation + "\\saveData\\shader\\vertex.glsl";
+    }
+}shaderLoc;
+
+#else
+
+struct ShaderLocation {
+    std::string MeshFragmentShader = "\\game\\shader\\fragment.quashader";
+    std::string MeshVertexShader = "\\game\\shader\\vertex.quashader";
+	void Init() {}
+
+}shaderLoc;
+#endif
 
 void updateMeshWorldData(const std::string& UUID)
 {
@@ -205,7 +229,6 @@ void updateAABB(const std::string& UUID)
 
 glm::vec3 getRayDirection(double mouseX, double mouseY, int screenW, int screenH)
 {
-    // NDC
     float x = (2.0f * mouseX) / screenW - 1.0f;
     float y = 1.0f - (2.0f * mouseY) / screenH;
 
@@ -246,48 +269,6 @@ void entity::gameObject::childrenHandler()
             tr.worldMatrix = parentTr.worldMatrix * tr.localMatrix;
         }
     }
-}
-
-void cameraSelector()
-{
-    static std::string realActiveUUID = "";
-    static bool initialized = false;
-
-    if (!initialized)
-    {
-        for (auto& cam : components::entity_camera)
-        {
-            if (cam.first != "ENGINE_CAM")
-                continue;
-
-            realActiveUUID = cam.first;
-            gameobjects.activeCamera = &components::entity_camera[realActiveUUID];
-            initialized = true;
-            break;
-        }
-    }
-
-    if (GameState.game_state == states::gameState::PLAY)
-    {
-        for (auto& cam : components::entity_camera)
-        {
-            if (cam.second.isMain && cam.second.isActive)
-            {
-                realActiveUUID = cam.first;
-                gameobjects.activeCamera = &components::entity_camera[realActiveUUID];
-                initialized = true;
-                break;
-            }
-        }
-    }else if(GameState.game_state == states::gameState::PAUSE)
-    {
-        initialized = false;
-    }
-
-    gameobjects.activeCamera = &components::entity_camera[realActiveUUID];
-
-    gameobjects.activeCamera->UpdateView();
-    gameobjects.activeCamera->UpdateProjection();
 }
 
 void components::prepareComponentsList()
@@ -367,47 +348,17 @@ void components::prepareComponentsList()
     );
 }
 
-void GL_config()
-{
-    bool found = false;
-	bool cubeMap = false;
-
-    for (const auto& pair : environment::environment_properties::Enviroments) {
-        if (pair.second.isCreated &&
-			pair.second.sceneID == scenesHandler.currentSceneName() && 
-            pair.second.useCubemap == false)
-        {
-            glClearColor(
-                pair.second.cubeMapcolour.r,
-                pair.second.cubeMapcolour.g,
-                pair.second.cubeMapcolour.b,
-                pair.second.cubeMapcolour.a
-            );
-            found = true;
-			cubeMap = pair.second.useCubemap;
-            break;
-        }
-    }
-
-    if (!found && !cubeMap) {
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-    }
-
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    glEnable(GL_DEPTH_TEST);
-    glDepthFunc(GL_LESS);
-}
-
 void gameObject::addObject(const char* UUID, const char* name, components::type type)
 {
+	shaderLoc.Init();
     if (type == components::type::OBJECT)
     {
         components::Material mat_Default;
         components::entity_data[UUID] = { name, "",UUID, true, components::type::OBJECT };
         components::entity_transform[UUID] = { { 0,0,0 }, { 0,0,0 },  { 1,1,1 } };
         components::entity_material[UUID] = mat_Default;
-        loadShader("vertex.glsl", "fragment.glsl", UUID);
+        std::cout << gameData.projectLocation << std::endl;
+        loadShader(shaderLoc.MeshVertexShader.c_str(), shaderLoc.MeshFragmentShader.c_str(), UUID);
         loadMesh(UUID);
     }
     else if (type == components::type::CAMERA)
@@ -416,7 +367,11 @@ void gameObject::addObject(const char* UUID, const char* name, components::type 
         components::entity_data[UUID] = { "Camera", "", UUID, true, components::type::CAMERA };
         components::entity_transform[UUID] = { { 0,0,0 }, { 0,0,0 },  { 1,1,1 } };
         components::entity_camera[UUID] = cam_Default;
+        components::entity_camera[UUID].width = 1920;
+        components::entity_camera[UUID].height = 1080;
+        components::entity_camera[UUID].isActive = true;
         components::entity_camera[UUID].UpdateProjection();
+        components::entity_camera[UUID].create_framefuffer();
 
     }
     else if (type == components::type::LIGHT)
@@ -461,24 +416,9 @@ void entity::gameObject::drawShadow(unsigned int shadowProgram, std::string UUID
 
 void entity::gameObject::draw()
 {
-    GL_config();
-    cameraSelector();
-    shadows.BeginPassShadow();
     for (const auto& obj : components::entity_data)
     {
-        if (obj.second.typeObject != components::type::OBJECT) continue;
-        const std::string UUID = obj.first;
-
-        if (components::entity_mesh.count(UUID) == 0) continue;
-        if (components::entity_transform.count(UUID) == 0) continue;
-        if (components::entity_data[UUID].show_ == false) continue;
-
-        drawShadow(shadows.depthShader, UUID);
-    }
-    shadows.EndPassShadow();
-
-    for (const auto& obj : components::entity_data)
-    {
+        //!! EDIT THE SHADER
         if (obj.second.typeObject == components::type::OBJECT)
         {
 			updateAABB(obj.first);
@@ -514,6 +454,7 @@ void entity::gameObject::draw()
                 glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(activeCamera->projectionMatrix));
                 glUniform3f(cameraPosLoc, activeCamera->position.x, activeCamera->position.y, activeCamera->position.z);
             }
+
             glm::mat3 normalMatrix = glm::transpose(glm::inverse(glm::mat3(model)));
             GLint normalMatrixLoc = glGetUniformLocation(shaderComp.ShaderProgram, "normalMatrix");
             glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
@@ -572,12 +513,6 @@ void entity::gameObject::draw()
                 glUniform1i(glGetUniformLocation(shaderComp.ShaderProgram, "emissiveMap"), 4);
             }
 
-            glActiveTexture(GL_TEXTURE5);
-            glBindTexture(GL_TEXTURE_2D, shadows.depthMap);
-            glUniform1i(glGetUniformLocation(shaderComp.ShaderProgram, "shadowMap"), 5);
-            glUniformMatrix4fv(glGetUniformLocation(shaderComp.ShaderProgram, "lightSpaceMatrix"), 1, GL_FALSE, glm::value_ptr(shadows.lightSpaceMatrix));
-            glUniform1i(glGetUniformLocation(shaderComp.ShaderProgram, "shadowsEnabled"), shadows.shadowsEnabled ? 1 : 0);
-
 
             int i = 0;
             for (auto& l : components::entity_light)
@@ -620,27 +555,55 @@ void entity::gameObject::draw()
     }
 
 #if WITH_EDITOR
-
     if (ImGui::IsMouseClicked(0) && !ImGui::IsAnyItemHovered())
     {
         double mx, my;
         glfwGetCursorPos(windsHemndl.window, &mx, &my);
 
-        int w, h;
-        glfwGetWindowSize(windsHemndl.window, &w, &h);
+        float vx = (float)mx - sceneViewport.x;
+        float vy = (float)my - sceneViewport.y;
 
-        glm::vec3 rayOrigin = activeCamera->position;
-
-        glm::vec3 rayDir = getRayDirection(mx, my, w, h);
-
-        std::string hit = pickObject(rayOrigin, rayDir);
-
-        if (hit != "")
+        if (vx >= 0 && vy >= 0 && vx <= sceneViewport.width && vy <= sceneViewport.height)
         {
-			Interfaces.setSelectoredObject(hit);
+            glm::vec3 rayOrigin = activeCamera->position;
+            glm::vec3 rayDir = getRayDirection(vx, vy, 
+                                               (int)sceneViewport.width, 
+                                               (int)sceneViewport.height);
+
+            std::string hit = pickObject(rayOrigin, rayDir);
+            if (!hit.empty())
+            {
+                Interfaces.setSelectoredObject(hit);
+                Interfaces.setDetailId("");
+            }
         }
     }
 
+    if (ImGui::IsMouseClicked(1) && !ImGui::IsAnyItemHovered() && ImGui::IsKeyDown(ImGuiKey_LeftShift))
+    {
+        double mx, my;
+        glfwGetCursorPos(windsHemndl.window, &mx, &my);
+
+        float vx = (float)mx - sceneViewport.x;
+        float vy = (float)my - sceneViewport.y;
+
+        if (vx >= 0 && vy >= 0 && vx <= sceneViewport.width && vy <= sceneViewport.height)
+        {
+            glm::vec3 rayOrigin = activeCamera->position;
+            glm::vec3 rayDir = getRayDirection(vx, vy,
+                (int)sceneViewport.width,
+                (int)sceneViewport.height);
+
+            std::string hit = pickObject(rayOrigin, rayDir);
+            if (!hit.empty())
+            {
+                Interfaces.setDetailId(hit);
+            }
+            else {
+                Interfaces.setDetailId("");
+            }
+        }
+    }
 #endif
 }
 
@@ -648,16 +611,16 @@ inline unsigned int gameObject::loadShader(const char* location_Vertex, const ch
 {
     auto loadShaderSource = [](const char* filePath) -> std::string
         {
+#if WITH_EDITOR
             std::ifstream file(filePath, std::ios::binary);
-            if (!file.is_open()) {
+            if (!file.is_open())
+            {
                 std::cout << "ERROR: Failed to open shader file: " << filePath << std::endl;
                 return "";
             }
-
             std::stringstream stream;
             stream << file.rdbuf();
             std::string source = stream.str();
-
             if (source.size() >= 3 &&
                 static_cast<unsigned char>(source[0]) == 0xEF &&
                 static_cast<unsigned char>(source[1]) == 0xBB &&
@@ -665,25 +628,39 @@ inline unsigned int gameObject::loadShader(const char* location_Vertex, const ch
             {
                 source.erase(0, 3);
             }
-
             return source;
+#else
+            auto shader = QuaveleShaderFormater::ShaderFormatter::loadFromFile(filePath);
+            if (!shader)
+            {
+                std::cout << "ERROR: Failed to open shader file: " << filePath << std::endl;
+                return "";
+            }
+
+            std::string source = shader->source();
+            // ALSO strip UTF-8 BOM if present in the loaded shader
+            if (source.size() >= 3 &&
+                static_cast<unsigned char>(source[0]) == 0xEF &&
+                static_cast<unsigned char>(source[1]) == 0xBB &&
+                static_cast<unsigned char>(source[2]) == 0xBF)
+            {
+                source.erase(0, 3);
+            }
+            return source;
+#endif
         };
 
     std::string vertexCode = loadShaderSource(location_Vertex);
     std::string fragmentCode = loadShaderSource(location_Fragment);
-
     if (vertexCode.empty() || fragmentCode.empty()) {
         std::cout << "ERROR: Failed to load shader sources for " << (UUID ? UUID : "") << std::endl;
         return 0;
     }
-
     const char* vShaderCode = vertexCode.c_str();
     const char* fShaderCode = fragmentCode.c_str();
-
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vShaderCode, nullptr);
     glCompileShader(vertexShader);
-
     GLint success;
     char infoLog[512];
     glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
@@ -691,41 +668,33 @@ inline unsigned int gameObject::loadShader(const char* location_Vertex, const ch
         glGetShaderInfoLog(vertexShader, 512, nullptr, infoLog);
         std::cout << "ERROR: Vertex shader compilation failed for " << UUID << ":\n" << infoLog << std::endl;
     }
-
     GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentShader, 1, &fShaderCode, nullptr);
     glCompileShader(fragmentShader);
-
     glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
     if (!success) {
         glGetShaderInfoLog(fragmentShader, 512, nullptr, infoLog);
         std::cout << "ERROR: Fragment shader compilation failed for " << UUID << ":\n" << infoLog << std::endl;
     }
-
     GLuint shaderProgram = glCreateProgram();
     glAttachShader(shaderProgram, vertexShader);
     glAttachShader(shaderProgram, fragmentShader);
     glLinkProgram(shaderProgram);
-
     glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
     if (!success) {
         glGetProgramInfoLog(shaderProgram, 512, nullptr, infoLog);
         std::cout << "ERROR: Shader program linking failed for " << UUID << ":\n" << infoLog << std::endl;
     }
-
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
-
     if (UUID != nullptr && UUID[0] != '\0')
     {
         components::entity_shader[UUID] = components::Shader{
             shaderProgram,
             true
         };
-
         std::cout << "Shader loaded successfully for: " << UUID << std::endl;
     }
-
     return shaderProgram;
 }
 
@@ -873,4 +842,59 @@ GLuint components::GLUInit(const std::string& filePath)
     stbi_image_free(data);
 
     return textureID;
+}
+
+void entity::components::Camera::create_framefuffer()
+{
+    std::cout << "FRAMEBUFFER:: Framebuffer Created\n";
+    glGenFramebuffers(1, &fbo);
+    glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+
+    glGenTextures(1, &tex);
+    glBindTexture(GL_TEXTURE_2D, tex);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, tex, 0);
+
+    glGenRenderbuffers(1, &rbo);
+    glBindRenderbuffer(GL_RENDERBUFFER, rbo);
+    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
+
+    if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+        std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!\n";
+
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    glBindTexture(GL_TEXTURE_2D, 0);
+    glBindRenderbuffer(GL_RENDERBUFFER, 0);
+}
+
+void entity::components::Camera::bind()
+{
+    glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+    glViewport(0, 0, width, height);
+}
+
+void entity::components::Camera::unbind() { glBindFramebuffer(GL_FRAMEBUFFER, 0); }
+
+void entity::components::Camera::rescale_framebuffer(float w, float h)
+{
+    if (w <= 0 || h <= 0) return;
+
+    width = (GLsizei)w;
+    height = (GLsizei)h;
+    aspect = w / h;
+
+    glBindTexture(GL_TEXTURE_2D, tex);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, tex, 0);
+
+    glBindRenderbuffer(GL_RENDERBUFFER, rbo);
+    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
+
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }

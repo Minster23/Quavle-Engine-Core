@@ -7,27 +7,17 @@ layout (location = 2) in vec2 aTexCoords;
 out vec3 FragPos;
 out vec3 Normal;
 out vec2 TexCoords;
-out vec4 FragPosLightSpace;
 
 uniform mat4 model;
 uniform mat4 view;
 uniform mat4 projection;
-uniform mat4 lightSpaceMatrix;
-uniform mat3 normalMatrix; // This is now provided from C++
+uniform mat3 normalMatrix; // pre-computed on CPU
 
 void main()
 {
-    vec4 worldPos = model * vec4(aPos, 1.0);
-    FragPos = worldPos.xyz;
-    
-    // Use the pre-computed normal matrix from CPU
-    Normal = normalize(normalMatrix * aNormal);
-    
-    TexCoords = aTexCoords;
-    
-    // Transform position to light space for shadow mapping
-    FragPosLightSpace = lightSpaceMatrix * worldPos;
-    
-    // Final position in clip space
-    gl_Position = projection * view * worldPos;
+    vec4 worldPos   = model * vec4(aPos, 1.0);
+    FragPos         = worldPos.xyz;
+    Normal          = normalize(normalMatrix * aNormal);
+    TexCoords       = aTexCoords;
+    gl_Position     = projection * view * worldPos;
 }

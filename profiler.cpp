@@ -33,7 +33,6 @@ void interface::interfaces::componentsInterfaces::profiler(bool open)
         initialized = true;
     }
 
-    // ===== FPS / CPU / GPU CALC =====
     frameCount++;
     auto now = std::chrono::high_resolution_clock::now();
     float delta = std::chrono::duration<float>(now - lastTime).count();
@@ -53,7 +52,6 @@ void interface::interfaces::componentsInterfaces::profiler(bool open)
         lastTime = now;
     }
 
-    // ===== COLORS =====
     ImVec4 fpsColor =
         fps < 30 ? ImVec4(1, 0.2f, 0.2f, 1) :
         fps < 55 ? ImVec4(1, 0.9f, 0.2f, 1) :
@@ -62,7 +60,6 @@ void interface::interfaces::componentsInterfaces::profiler(bool open)
     ImVec4 cpuColor = ImVec4(0.3f, 0.7f, 1.0f, 1.0f);
     ImVec4 gpuColor = ImVec4(0.9f, 0.4f, 1.0f, 1.0f);
 
-    // ===== WINDOW =====
     ImGuiWindowFlags flags =
         ImGuiWindowFlags_NoDecoration |
         ImGuiWindowFlags_AlwaysAutoResize |
@@ -71,7 +68,13 @@ void interface::interfaces::componentsInterfaces::profiler(bool open)
         ImGuiWindowFlags_NoNav |
         ImGuiWindowFlags_NoBackground;
 
-    ImGui::SetNextWindowPos(ImVec2(12, 12), ImGuiCond_Always);
+    ImVec2 topLeft(
+        sceneViewport.x,
+        sceneViewport.y
+    );
+
+
+    ImGui::SetNextWindowPos(topLeft, ImGuiCond_Always);
     ImGui::Begin("Profiler", &open, flags);
     {
         ImGui::TextColored(fpsColor, "FPS : %.1f", fps);
@@ -80,7 +83,6 @@ void interface::interfaces::componentsInterfaces::profiler(bool open)
 
         ImVec2 plotSize(260, 70);
 
-        // ===== FPS GRAPH =====
         ImPlot::PushStyleColor(ImPlotCol_Line, fpsColor);
         if (ImPlot::BeginPlot("##FPS", plotSize,
             ImPlotFlags_NoLegend | ImPlotFlags_NoFrame | ImPlotFlags_NoMouseText))
@@ -123,4 +125,5 @@ void interface::interfaces::componentsInterfaces::profiler(bool open)
         ImPlot::PopStyleColor();
     }
     ImGui::End();
+
 }
