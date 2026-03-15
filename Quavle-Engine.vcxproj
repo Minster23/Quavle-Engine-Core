@@ -232,6 +232,8 @@
     <ClCompile Include="environment.cpp" />
     <ClCompile Include="filebrowser.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="graphEditor.cpp" />
+    <ClCompile Include="graphModule.cpp" />
     <ClCompile Include="guizmo.cpp" />
     <ClCompile Include="hirarcy.cpp" />
     <ClCompile Include="inspector.cpp" />
@@ -292,6 +294,7 @@
     <ClInclude Include="entity.h" />
     <ClInclude Include="environment.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="graphModule.h" />
     <ClInclude Include="IconsFontAwesome6.h" />
     <ClInclude Include="interface.h" />
     <ClInclude Include="random.h" />

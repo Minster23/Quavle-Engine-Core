@@ -139,6 +139,8 @@ namespace entity
             GLuint fbo, tex, rbo;
             GLsizei width = 1920, height = 1080;
 
+            bool canMoveInEditor;
+
 
             glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f);
             glm::vec3 rotation = glm::vec3(0.0f);

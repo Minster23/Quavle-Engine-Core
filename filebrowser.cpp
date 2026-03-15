@@ -59,7 +59,8 @@ namespace
     {
 		if (type == ".txt" || type == ".lua" || type == ".cpp")
         {
-			Interfaces.setCodeEditorOpened(path);
+			//Interfaces.setCodeEditorOpened(path);
+            Interfaces.setGraphEditorOpened(path);
             return true;
         }
         else

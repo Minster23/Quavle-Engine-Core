@@ -28,6 +28,11 @@ namespace interface
 			componentsInterfaces::codeEditorFileLoc_ = fileLoc;
 		}
 
+		void setGraphEditorOpened(std::string fileLoc)
+		{
+			componentsInterfaces::graphEditorFileLoc_ = fileLoc;
+		}
+
 		enum ComponentType
 		{
 			COMP_TRANSFORM,
@@ -69,6 +74,8 @@ namespace interface
 			static void floatingInfo();
 			static std::string codeEditorFileLoc_;
 			static void codeEditor();
+			static std::string graphEditorFileLoc_;
+			static void graphEditor();
 		};
 
 		void viewport(std::string title, unsigned int tex);

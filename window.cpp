@@ -8,7 +8,6 @@
 #include "environment.h"
 
 #if WITH_EDITOR
-#include <imgui.h>
 #include "interface.h"
 using namespace interface;
 #endif
@@ -60,7 +59,7 @@ void cameraSelector()
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
 #if WITH_EDITOR
-    if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS && !ImGui::IsAnyItemHovered() && !ImGui::IsWindowHovered())
+    if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS && gameobjects.activeCamera->canMoveInEditor)
     {
         if (cursorDisabled)
         {
@@ -101,43 +100,32 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
     yoffset *= sensitivity;
 
 
-    if (cursorDisabled)
+    if (cursorDisabled && gameobjects.activeCamera->canMoveInEditor)
     {
         gameobjects.activeCamera->cameraRotation(xoffset, yoffset);
     }
 }
 
-bool canIntract()
-{
-#if WITH_EDITOR
-    if (ImGui::IsAnyItemActive() || ImGui::IsAnyItemHovered() || ImGui::IsWindowHovered())
-    {
-        return false;
-    }
-    else { return true; }
-#endif
-}
-
 void processInput(GLFWwindow* window)
 {
-    if (!gameobjects.activeCamera) return;
+    if (!gameobjects.activeCamera || !gameobjects.activeCamera->canMoveInEditor) return;
 
     float cameraSpeed = 0.05f;
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS && canIntract())
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
         gameobjects.activeCamera->position += gameobjects.activeCamera->Forward() * cameraSpeed;
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS && canIntract())
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
         gameobjects.activeCamera->position -= gameobjects.activeCamera->Forward() * cameraSpeed;
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS && canIntract())
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
         gameobjects.activeCamera->position -= gameobjects.activeCamera->Right() * cameraSpeed;
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS && canIntract())
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         gameobjects.activeCamera->position += gameobjects.activeCamera->Right() * cameraSpeed;
 
-    if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS && canIntract())
+    if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS)
         gameobjects.activeCamera->position.y -= cameraSpeed;
-    if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS && canIntract())
+    if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS)
         gameobjects.activeCamera->position.y += cameraSpeed;
 
     if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
@@ -260,6 +248,7 @@ void window::windowsHandler::windowLoop()
         gameobjects.activeCamera->unbind();
 
 #if WITH_EDITOR
+
         if (GameState.control_state == states::controlState::EDITOR)processInput(window);
         Interfaces.draw();
 #endif

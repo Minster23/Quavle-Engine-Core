@@ -151,6 +151,14 @@ void Theme(ImGuiIO& io)
 void interface::interfaces::viewport(std::string title, unsigned int tex)
 {
     ImGui::Begin(title.c_str());
+    if (ImGui::IsWindowHovered(ImGuiHoveredFlags_None))
+    {
+        gameobjects.activeCamera->canMoveInEditor = true;
+    }
+    else
+    {
+        gameobjects.activeCamera->canMoveInEditor = false;
+    }
 
     ImVec2 avail = ImGui::GetContentRegionAvail();
     ImVec2 pos = ImGui::GetCursorScreenPos();
@@ -283,6 +291,7 @@ void interface::interfaces::draw()
     interfaces::componentsInterfaces::canvasOverlay();
     interfaces::componentsInterfaces::detailItem();
 	interfaces::componentsInterfaces::codeEditor();
+    interfaces::componentsInterfaces::graphEditor();
 
     viewport("Game", gameobjects.activeCamera->tex);
     viewport("Scene", componentss.entity_camera["ENGINE_CAM"].tex);

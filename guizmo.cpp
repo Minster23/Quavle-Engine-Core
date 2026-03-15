@@ -79,16 +79,5 @@ void interfaces::componentsInterfaces::guizmo()
         ImGuiWindowFlags_AlwaysAutoResize
     );
 
-    ImGui::RadioButton("Translate", op == ImGuizmo::TRANSLATE);
-    ImGui::SameLine();
-    ImGui::RadioButton("Rotate", op == ImGuizmo::ROTATE);
-    ImGui::SameLine();
-    ImGui::RadioButton("Scale", op == ImGuizmo::SCALE);
-
-    ImGui::SameLine();
-    ImGui::RadioButton("Local", mode == ImGuizmo::LOCAL);
-    ImGui::SameLine();
-    ImGui::RadioButton("World", mode == ImGuizmo::WORLD);
-
     ImGui::End();
 }

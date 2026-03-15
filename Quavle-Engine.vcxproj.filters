@@ -232,6 +232,12 @@
     <ClCompile Include="codeEditor.cpp">
       <Filter>Source Files\interface\compenents</Filter>
     </ClCompile>
+    <ClCompile Include="graphEditor.cpp">
+      <Filter>Source Files\interface\compenents</Filter>
+    </ClCompile>
+    <ClCompile Include="graphModule.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -540,6 +546,9 @@
     </ClInclude>
     <ClInclude Include="IconsFontAwesome6.h">
       <Filter>Source Files\utils\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="graphModule.h">
+      <Filter>Source Files\game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
