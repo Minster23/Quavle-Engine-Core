@@ -65,6 +65,8 @@ namespace interface
 			static void scenesManager();
 			static bool fileExplorer_;
 			static void fileExplorer();
+			static void initFileExplorerFonts();
+
 			static bool buildWindow_;
 			static void buildWindow();
 			static bool canvasOverlay_;

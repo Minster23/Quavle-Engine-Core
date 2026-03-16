@@ -20,11 +20,16 @@ namespace fs = std::filesystem;
 namespace
 {
     std::unordered_map<std::string, std::vector<std::string>> fileCache;
-	std::unordered_map<std::string, unsigned int> textureCache;
+    std::unordered_map<std::string, unsigned int> textureCache;
+
+    // FIX: Fonts are stored once and loaded during initialization,
+    // NOT allocated inside the per-frame render functions.
+    ImFont* ICON_FONT = nullptr;
+    ImFont* TEXT_FONT = nullptr;
 
     unsigned int loadTexture(const std::string& path) {
 
-		if (textureCache.find(path) != textureCache.end())
+        if (textureCache.find(path) != textureCache.end())
             return textureCache[path];
 
         unsigned int textureID;
@@ -57,9 +62,9 @@ namespace
 
     bool openFile(const std::string& path, std::string type)
     {
-		if (type == ".txt" || type == ".lua" || type == ".cpp")
+        if (type == ".txt" || type == ".lua" || type == ".cpp")
         {
-			//Interfaces.setCodeEditorOpened(path);
+            //Interfaces.setCodeEditorOpened(path);
             Interfaces.setGraphEditorOpened(path);
             return true;
         }
@@ -71,28 +76,38 @@ namespace
     }
 
     static std::string currentPath;
-	static std::vector<std::string> HistoryDir;
+    static std::vector<std::string> HistoryDir;
 }
 
 bool interfaces::componentsInterfaces::fileExplorer_ = true;
 
+// FIX: Call this ONCE during application startup, before the render loop,
+// right after your ImGui context and backend are initialized but before
+// ImGui_ImplXXX_CreateFontsTexture() / NewFrame() is first called.
+void interfaces::componentsInterfaces::initFileExplorerFonts()
+{
+    ImGuiIO& io = ImGui::GetIO();
+    ICON_FONT = io.Fonts->AddFontFromFileTTF("fonts/fa-solid-900.ttf", 30.0f);
+    TEXT_FONT = io.Fonts->AddFontFromFileTTF("fonts/arial.ttf", 16.0f);
+}
+
 std::string fileIcon(std::string type)
 {
     std::string Icon;
-	if (type == ".txt" || type == ".docx" || type == ".pdf")
-		Icon = ICON_FA_FILE_LINES;
-	else if (type == ".png" || type == ".jpg" || type == ".jpeg" || type == ".bmp")
-		Icon = ICON_FA_FILE_IMAGE;
-	else if (type == ".mp4" || type == ".avi" || type == ".mkv")
-		Icon = ICON_FA_FILE_VIDEO;
-	else if (type == ".mp3" || type == ".wav" || type == ".ogg")
-		Icon = ICON_FA_FILE_AUDIO;
+    if (type == ".txt" || type == ".docx" || type == ".pdf")
+        Icon = ICON_FA_FILE_LINES;
+    else if (type == ".png" || type == ".jpg" || type == ".jpeg" || type == ".bmp")
+        Icon = ICON_FA_FILE_IMAGE;
+    else if (type == ".mp4" || type == ".avi" || type == ".mkv")
+        Icon = ICON_FA_FILE_VIDEO;
+    else if (type == ".mp3" || type == ".wav" || type == ".ogg")
+        Icon = ICON_FA_FILE_AUDIO;
     else if (type == ".cpp" || type == ".h" || type == ".hpp" || type == ".cs")
         Icon = ICON_FA_FILE_CODE;
     else if (type == ".zip" || type == ".rar" || type == ".7z")
         Icon = ICON_FA_FILE_ZIPPER;
     else
-		Icon = ICON_FA_FILE;
+        Icon = ICON_FA_FILE;
     return Icon;
 }
 
@@ -100,49 +115,40 @@ void fileList()
 {
     fs::path dir_path{ currentPath };
 
-    int counter = 0;
-    int foundFiles = 0;
-
-    try {
-        for (const auto& entry : fs::directory_iterator(dir_path)) {
-            counter++;
-            if (fileCache[currentPath].size() <= counter && !entry.is_directory())
-            {
-                foundFiles++;
-                fileCache[currentPath].push_back(entry.path().filename().string());
-            }
-            if (foundFiles == counter)
-            {
-                counter = 0;
-                foundFiles = 0;
-                break;
+    // FIX: Only scan the directory if this path hasn't been cached yet.
+    // The old logic had a broken counter comparison that failed to guard
+    // re-entry, causing the cache vector to grow unboundedly every frame.
+    if (fileCache.find(currentPath) == fileCache.end())
+    {
+        std::vector<std::string> entries;
+        try {
+            for (const auto& entry : fs::directory_iterator(dir_path)) {
+                if (!entry.is_directory())
+                    entries.push_back(entry.path().filename().string());
             }
         }
-    }
-    catch (const fs::filesystem_error& e) {
-        std::cerr << "Filesystem error: " << e.what() << std::endl;
+        catch (const fs::filesystem_error& e) {
+            std::cerr << "Filesystem error: " << e.what() << std::endl;
+        }
+        fileCache[currentPath] = std::move(entries);
     }
 
     auto& files = fileCache[currentPath];
-    ImGuiIO& io = ImGui::GetIO();
-
-    ImFont* ICON_FONT = io.Fonts->AddFontFromFileTTF("fonts/fa-solid-900.ttf", 30.0f);
-    ImFont* TEXT_FONT = io.Fonts->AddFontFromFileTTF("fonts/arial.ttf", 16.0f);
 
     int P = 0;
     int limit = 7;
 
     for (const auto& file : files) {
         ImGui::PushID(P);
-		fs::path filePath = dir_path / file;
-		fs::path ext = filePath.extension();
+        fs::path filePath = dir_path / file;
+        fs::path ext = filePath.extension();
         std::string ext_str = ext.string();
 
         ImVec2 cellSize = { 80, 80 };
         ImGui::BeginGroup();
 
         ImVec2 start = ImGui::GetCursorScreenPos();
-		if (ImGui::InvisibleButton("cell", cellSize))
+        if (ImGui::InvisibleButton("cell", cellSize))
         {
             openFile(filePath.string(), ext_str);
         }
@@ -154,11 +160,12 @@ void fileList()
             start.y + (cellSize.y - iconSize.y) * 0.4f
             });
 
+        // FIX: Use the pre-loaded font pointer instead of calling AddFontFromFileTTF.
         ImGui::PushFont(ICON_FONT);
 
-        if(ext_str == ".jpg" || ext_str == ".jpeg" || ext_str == ".png" || ext_str == ".bmp" )
-			ImGui::Image((void*)(intptr_t)loadTexture((dir_path / file).string()), ImVec2(40, 40));
-		else
+        if (ext_str == ".jpg" || ext_str == ".jpeg" || ext_str == ".png" || ext_str == ".bmp")
+            ImGui::Image((void*)(intptr_t)loadTexture((dir_path / file).string()), ImVec2(40, 40));
+        else
             ImGui::Text("%s", fileIcon(ext_str).c_str());
 
         ImGui::PopFont();
@@ -173,6 +180,7 @@ void fileList()
             start.y + cellSize.y - 18
             });
 
+        // FIX: Use the pre-loaded font pointer instead of calling AddFontFromFileTTF.
         ImGui::PushFont(TEXT_FONT);
         ImGui::Text("%s", name.c_str());
         ImGui::PopFont();
@@ -200,7 +208,7 @@ void drawDirectory(const std::filesystem::path& path)
         {
             if (ImGui::IsItemClicked())
             {
-				HistoryDir.push_back(currentPath);
+                HistoryDir.push_back(currentPath);
                 currentPath = entry.path().string();
             }
 
@@ -228,17 +236,22 @@ void directoryList(std::string FileLoc)
     ImGui::EndChild();
 }
 
-void interfaces::componentsInterfaces::fileExplorer() 
+void interfaces::componentsInterfaces::fileExplorer()
 {
     if (currentPath.empty())
         currentPath = game::gameData.projectLocation;
 
     ImGui::Begin("File Explorer", &fileExplorer_, ImGuiWindowFlags_NoCollapse);
     if (ImGui::Button(ICON_FA_HOUSE))
+    {
+        // FIX: Clear the cache when navigating home so stale entries
+        // don't persist if files changed since last visit.
+        fileCache.clear();
         currentPath = game::gameData.projectLocation;
+    }
     ImGui::SameLine();
 
-	if (currentPath != game::gameData.projectLocation)
+    if (currentPath != game::gameData.projectLocation)
     {
         if (ImGui::Button(ICON_FA_BACKWARD_STEP))
         {
@@ -248,9 +261,9 @@ void interfaces::componentsInterfaces::fileExplorer()
         ImGui::SameLine();
     }
 
-	ImGui::Text(currentPath.c_str());
+    ImGui::Text("%s", currentPath.c_str());
 
-	ImGui::BeginChild("File List", ImVec2(0, 0), true);
+    ImGui::BeginChild("File List", ImVec2(0, 0), true);
     ImGui::Columns(2);
 
     ImGui::Text("Folder");
@@ -258,13 +271,13 @@ void interfaces::componentsInterfaces::fileExplorer()
     ImGui::Text("Files");
     ImGui::NextColumn();
 
-	directoryList(currentPath);
+    directoryList(currentPath);
     ImGui::NextColumn();
     fileList();
     ImGui::NextColumn();
 
     ImGui::Columns(1);
-	ImGui::EndChild();
+    ImGui::EndChild();
 
     ImGui::End();
 }

@@ -1,15 +1,14 @@
 #include "interface.h"
 #include "IconsFontAwesome6.h"
 #include "graphModule.h"
-#include "graphModule.h"
 
 #include <functional>
-#include <fstream>
-#include <any>
-#include <vector>
 #include <unordered_map>
 #include <random>
-#include <cmath>
+
+#include <iostream>
+#include <string>
+#include <variant>
 
 using namespace interface;
 using namespace NodesModule;
@@ -23,8 +22,6 @@ namespace
 	static int choosedNode = -1;
 	static int nextNodeId = 0;
 	static ImVec2 viewPos;
-	
-	// BUAT NODE PAKE CHILD (REWRITE NODE SYSTEM)
 
 	void drawLine(ImVec2 source, ImVec2 target, ImVec2 position)
 	{
@@ -42,9 +39,13 @@ namespace
 			cp2,
 			p2,
 			IM_COL32(255, 0, 200, 200),
-			12.0f
+			5.0f
 		);
 	}
+
+	static bool canDrag = false;
+	static int fromNode = -1;
+	static int fromPin = -1;
 }
 
 void renderNodes(ImVec2 size, ImVec2 position)
@@ -52,23 +53,33 @@ void renderNodes(ImVec2 size, ImVec2 position)
 	for (const auto& node : NodesModule::Nodes)
 	{
 		ImGui::PushID(node.second->getName().c_str());
-		ImGui::SetCursorScreenPos(ImVec2(node.second->pos.x + position.x + viewPos.x, node.second->pos.y + position.y + viewPos.y));
-		ImGui::SetNextWindowSizeConstraints(ImVec2(100, 500), ImVec2(500, 1000));
-		ImGui::BeginChild(node.second->getName().c_str(), ImVec2(100, 500), false, ImGuiChildFlags_Borders);
+
+		ImGui::SetCursorScreenPos(ImVec2(
+			node.second->pos.x + position.x + viewPos.x,
+			node.second->pos.y + position.y + viewPos.y
+		));
+
+		ImGui::SetNextWindowSizeConstraints(ImVec2(160, 120), ImVec2(500, 1000));
+
+		ImGui::BeginChild(node.second->getName().c_str(), ImVec2(160, 0), true, ImGuiChildFlags_Borders);
+
 		ImDrawList* draw_list = ImGui::GetWindowDrawList();
 
 		if (ImGui::CollapsingHeader(node.second->getName().c_str(), ImGuiTreeNodeFlags_Leaf))
+		{
+		}
 
-			if (ImGui::IsItemHovered() && ImGui::IsMouseClicked(0))
-			{
-				node.second->dragging = true;
-				choosedNode = node.first;
+		if (ImGui::IsItemHovered() && ImGui::IsMouseClicked(0))
+		{
+			node.second->dragging = true;
+			choosedNode = node.first;
 
-				node.second->dragOffset = ImVec2(
-					ImGui::GetMousePos().x - (node.second->pos.x + position.x - viewPos.x),
-					ImGui::GetMousePos().y - (node.second->pos.y + position.y - viewPos.y)
-				);
-			}
+			node.second->dragOffset = ImVec2(
+				ImGui::GetMousePos().x - (node.second->pos.x + position.x - viewPos.x),
+				ImGui::GetMousePos().y - (node.second->pos.y + position.y - viewPos.y)
+			);
+		}
+
 		if (node.second->dragging && ImGui::IsMouseReleased(0))
 			node.second->dragging = false;
 
@@ -79,6 +90,82 @@ void renderNodes(ImVec2 size, ImVec2 position)
 				ImGui::GetMousePos().y - position.y + viewPos.y - node.second->dragOffset.y
 			);
 		}
+
+		node.second->execute();
+
+		ImGui::Spacing();
+		ImGui::Text("ID: %d", node.first);
+		ImGui::Separator();
+
+		ImGui::Columns(2, nullptr, false);
+
+		for (auto& o : node.second->getPinOUT())
+		{
+			ImGui::PushID(o.id);
+			ImGui::AlignTextToFramePadding();
+
+			ImGui::Text("OUT");
+
+			ImVec2 itemMax = ImGui::GetItemRectMax();
+			ImVec2 itemMin = ImGui::GetItemRectMin();
+
+			o.pos = ImVec2(
+				itemMax.x - viewPos.x - position.x + (itemMin.x - itemMax.x),
+				itemMax.y - viewPos.y - position.y + (itemMin.y - itemMax.y)
+			);
+
+			draw_list->AddCircleFilled(
+				ImVec2(itemMax.x - 5, (itemMin.y + itemMax.y) * 0.5f),
+				9.0f,
+				IM_COL32(200, 200, 200, 255)
+			);
+
+			if (ImGui::IsItemClicked(ImGuiMouseButton_Left) && canDrag)
+			{
+				NodesModule::connectPin(fromNode, fromPin, node.first, o.id);
+				canDrag = false;
+			}
+
+			ImGui::Text("%f", o.pos.x);
+			ImGui::Text("%f", o.pos.y);
+			ImGui::PopID();
+		}
+
+		ImGui::NextColumn();
+
+		for (auto& i : node.second->getPinIN())
+		{
+			ImGui::PushID(i.id);
+			ImGui::AlignTextToFramePadding();
+
+			ImGui::Text("IN");
+			ImVec2 itemMax = ImGui::GetItemRectMax();
+			ImVec2 itemMin = ImGui::GetItemRectMin();
+
+			i.pos = ImVec2(
+				itemMax.x - viewPos.x - position.x + (itemMin.x - itemMax.x),
+				itemMax.y - viewPos.y - position.y + (itemMin.y - itemMax.y)
+			);
+
+			draw_list->AddCircleFilled(
+				ImVec2(itemMin.x + 5, (itemMin.y + itemMax.y) * 0.5f),
+				9.0f,
+				IM_COL32(200, 200, 200, 255)
+			);
+
+			if (ImGui::IsItemClicked(ImGuiMouseButton_Left) && !canDrag)
+			{
+				fromNode = node.first;
+				fromPin = i.id;
+				canDrag = true;
+			}
+
+			ImGui::Text("%f", i.pos.x);
+			ImGui::Text("%f", i.pos.y);
+			ImGui::PopID();
+		}
+
+		ImGui::Columns(1);
 
 		ImGui::EndChild();
 		ImGui::PopID();
@@ -91,7 +178,6 @@ void Canvas(ImVec2 size, ImVec2 position)
 	ImDrawList* draw_list = ImGui::GetWindowDrawList();
 	const ImU32 GRID_COLOR = ImGui::GetColorU32(IM_COL32(200, 200, 200, 40));
 	static ImVec2 lastMouse;
-
 
 	ImGui::BeginChild("Blueprint Timeline", ImVec2(ImGui::GetContentRegionAvail()), false, ImGuiWindowFlags_NoScrollbar | ImGuiChildFlags_AlwaysAutoResize);
 
@@ -132,9 +218,41 @@ void Canvas(ImVec2 size, ImVec2 position)
 			ImVec2(position.x + size.x, position.y + y + yoff),
 			GRID_COLOR);
 
-	//drawLine(nodeList[2].pins[1].pos, nodeList[0].pins.back().pos, position);
-
 	renderNodes(size, position);
+
+	for (auto& con : NodesModule::connections)
+	{
+		auto& source = NodesModule::Nodes[con.fromNode]->getPinIN()[con.fromPin].pos;
+		auto& target = NodesModule::Nodes[con.toNode]->getPinOUT()[con.toPin].pos;
+
+
+		drawLine(source, target, position);
+		NodesModule::connectionDataHandler(con.fromNode, con.fromPin, con.toNode, con.toPin);
+	}
+
+	if(canDrag)
+	{
+		if (ImGui::IsMouseClicked(ImGuiMouseButton_Right))
+			canDrag = false;
+
+		auto& d = NodesModule::Nodes[fromNode]->getPinIN()[fromPin];
+		ImVec2 mousePos = ImVec2{ ImGui::GetMousePos().x - position.x + viewPos.x, ImGui::GetMousePos().y - position.y + viewPos.y };
+
+		draw_list->AddCircleFilled(
+			d.pos,
+			12.0f,
+			IM_COL32(200, 200, 200, 255)
+		);
+
+		draw_list->AddCircleFilled(
+			mousePos,
+			12.0f,
+			IM_COL32(200, 200, 200, 255)
+		);
+
+
+		drawLine(d.pos, mousePos, position);
+	}
 
 	ImGui::EndChild();
 }
@@ -155,6 +273,46 @@ void InfoPanel()
 		ImGui::TextDisabled("X: %f", Data->pos.x);
 		ImGui::SameLine();
 		ImGui::TextDisabled("Y: %f", Data->pos.y);
+	}
+
+	if (ImGui::CollapsingHeader("Pins"))
+	{
+
+	}
+
+	ImGui::End();
+}
+
+void ConnectionList()
+{
+	ImGui::Begin("Connection List");
+
+	if (ImGui::BeginTable("connections_table", 4, ImGuiTableFlags_Borders | ImGuiTableFlags_RowBg))
+	{
+		ImGui::TableSetupColumn("From Node");
+		ImGui::TableSetupColumn("From Pin");
+		ImGui::TableSetupColumn("To Node");
+		ImGui::TableSetupColumn("To Pin");
+		ImGui::TableHeadersRow();
+
+		for (auto& con : NodesModule::connections)
+		{
+			ImGui::TableNextRow();
+
+			ImGui::TableSetColumnIndex(0);
+			ImGui::Text("%d", con.fromNode);
+
+			ImGui::TableSetColumnIndex(1);
+			ImGui::Text("%d", con.fromPin);
+
+			ImGui::TableSetColumnIndex(2);
+			ImGui::Text("%d", con.toNode);
+
+			ImGui::TableSetColumnIndex(3);
+			ImGui::Text("%d", con.toPin);
+		}
+
+		ImGui::EndTable();
 	}
 
 	ImGui::End();
@@ -184,8 +342,10 @@ void interface::interfaces::componentsInterfaces::graphEditor()
 		}
 		ImGui::EndMenuBar();
 	}
+
 	Canvas(ImGui::GetContentRegionAvail(), ImGui::GetCursorScreenPos());
 	ImGui::End();
 
 	InfoPanel();
+	ConnectionList();
 }

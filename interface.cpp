@@ -196,6 +196,8 @@ bool interface::interfaces::init()
     ImGui_ImplGlfw_InitForOpenGL(wndHandler.window, true);
     ImGui_ImplOpenGL3_Init("#version 330");
 	Theme(io);
+
+    interfaces::componentsInterfaces::initFileExplorerFonts();
 	return true;
 }
 
@@ -238,7 +240,6 @@ void interface::interfaces::componentsInterfaces::menuBar()
         ImGui::EndMenu();
     }
 
-    // ===== Window Menu =====
     if (ImGui::BeginMenu(ICON_FA_PERSON_THROUGH_WINDOW " Window"))
     {
         ImGui::MenuItem("Hierarchy", nullptr, &hirarcy_);
@@ -249,7 +250,6 @@ void interface::interfaces::componentsInterfaces::menuBar()
         ImGui::EndMenu();
     }
 
-    // ===== Debug Menu =====
     if (ImGui::BeginMenu(ICON_FA_BUG_SLASH " Debug"))
     {
         ImGui::MenuItem("Profiler", nullptr, &profiler_);
