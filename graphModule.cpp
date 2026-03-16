@@ -5,6 +5,7 @@
 #include <iterator>
 
 using namespace NodesModule;
+static int nextID = 0;
 
 namespace NodesModule
 {
@@ -78,49 +79,78 @@ void NodesModule::connectionDataHandler(int selfNode, int selfPin, int targetNod
 
 	P2.val = P1.val;
 }
+
 class Transform : public NodesModule::BaseNode
 {
 private:
-	float value = 0.0f;
-	std::string name = "KK";
+	float X = 0.0f;
+	float Y = 0.0f;
+	float Z = 0.0f;
 public:
 	void setup() override
 	{
 		setName("Transform");
-		PinIN("X", Pintype::STRING);
+		PinIN("X", Pintype::FLOAT);
+		PinIN("Y", Pintype::FLOAT);
+		PinIN("Z", Pintype::FLOAT);
 	}
 
 	void execute() override 
 	{
-		getPinIN()[0].setValue<std::string>(name);
-		ImGui::DragFloat("Val", &value);
+		getPinIN()[0].setValue<float>(X);
+		getPinIN()[1].setValue<float>(Y);
+		getPinIN()[2].setValue<float>(Z);
+		ImGui::DragFloat("X", &X);
+		ImGui::DragFloat("Y", &Y);
+		ImGui::DragFloat("Z", &Z);
 	}
 };
 
 class Mesh : public NodesModule::BaseNode
 {
 private:
-	float Size = 0.0f;
+	float X = 0.0f;
+	float Y = 0.0f;
+	float Z = 0.0f;
 	std::string name = "";
 
 public:
 	void setup() override
 	{
 		setName("Mesh");
-		pinOUT("Size", Pintype::STRING);
+		pinOUT("X", Pintype::FLOAT);
+		pinOUT("Y", Pintype::FLOAT);
+		pinOUT("Z", Pintype::FLOAT);
 	}
 
 	void execute() override
 	{
-		getPinOUT()[0].getValue<std::string>(name);
-		ImGui::Text(name.c_str());
+		getPinOUT()[0].getValue<float>(X);
+		getPinOUT()[1].getValue<float>(Y);
+		getPinOUT()[2].getValue<float>(Z);
+		ImGui::Text("%f", X);
+		ImGui::Text("%f", Y);
+		ImGui::Text("%f", Z);
 	}
 };
 
+template<typename T>
+int insertNode()
+{
+	int id = nextID++;
+	Nodes[id] = std::make_unique<T>();
+	return id;
+}
+
+template<typename... T>
+void insertNodes()
+{
+	(insertNode<T>(), ...);
+}
+
 void NodesModule::init(void)
 {
-	Nodes[0] = std::make_unique<Transform>();
-	Nodes[1] = std::make_unique<Mesh>();
+	insertNodes<Transform, Mesh>();
 
 	for (const auto& pair : Nodes) {
 		pair.second->setup();

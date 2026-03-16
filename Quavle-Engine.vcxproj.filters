@@ -74,9 +74,6 @@
     <Filter Include="Source Files\saved">
       <UniqueIdentifier>{d22c5d09-b7a8-4d6e-a42d-07d47673f948}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\entity\components widget">
-      <UniqueIdentifier>{c14da9a0-b96e-4b60-9a57-e213e118fc33}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\vendor\imgui\misc">
       <UniqueIdentifier>{a0ff72cd-b9ae-4112-bda1-43bfd80c938b}</UniqueIdentifier>
     </Filter>
@@ -85,6 +82,9 @@
     </Filter>
     <Filter Include="Source Files\build">
       <UniqueIdentifier>{d591e0a5-abbc-4083-9aa9-f1c3c6225d14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entity\comp_interface">
+      <UniqueIdentifier>{c14da9a0-b96e-4b60-9a57-e213e118fc33}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -212,7 +212,7 @@
       <Filter>Source Files\entity</Filter>
     </ClCompile>
     <ClCompile Include="widget.cpp">
-      <Filter>Source Files\entity\components widget</Filter>
+      <Filter>Source Files\entity\comp_interface</Filter>
     </ClCompile>
     <ClCompile Include="environment.cpp">
       <Filter>Source Files\game</Filter>

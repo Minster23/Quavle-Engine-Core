@@ -241,30 +241,37 @@ namespace entity
         static std::unordered_map<std::string, Audio>     entity_audio;
         GLuint GLUInit(const std::string& filePath);
 
-#define COMPONENT_ENTRY(NAME, MAP, TYPE)                  \
-{                                                         \
-    NAME,                                                 \
-    [](const std::string& id)                             \
-    {                                                     \
-        if (MAP.contains(id)) return;                     \
-        MAP[id] = TYPE{};                                 \
-    },                                                    \
-    [](const std::string& id)                             \
-    {                                                     \
-        auto it = MAP.find(id);                           \
-        if (it == MAP.end()) return;                      \
-        it->second.renderUI();                            \
-    }                                                     \
-}
-
-        struct CompoenentsList
+        struct ComponentsList
         {
             std::string name;
             std::function<void(const std::string&)> add;
-			std::function<void(const std::string&)> callRender;
+            std::function<void(const std::string&)> callRender;
         };
 
-		static std::vector<CompoenentsList> ComponentsList;
+        static std::vector<ComponentsList> ComponentsLists;
+        template<typename T>
+        ComponentsList makeComponentEntry(
+            const std::string& name,
+            std::unordered_map<std::string, T>& pool)
+        {
+            return
+            {
+                name,
+
+                [&](const std::string& id)
+                {
+                    if (pool.contains(id)) return;
+                    pool[id] = T{};
+                },
+
+                [&](const std::string& id)
+                {
+                    auto it = pool.find(id);
+                    if (it == pool.end()) return;
+                    it->second.renderUI();
+                }
+            };
+        }
         void prepareComponentsList();
 
     };

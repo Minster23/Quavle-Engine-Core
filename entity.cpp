@@ -51,7 +51,7 @@ std::unordered_map<std::string, components::Mesh> components::entity_mesh;
 std::unordered_map<std::string, components::Shader> components::entity_shader;
 std::unordered_map<std::string, components::Camera> components::entity_camera;
 std::unordered_map<std::string, components::Collusion> components::entity_collusion;
-std::vector<components::CompoenentsList> components::ComponentsList;
+std::vector<components::ComponentsList> components::ComponentsLists;
 components::Camera* gameObject::activeCamera = nullptr;
 std::unordered_map<std::string, std::vector<glm::vec3>> gameObject::mesh_world_vertices;
 
@@ -273,78 +273,32 @@ void entity::gameObject::childrenHandler()
 
 void components::prepareComponentsList()
 {
-    ComponentsList.clear();
-
-    ComponentsList.push_back(
-        COMPONENT_ENTRY(
-            "Data",
-            components::entity_data,
-            Data
-        )
+    ComponentsLists.push_back(
+        makeComponentEntry<Data>("Data", entity_data)
     );
 
-    ComponentsList.push_back(
-        COMPONENT_ENTRY(
-            "Texture",
-            components::entity_texture,
-            Texture
-        )
+    ComponentsLists.push_back(
+        makeComponentEntry<Transform>("Transform", entity_transform)
     );
 
-    ComponentsList.push_back(
-        COMPONENT_ENTRY(
-            "Transform",
-            components::entity_transform,
-            Transform
-        )
+    ComponentsLists.push_back(
+        makeComponentEntry<Texture>("Texture", entity_texture)
     );
 
-    ComponentsList.push_back(
-        COMPONENT_ENTRY(
-            "Material",
-            components::entity_material,
-            Material
-        )
+    ComponentsLists.push_back(
+        makeComponentEntry<Material>("Material", entity_material)
     );
 
-    ComponentsList.push_back(
-        COMPONENT_ENTRY(
-            "Camera",
-            components::entity_camera,
-            Camera
-        )
+    ComponentsLists.push_back(
+        makeComponentEntry<Light>("Light", entity_light)
     );
 
-    ComponentsList.push_back(
-        COMPONENT_ENTRY(
-            "Light",
-            components::entity_light,
-            Light
-        )
+    ComponentsLists.push_back(
+        makeComponentEntry<Camera>("Camera", entity_camera)
     );
 
-    ComponentsList.push_back(
-        COMPONENT_ENTRY(
-            "Environment",
-            environment::environment_properties::Enviroments,
-            environment::environment_properties::env
-        )
-    );
-
-    ComponentsList.push_back(
-        COMPONENT_ENTRY(
-            "Text",
-			canvas::item::item_text,
-            canvas::item::Text
-        )
-    );
-
-    ComponentsList.push_back(
-        COMPONENT_ENTRY(
-            "Canvas Container",
-            canvas::item::item_container,
-            canvas::item::container
-        )
+    ComponentsLists.push_back(
+        makeComponentEntry<Audio>("Audio", entity_audio)
     );
 }
 

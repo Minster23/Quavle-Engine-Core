@@ -39,27 +39,26 @@ bool WorldToScreen(
     return true;
 }
 
-void setComponents(const std::string& Data_Id)
+void setComponents(const std::string& dataId)
 {
-    if (ImGui::Button("Add Components"))
-        ImGui::OpenPopup("Components");
+    if (ImGui::Button("Add Component"))
+        ImGui::OpenPopup("add_component_popup");
 
-    if (ImGui::BeginPopup("Components"))
+    if (ImGui::BeginPopup("add_component_popup"))
     {
-        for (int i = 0; i < components::ComponentsList.size(); i++)
+        for (auto& item : components::ComponentsLists)
         {
-            ImGui::PushID(i);
-
-            auto& item = components::ComponentsList[i];
+            ImGui::PushID(item.name.c_str());
 
             if (ImGui::MenuItem(item.name.c_str()))
             {
-                item.add(Data_Id);
+                item.add(dataId);
                 ImGui::CloseCurrentPopup();
             }
 
             ImGui::PopID();
         }
+
         ImGui::EndPopup();
     }
 }
@@ -71,12 +70,13 @@ void interfaces::componentsInterfaces::inspector()
         ImGui::Begin("Inspector", &inspector_);
         if (components::entity_data.count(interfaces::componentsInterfaces::selecetedObject))
         {
-            for (int i = 0; i < components::ComponentsList.size(); i++)
+            for (auto& item : components::ComponentsLists)
             {
-                ImGui::PushID(i);
-                auto& item = components::ComponentsList[i];
+                ImGui::PushID(item.name.c_str());
+
                 item.callRender(interfaces::componentsInterfaces::selecetedObject);
-				ImGui::PopID();
+
+                ImGui::PopID();
             }
 
 			setComponents(interfaces::componentsInterfaces::selecetedObject);

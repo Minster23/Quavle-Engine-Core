@@ -68,9 +68,9 @@ namespace NodesModule
 		std::string name;
 		std::vector<pinIn> pinIns;
 		std::vector<pinOut> pinOuts;
+		int nextPinId = 0;
 		pinIn& PinIN(std::string name, Pintype type)
 		{
-			int nextPinId = 0;
 			pinIn p;
 			p.id = nextPinId++;
 			p.type = type;
@@ -80,7 +80,6 @@ namespace NodesModule
 		};
 		pinOut& pinOUT(std::string name, Pintype type)
 		{
-			int nextPinId = 0;
 			pinOut k;
 			k.id = nextPinId++;
 			k.type = type;

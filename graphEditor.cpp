@@ -23,7 +23,7 @@ namespace
 	static int nextNodeId = 0;
 	static ImVec2 viewPos;
 
-	void drawLine(ImVec2 source, ImVec2 target, ImVec2 position)
+	static void drawLine(ImVec2 source, ImVec2 target, ImVec2 position)
 	{
 		ImVec2 p1 = ImVec2(source.x + position.x + viewPos.x, source.y + position.y + viewPos.y);
 		ImVec2 p2 = ImVec2(target.x + position.x + viewPos.x, target.y + position.y + viewPos.y);
@@ -52,14 +52,14 @@ void renderNodes(ImVec2 size, ImVec2 position)
 {
 	for (const auto& node : NodesModule::Nodes)
 	{
-		ImGui::PushID(node.second->getName().c_str());
+		ImGui::PushID(node.first);
 
 		ImGui::SetCursorScreenPos(ImVec2(
 			node.second->pos.x + position.x + viewPos.x,
 			node.second->pos.y + position.y + viewPos.y
 		));
 
-		ImGui::SetNextWindowSizeConstraints(ImVec2(160, 120), ImVec2(500, 1000));
+		ImGui::SetNextWindowSizeConstraints(ImVec2(160, 120), ImVec2(600, 500));
 
 		ImGui::BeginChild(node.second->getName().c_str(), ImVec2(160, 0), true, ImGuiChildFlags_Borders);
 
@@ -93,11 +93,9 @@ void renderNodes(ImVec2 size, ImVec2 position)
 
 		node.second->execute();
 
-		ImGui::Spacing();
-		ImGui::Text("ID: %d", node.first);
 		ImGui::Separator();
 
-		ImGui::Columns(2, nullptr, false);
+		ImGui::Columns(3, nullptr, false);
 
 		for (auto& o : node.second->getPinOUT())
 		{
@@ -125,9 +123,6 @@ void renderNodes(ImVec2 size, ImVec2 position)
 				NodesModule::connectPin(fromNode, fromPin, node.first, o.id);
 				canDrag = false;
 			}
-
-			ImGui::Text("%f", o.pos.x);
-			ImGui::Text("%f", o.pos.y);
 			ImGui::PopID();
 		}
 
@@ -159,9 +154,6 @@ void renderNodes(ImVec2 size, ImVec2 position)
 				fromPin = i.id;
 				canDrag = true;
 			}
-
-			ImGui::Text("%f", i.pos.x);
-			ImGui::Text("%f", i.pos.y);
 			ImGui::PopID();
 		}
 
@@ -236,7 +228,7 @@ void Canvas(ImVec2 size, ImVec2 position)
 			canDrag = false;
 
 		auto& d = NodesModule::Nodes[fromNode]->getPinIN()[fromPin];
-		ImVec2 mousePos = ImVec2{ ImGui::GetMousePos().x - position.x + viewPos.x, ImGui::GetMousePos().y - position.y + viewPos.y };
+		ImVec2 mousePos = ImVec2{ ImGui::GetMousePos().x - position.x , ImGui::GetMousePos().y - position.y};
 
 		draw_list->AddCircleFilled(
 			d.pos,
@@ -273,11 +265,6 @@ void InfoPanel()
 		ImGui::TextDisabled("X: %f", Data->pos.x);
 		ImGui::SameLine();
 		ImGui::TextDisabled("Y: %f", Data->pos.y);
-	}
-
-	if (ImGui::CollapsingHeader("Pins"))
-	{
-
 	}
 
 	ImGui::End();
@@ -329,7 +316,7 @@ void interface::interfaces::componentsInterfaces::graphEditor()
 		initNodeModule = true;
 	}
 
-	ImGui::Begin(ICON_FA_TACHOGRAPH_DIGITAL "Graph Editor", nullptr, ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoScrollbar);
+	ImGui::Begin(ICON_FA_TACHOGRAPH_DIGITAL " Graph Editor", nullptr, ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoScrollbar);
 
 	if (ImGui::BeginMenuBar())
 	{
