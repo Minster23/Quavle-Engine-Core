@@ -22,7 +22,7 @@ namespace
 	static int choosedNode = -1;
 	static int nextNodeId = 0;
 	static ImVec2 viewPos;
-	static bool _showConnList = false;
+	static std::string fileNow;
 
 	static void drawLine(ImVec2 source, ImVec2 target, ImVec2 position)
 	{
@@ -51,27 +51,29 @@ namespace
 
 void renderNodes(ImVec2 size, ImVec2 position)
 {
-	for (const auto& node : NodesModule::Nodes)
+	for (int x = 0; x < NodesInFile[fileNow].size(); x++)
 	{
-		ImGui::PushID(node.first);
+		auto& node = NodesInFile[fileNow][x];
+		std::cout <<"NODE RENDER - " + node->getName() + "\n";
+		ImGui::PushID(x);
 
 		ImGui::SetCursorScreenPos(ImVec2(
-			node.second->pos.x + position.x + viewPos.x,
-			node.second->pos.y + position.y + viewPos.y
+			node->pos.x + position.x + viewPos.x,
+			node->pos.y + position.y + viewPos.y
 		));
 
-		ImGui::SetNextWindowSizeConstraints(ImVec2(180, 120), node.second->getSize());
+		ImGui::SetNextWindowSizeConstraints(ImVec2(180, 120), node->getSize());
 
 		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(8, 8));
 		ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(6, 6));
 
-		ImGui::BeginChild(node.second->getName().c_str(), ImVec2(180, 0), true, ImGuiChildFlags_Borders);
+		ImGui::BeginChild(node->getName().c_str(), ImVec2(180, 0), true, ImGuiChildFlags_Borders);
 
 		// HEADER
 		ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(0.2f, 0.2f, 0.2f, 1));
 		ImGui::PushStyleColor(ImGuiCol_HeaderHovered, ImVec4(0.3f, 0.3f, 0.3f, 1));
 
-		if (ImGui::CollapsingHeader(node.second->getName().c_str(), ImGuiTreeNodeFlags_Leaf))
+		if (ImGui::CollapsingHeader(node->getName().c_str(), ImGuiTreeNodeFlags_Leaf))
 		{
 		}
 
@@ -79,30 +81,30 @@ void renderNodes(ImVec2 size, ImVec2 position)
 
 		if (ImGui::IsItemHovered() && ImGui::IsMouseClicked(0))
 		{
-			node.second->dragging = true;
-			choosedNode = node.first;
+			node->dragging = true;
+			choosedNode = x;
 
-			node.second->dragOffset = ImVec2(
-				ImGui::GetMousePos().x - (node.second->pos.x + position.x - viewPos.x),
-				ImGui::GetMousePos().y - (node.second->pos.y + position.y - viewPos.y)
+			node->dragOffset = ImVec2(
+				ImGui::GetMousePos().x - (node->pos.x + position.x - viewPos.x),
+				ImGui::GetMousePos().y - (node->pos.y + position.y - viewPos.y)
 			);
 		}
 
-		if (node.second->dragging && ImGui::IsMouseReleased(0))
-			node.second->dragging = false;
+		if (node->dragging && ImGui::IsMouseReleased(0))
+			node->dragging = false;
 
-		if (node.second->dragging)
+		if (node->dragging)
 		{
-			node.second->pos = ImVec2(
-				ImGui::GetMousePos().x - position.x + viewPos.x - node.second->dragOffset.x,
-				ImGui::GetMousePos().y - position.y + viewPos.y - node.second->dragOffset.y
+			node->pos = ImVec2(
+				ImGui::GetMousePos().x - position.x + viewPos.x - node->dragOffset.x,
+				ImGui::GetMousePos().y - position.y + viewPos.y - node->dragOffset.y
 			);
 		}
 
 		ImGui::Separator();
 
 		// NODE CONTENT
-		node.second->execute();
+		node->execute();
 
 		ImGui::Spacing();
 		ImGui::Separator();
@@ -110,7 +112,7 @@ void renderNodes(ImVec2 size, ImVec2 position)
 
 		ImGui::Columns(2, nullptr, false);
 
-		for (auto& o : node.second->getPinOUT())
+		for (auto& o : node->getPinOUT())
 		{
 			ImGui::PushID(o.id);
 
@@ -127,7 +129,7 @@ void renderNodes(ImVec2 size, ImVec2 position)
 
 			if (ImGui::IsItemClicked(ImGuiMouseButton_Left) && canDrag)
 			{
-				NodesModule::connectPin(fromNode, fromPin, node.first, o.id);
+				NodesModule::connectPin(fromNode, fromPin, x, o.id, fileNow);
 				canDrag = false;
 			}
 
@@ -136,7 +138,7 @@ void renderNodes(ImVec2 size, ImVec2 position)
 
 		ImGui::NextColumn();
 
-		for (auto& i : node.second->getPinIN())
+		for (auto& i : node->getPinIN())
 		{
 			ImGui::PushID(i.id);
 
@@ -153,7 +155,7 @@ void renderNodes(ImVec2 size, ImVec2 position)
 
 			if (ImGui::IsItemClicked(ImGuiMouseButton_Left) && !canDrag)
 			{
-				fromNode = node.first;
+				fromNode = x;
 				fromPin = i.id;
 				canDrag = true;
 			}
@@ -168,7 +170,6 @@ void renderNodes(ImVec2 size, ImVec2 position)
 		ImGui::PopStyleVar(2);
 		ImGui::PopID();
 	}
-	
 }
 
 void Canvas(ImVec2 size, ImVec2 position)
@@ -188,7 +189,13 @@ void Canvas(ImVec2 size, ImVec2 position)
 	if (ImGui::BeginPopup("OPEN_NODE_LIST"))
 	{
 		ImGui::LabelText("Nodes", "List of Nodes");
-
+		for(auto& n : NodesPool)
+		{
+			if(ImGui::Selectable(n.second->getName().c_str()))
+			{
+				addNode(n.second->clone(), fileNow);
+			}
+		}
 		ImGui::EndPopup();
 	}
 
@@ -218,14 +225,18 @@ void Canvas(ImVec2 size, ImVec2 position)
 
 	renderNodes(size, position);
 
-	for (auto& con : NodesModule::connections)
+	//BUG IN HERE
+
+	auto& Nodes = NodesInFile[fileNow];
+
+	for (auto& con :connections)
 	{
-		auto& source = NodesModule::Nodes[con.fromNode]->getPinIN()[con.fromPin].pos;
-		auto& target = NodesModule::Nodes[con.toNode]->getPinOUT()[con.toPin].pos;
+		auto& source = Nodes[con.fromNode]->getPinIN()[con.fromPin].pos;
+		auto& target = Nodes[con.toNode]->getPinOUT()[con.toPin].pos;
 
 
 		drawLine(source, target, position);
-		NodesModule::connectionDataHandler(con.fromNode, con.fromPin, con.toNode, con.toPin);
+		NodesModule::connectionDataHandler(con.fromNode, con.fromPin, con.toNode, con.toPin, fileNow);
 	}
 
 	if(canDrag)
@@ -233,7 +244,7 @@ void Canvas(ImVec2 size, ImVec2 position)
 		if (ImGui::IsMouseClicked(ImGuiMouseButton_Right))
 			canDrag = false;
 
-		auto& d = NodesModule::Nodes[fromNode]->getPinIN()[fromPin];
+		auto& d = Nodes[fromNode]->getPinIN()[fromPin];
 		ImVec2 mousePos = ImVec2{ ImGui::GetMousePos().x - viewPos.x - position.x  , ImGui::GetMousePos().y - viewPos.x - position.x };
 
 		drawLine(d.pos, mousePos, position);
@@ -244,11 +255,7 @@ void Canvas(ImVec2 size, ImVec2 position)
 
 void InfoPanel()
 {
-	auto it = Nodes.find(choosedNode);
-	if (it == Nodes.end())
-		return;
-
-	auto& Data = it->second;
+	auto& Data = NodesInFile[fileNow][choosedNode];
 
 	ImGui::BeginChild("Inspector Node");
 
@@ -265,9 +272,6 @@ void InfoPanel()
 
 void ConnectionList()
 {
-	if (!_showConnList)
-		return;
-
 	ImGui::BeginChild("Connection List");
 
 	if (ImGui::BeginTable("connections_table", 4, ImGuiTableFlags_Borders | ImGuiTableFlags_RowBg))
@@ -312,13 +316,14 @@ void interface::interfaces::componentsInterfaces::graphEditor()
 		initNodeModule = true;
 	}
 
+	fileNow = graphEditorFileLoc_;
+
 	ImGui::Begin(ICON_FA_TACHOGRAPH_DIGITAL " Graph Editor", nullptr, ImGuiWindowFlags_MenuBar);
 
 	if (ImGui::BeginMenuBar())
 	{
 		if (ImGui::BeginMenu("File"))
 		{
-			ImGui::Checkbox("Connection List", &_showConnList);
 			if (ImGui::MenuItem("Save"))
 			{
 			}
@@ -348,6 +353,6 @@ void interface::interfaces::componentsInterfaces::graphEditor()
 	ImGui::EndChild();
 
 	ImGui::EndTable();
-
 	ImGui::End();
+
 }

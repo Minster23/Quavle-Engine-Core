@@ -101,6 +101,8 @@ namespace NodesModule
 
 		virtual void detail() {};
 
+		virtual std::unique_ptr<BaseNode> clone() const = 0;
+
 		ImVec2 pos;
 		bool dragging;
 		ImVec2 dragOffset;
@@ -110,15 +112,14 @@ namespace NodesModule
 		std::vector<pinOut>& getPinOUT() { return pinOuts; }
 		ImVec2 getSize() { return ImVec2(nodeSize); }
 		ImVec2 setSize(float x, float y) { return { nodeSize.x = x, nodeSize.y = y }; }
-
-		int getPinIndByName(std::string v, PinKind kind);
 	};
 
-	extern std::unordered_map<int, std::unique_ptr<BaseNode>> Nodes;
+	extern std::unordered_map<int, std::unique_ptr<BaseNode>> NodesPool;
+	extern std::unordered_map<std::string, std::vector<std::unique_ptr<BaseNode>>> NodesInFile;
 	extern std::vector<Connection> connections;
 
-	void connectPin(int selfNode, int selfPin, int targetNode, int targetPin);
-	void connectionDataHandler(int selfNode, int selfPin, int targetNode, int targetPin);
+	void connectPin(int selfNode, int selfPin, int targetNode, int targetPin, std::string FileNow);
+	void connectionDataHandler(int selfNode, int selfPin, int targetNode, int targetPin, std::string FileNow);
+	void addNode(std::unique_ptr<BaseNode> Node, std::string FileNow);
 	void init(void);
-
 }

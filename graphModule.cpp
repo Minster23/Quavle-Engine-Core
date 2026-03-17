@@ -9,35 +9,22 @@ static int nextID = 0;
 
 namespace NodesModule
 {
-	std::unordered_map<int, std::unique_ptr<BaseNode>> Nodes;
+	std::unordered_map<int, std::unique_ptr<BaseNode>> NodesPool;
+	std::unordered_map<std::string, std::vector<std::unique_ptr<BaseNode>>> NodesInFile;
 	std::vector<Connection> connections;
 }
 
-int NodesModule::BaseNode::getPinIndByName(std::string v, PinKind kind)
+void NodesModule::addNode(std::unique_ptr<BaseNode> Node, std::string FileNow)
 {
-	if(kind == PinKind::IN)
-	{
-		for (auto& p : BaseNode::getPinIN())
-		{
-			if (p.name.c_str() == v)
-				return p.id;
-		}
-	}
-	if (kind == PinKind::OUT)
-	{
-		for (auto& p : BaseNode::getPinOUT())
-		{
-			if (p.name.c_str() == v)
-				return p.id;
-		}
-	}
-
+	NodesInFile[FileNow].push_back(std::move(Node));
 }
 
-void NodesModule::connectPin(int selfNode, int selfPin, int targetNode, int targetPin)
+void NodesModule::connectPin(int selfNode, int selfPin, int targetNode, int targetPin,std::string FileNow)
 {
 	if (selfNode < 0 || selfPin < 0)
 		return;
+
+	auto& Nodes = NodesInFile[FileNow];
 
 	auto& nFT = Nodes[selfNode]->getPinIN()[selfPin].type;
 	auto& nTT = Nodes[targetNode]->getPinOUT()[targetPin].type;
@@ -64,8 +51,9 @@ void NodesModule::connectPin(int selfNode, int selfPin, int targetNode, int targ
 	return;
 }
 
-void NodesModule::connectionDataHandler(int selfNode, int selfPin, int targetNode, int targetPin)
+void NodesModule::connectionDataHandler(int selfNode, int selfPin, int targetNode, int targetPin, std::string FileNow)
 {
+	auto& Nodes = NodesInFile[FileNow];
 	auto& N1 = Nodes[selfNode];
 	auto& N2 = Nodes[targetNode];
 
@@ -111,6 +99,10 @@ public:
 	{
 
 	}
+
+	std::unique_ptr<BaseNode> clone() const override {
+		return std::make_unique<Transform>(*this);
+	}
 };
 
 class Mesh : public NodesModule::BaseNode
@@ -145,13 +137,17 @@ public:
 	{
 
 	}
+
+	std::unique_ptr<BaseNode> clone() const override {
+		return std::make_unique<Mesh>(*this);
+	}
 };
 
 template<typename T>
 int insertNode()
 {
 	int id = nextID++;
-	Nodes[id] = std::make_unique<T>();
+	NodesPool[id] = std::make_unique<T>();
 	return id;
 }
 
@@ -165,8 +161,7 @@ void NodesModule::init(void)
 {
 	insertNodes<Transform, Mesh>();
 
-	for (const auto& pair : Nodes) {
+	for (const auto& pair : NodesPool) {
 		pair.second->setup();
-		std::cout << pair.second->getName() + " - INITIALIZE" << std::endl;
 	}
 }
