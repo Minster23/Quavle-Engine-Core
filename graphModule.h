@@ -68,6 +68,7 @@ namespace NodesModule
 		std::string name;
 		std::vector<pinIn> pinIns;
 		std::vector<pinOut> pinOuts;
+		ImVec2 nodeSize;
 		int nextPinId = 0;
 		pinIn& PinIN(std::string name, Pintype type)
 		{
@@ -98,6 +99,8 @@ namespace NodesModule
 
 		virtual void execute() {};
 
+		virtual void detail() {};
+
 		ImVec2 pos;
 		bool dragging;
 		ImVec2 dragOffset;
@@ -105,6 +108,8 @@ namespace NodesModule
 		std::string getName() { return name; }
 		std::vector<pinIn>& getPinIN() { return pinIns; }
 		std::vector<pinOut>& getPinOUT() { return pinOuts; }
+		ImVec2 getSize() { return ImVec2(nodeSize); }
+		ImVec2 setSize(float x, float y) { return { nodeSize.x = x, nodeSize.y = y }; }
 
 		int getPinIndByName(std::string v, PinKind kind);
 	};

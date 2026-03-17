@@ -47,6 +47,7 @@ void NodesModule::connectPin(int selfNode, int selfPin, int targetNode, int targ
 
 	for (auto& c : NodesModule::connections)
 	{
+
 		if (c.fromNode == selfNode &&
 			c.fromPin == selfPin &&
 			c.toNode == targetNode &&
@@ -90,6 +91,7 @@ public:
 	void setup() override
 	{
 		setName("Transform");
+		setSize(700, 420);
 		PinIN("X", Pintype::FLOAT);
 		PinIN("Y", Pintype::FLOAT);
 		PinIN("Z", Pintype::FLOAT);
@@ -103,6 +105,11 @@ public:
 		ImGui::DragFloat("X", &X);
 		ImGui::DragFloat("Y", &Y);
 		ImGui::DragFloat("Z", &Z);
+	}
+
+	void detail() override
+	{
+
 	}
 };
 
@@ -118,6 +125,7 @@ public:
 	void setup() override
 	{
 		setName("Mesh");
+		setSize(700, 500);
 		pinOUT("X", Pintype::FLOAT);
 		pinOUT("Y", Pintype::FLOAT);
 		pinOUT("Z", Pintype::FLOAT);
@@ -131,6 +139,11 @@ public:
 		ImGui::Text("%f", X);
 		ImGui::Text("%f", Y);
 		ImGui::Text("%f", Z);
+	}
+
+	void detail() override
+	{
+
 	}
 };
 
